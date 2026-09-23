@@ -35,6 +35,10 @@
         "worldeditcui_protocol": "*",
         "fabric-permissions-api-v0": "*"
     },
+    "jars": [
+        {"file": "META-INF/jars/worldeditcui-protocol-common-mc26.2-4.0.3-dev.jar"},
+        {"file": "META-INF/jars/worldeditcui-protocol-fabric-mc26.2-4.0.3-dev.jar"}
+    ],
     "mixins": [
         "worldedit-coremc.mixins.json",
         "fawe-fabric.mixins.json"

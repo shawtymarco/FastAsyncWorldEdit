@@ -105,6 +105,8 @@ sourceSets.named("main") {
 }
 
 tasks.named<Copy>("processResources") {
+    inputs.property("faweCommit", rootProject.ext["revision"])
+    inputs.property("faweDate", rootProject.ext["date"])
     filesMatching("fawe.properties") {
         expand(
                 "version" to "$version",
