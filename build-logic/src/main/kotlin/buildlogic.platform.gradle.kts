@@ -23,6 +23,11 @@ tasks.named<ShadowJar>("shadowJar") {
         include(project(":worldedit-libs:core"))
         include(project(":worldedit-libs:${project.name.replace("worldedit-", "")}"))
         include(project(":worldedit-core"))
+        if (project.findProject(":worldedit-core-mc") != null && project.name == "worldedit-fabric") {
+            include(project(":worldedit-core-mc"))
+            include(project(":worldedit-libs:core-mc"))
+            include(project(":worldedit-fabric:adapters:adapter-26.2"))
+        }
         include(dependency(jchronic))
         exclude(dependency("com.google.code.findbugs:jsr305"))
     }

@@ -5,15 +5,23 @@ plugins {
 repositories {
     gradlePluginPortal()
     maven {
+        name = "Fabric"
+        url = uri("https://maven.fabricmc.net/")
+    }
+    maven {
         name = "EngineHub Repository"
         url = uri("https://maven.enginehub.org/repo/")
     }
+    mavenCentral()
 }
 
 dependencies {
     implementation(gradleApi())
+    implementation(libs.grgit)
     implementation(libs.shadow)
     implementation(libs.paperweight)
+    // Apply Loom via pluginManagement / settings; keep classpath hint for version alignment
+    compileOnly(libs.fabric.loom)
 
     constraints {
         val asmVersion = "[${libs.versions.minimumAsm.get()},)"

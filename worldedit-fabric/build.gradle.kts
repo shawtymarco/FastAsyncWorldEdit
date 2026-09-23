@@ -1,11 +1,8 @@
-import buildlogic.getLibrary
-import buildlogic.stringyLibs
 import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
-import net.fabricmc.loom.task.RemapJarTask
-import net.fabricmc.loom.task.RunGameTask
+import groovy.json.JsonSlurper
 
 plugins {
-    id("fabric-loom")
+    id("net.fabricmc.fabric-loom")
     `java-library`
     id("buildlogic.platform")
 }
@@ -17,56 +14,61 @@ platform {
 
 val fabricApiConfiguration: Configuration = configurations.create("fabricApi")
 
-loom {
-    accessWidenerPath.set(project.file("src/main/resources/worldedit.accesswidener"))
-}
-
-tasks.withType<RunGameTask>().configureEach {
-    javaLauncher.set(javaToolchains.launcherFor(java.toolchain))
-}
-
 repositories {
-    afterEvaluate {
-        verifyEngineHubRepositories()
+    maven {
+        name = "Fabric"
+        url = uri("https://maven.fabricmc.net/")
+    }
+    maven {
+        name = "EngineHub"
+        url = uri("https://maven.enginehub.org/repo/")
+    }
+    maven {
+        name = "EngineHub libs"
+        url = uri("https://repo.enginehub.org/libs-release/")
     }
 }
 
 dependencies {
-    "api"(project(":worldedit-core"))
+    api(project(":worldedit-core"))
+    api(project(":worldedit-core-mc"))
+    implementation(project(":worldedit-fabric:adapters:adapter-26.2"))
 
-    "minecraft"(libs.fabric.minecraft)
-    "mappings"(loom.layered {
-        officialMojangMappings()
-        parchment("org.parchmentmc.data:parchment-${libs.versions.parchment.minecraft.get()}:${libs.versions.parchment.mappings.get()}@zip")
-    })
-    "modImplementation"(libs.fabric.loader)
-    "include"(libs.cuiProtocol.fabric)
-    "modImplementation"(libs.cuiProtocol.fabric)
+    // Runtime libs that core treats as compileOnly — must ship in the Fabric dist jar
+    // (same set Bukkit shades into FAWE-Paper).
+    api(libs.parallelgzip) { isTransitive = false }
+    api(libs.lz4Java) { isTransitive = false }
+    api(libs.sparsebitset) { isTransitive = false }
+    // SnakeYAML is used reflectively by config loading; must be shaded explicitly.
+    api(libs.snakeyaml) { isTransitive = false }
 
-    // [1] Load the API dependencies from the fabric mod json...
+    minecraft(libs.fabric.minecraft)
+    implementation(libs.fabric.loader)
+    include(libs.cuiProtocol.fabric)
+    implementation(libs.cuiProtocol.fabric)
+    // Fabric CUI jar does not declare its common dependency; pull it in explicitly.
+    implementation(libs.cuiProtocol.common)
+    include(libs.cuiProtocol.common)
+
     @Suppress("UNCHECKED_CAST")
     val fabricModJson = file("src/main/resources/fabric.mod.json").bufferedReader().use {
-        groovy.json.JsonSlurper().parse(it) as Map<String, Map<String, *>>
+        JsonSlurper().parse(it) as Map<String, Map<String, *>>
     }
     val wantedDependencies = (fabricModJson["depends"] ?: error("no depends in fabric.mod.json")).keys
         .filter { it == "fabric-api-base" || it.contains(Regex("v\\d$")) }
         .toSet()
-    // [2] Request the matching dependency from fabric-loom
     for (wantedDependency in wantedDependencies) {
         val dep = fabricApi.module(wantedDependency, libs.versions.fabric.api.get())
-        "include"(dep)
-        "modImplementation"(dep)
+        include(dep)
+        implementation(dep)
     }
 
-    // No need for this at runtime
-    "modCompileOnly"(libs.fabric.permissions.api)
-
-    // Silence some warnings, since apparently this isn't on the compile classpath like it should be.
-    "compileOnly"(libs.errorprone.annotations)
+    compileOnly(libs.fabric.permissions.api)
+    compileOnly(libs.errorprone.annotations)
 }
 
 configure<BasePluginExtension> {
-    archivesName.set("${project.name}-mc${libs.fabric.minecraft.get().version}")
+    archivesName.set("FastAsyncWorldEdit-Fabric-mc${libs.versions.fabric.minecraft.get()}")
 }
 
 configure<PublishingExtension> {
@@ -78,32 +80,50 @@ configure<PublishingExtension> {
 
 tasks.named<Copy>("processResources") {
     val internalVersion = project.ext["internalVersion"]
-    // this will ensure that this task is redone when the versions change.
     inputs.property("version", internalVersion)
     filesMatching("fabric.mod.json") {
-        this.expand("version" to internalVersion)
+        expand(mapOf("version" to internalVersion))
     }
 }
 
 tasks.named<ShadowJar>("shadowJar") {
-    archiveClassifier.set("dist-dev")
+    archiveClassifier.set("dist")
+    dependsOn("jar")
+    from(rootProject.file("NOTICE.txt")) { into("META-INF"); rename { "NOTICE-FAWE.txt" } }
+    from(rootProject.file("FABRIC-PORT.md")) { into("META-INF") }
+    from({
+        zipTree(tasks.named<Jar>("jar").get().archiveFile).matching {
+            include("META-INF/jars/**")
+        }
+    })
     dependencies {
         relocate("org.antlr.v4", "com.sk89q.worldedit.antlr4")
         relocate("net.royawesome.jlibnoise", "com.sk89q.worldedit.jlibnoise")
-
         include(dependency("org.antlr:antlr4-runtime"))
         include(dependency("com.sk89q.lib:jlibnoise"))
+
+        // ZSTD cannot be relocated (native loader looks up original package).
+        include(dependency(libs.zstd))
+
+        include(dependency(libs.lz4Java))
+        include(dependency(libs.snakeyaml))
+
+        relocate("com.zaxxer", "com.fastasyncworldedit.core.math") {
+            include(dependency(libs.sparsebitset))
+        }
+        relocate("org.anarres", "com.fastasyncworldedit.core.internal.io") {
+            include(dependency(libs.parallelgzip))
+        }
+    }
+    minimize {
+        exclude(dependency(libs.lz4Java))
+        exclude(dependency(libs.parallelgzip))
+        exclude(dependency(libs.sparsebitset))
+        exclude(dependency(libs.zstd))
+        exclude(dependency(libs.snakeyaml))
     }
 }
 
-tasks.register<RemapJarTask>("remapShadowJar") {
-    val shadowJar = tasks.getByName<ShadowJar>("shadowJar")
-    dependsOn(shadowJar)
-    inputFile.set(shadowJar.archiveFile)
-    archiveFileName.set(shadowJar.archiveFileName.get().replace(Regex("-dev\\.jar$"), ".jar"))
-    addNestedDependencies.set(true)
-}
-
 tasks.named("assemble").configure {
-    dependsOn("remapShadowJar")
+    dependsOn("shadowJar")
 }

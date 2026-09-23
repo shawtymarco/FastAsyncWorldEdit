@@ -5,7 +5,7 @@ import org.gradle.plugins.ide.idea.model.IdeaModel
 group = rootProject.group
 version = rootProject.version
 
-configurations.configureEach {
+configurations.all {
     resolutionStrategy {
         cacheChangingModulesFor(1, TimeUnit.DAYS)
     }

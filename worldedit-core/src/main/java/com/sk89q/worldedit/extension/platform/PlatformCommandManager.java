@@ -669,6 +669,7 @@ public final class PlatformCommandManager {
         String arg0 = space0 == -1 ? args : args.substring(0, space0);
         Optional<Command> optional = commandManager.getCommand(arg0);
         if (optional.isEmpty()) {
+            LOGGER.debug("Ignoring CommandEvent; no matching command for arg0='{}' (args='{}')", arg0, args);
             return;
         }
         Command cmd = optional.get();

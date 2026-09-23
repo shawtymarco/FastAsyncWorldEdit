@@ -1,94 +1,76 @@
 [versions]
-# Minecraft expectations
-paperApi = "1.21.1-R0.1-SNAPSHOT"
+# Minecraft / Fabric
+fabric-minecraft = "26.2"
+fabric-loader = "0.19.5"
+fabric-api = "0.161.0+26.2"
+fabric-loom = "1.17.17"
+fabric-permissions-api = "0.7.0"
+cuiProtocol = "4.0.3"
+errorprone = "2.48.0"
+
 fastutil = "8.5.15"
 guava = "33.3.1-jre"
 log4j = "2.17.1"
 gson = "2.11.0"
 snakeyaml = "2.2"
 
-# Plugins
-dummypermscompat = "1.10"
-worldguard-bukkit = "7.0.17"
-griefprevention = "18.0.0"
-griefdefender = "2.1.0-SNAPSHOT"
-residence = "6.0.2.3"
-towny = "0.103.2.6"
-plotsquared = "7.6.0"
+# Plugins (compileOnly for core)
+plotsquared = "7.5.13"
 
 # Third party
 bstats = "3.2.1"
 sparsebitset = "1.3"
 parallelgzip = "1.0.5"
 adventure = "5.2.0"
-checkerqual = "4.2.3"
+checkerqual = "4.2.1"
 truezip = "6.8.4"
 auto-value = "1.11.1"
 jsr305 = "3.0.2"
 rhino-runtime = "1.7.15.1"
-zstd-jni = "1.4.8-1" # Not latest as it can be difficult to obtain latest ZSTD libs
+zstd-jni = "1.4.8-1"
 antlr4 = "4.13.2"
 json-simple = "1.1.1"
 jlibnoise = "1.0.0"
 jchronic = "0.2.4a"
-lz4-java = "1.11.3"
+lz4-java = "1.11.1"
 commons-cli = "1.11.0"
 paster = "1.1.7"
-vault = "1.7.1"
-serverlib = "2.3.7"
 linbus = "0.2.0"
 autoService = "1.1.1"
 guice = "7.0.0"
 
-## Internal
 text-adapter = "3.0.6"
 text = "3.0.4"
 piston = "0.5.11"
 
-# Tests
 mockito = "5.23.0"
-junit = "6.1.3"
+junit = "6.1.2"
 
-# Gradle plugins
-pluginyml = "0.6.0"
-mod-publish-plugin = "2.2.0"
 grgit = "5.3.3"
 shadow = "9.5.1"
 paperweight = "2.0.0-SNAPSHOT"
 codecov = "0.3.0"
 jqwik = "1.10.1"
 
-# Minimum versions we apply to make dependencies support newer Java
 minimumAsm = "9.7"
 minimumJdependency = "2.10"
 
 [libraries]
-# Gradle plugins
+grgit = { group = "org.ajoberstar.grgit", name = "grgit-gradle", version.ref = "grgit" }
 shadow = { group = "com.gradleup.shadow", name = "shadow-gradle-plugin", version.ref = "shadow" }
 paperweight = { group = "io.papermc.paperweight.userdev", name = "io.papermc.paperweight.userdev.gradle.plugin", version.ref = "paperweight" }
+fabric-loom = { module = "net.fabricmc:fabric-loom", version.ref = "fabric-loom" }
 
-# Minecraft expectations
-paperApi = { group = "io.papermc.paper", name = "paper-api", version.ref = "paperApi" }
 fastutil = { group = "it.unimi.dsi", name = "fastutil", version.ref = "fastutil" }
 log4j-bom = { group = "org.apache.logging.log4j", name = "log4j-bom", version.ref = "log4j" }
 log4j-api = { group = "org.apache.logging.log4j", name = "log4j-api", version.ref = "log4j" }
+log4j-core = { group = "org.apache.logging.log4j", name = "log4j-core", version.ref = "log4j" }
 guava = { group = "com.google.guava", name = "guava", version.ref = "guava" }
 gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
 snakeyaml = { group = "org.yaml", name = "snakeyaml", version.ref = "snakeyaml" }
 
-# Plugins
-dummypermscompat = { group = "com.sk89q", name = "dummypermscompat", version.ref = "dummypermscompat" }
-worldguard = { group = "com.sk89q.worldguard", name = "worldguard-bukkit", version.ref = "worldguard-bukkit" }
-griefprevention = { group = "com.github.TechFortress", name = "GriefPrevention", version.ref = "griefprevention" }
-griefdefender = { group = "com.griefdefender", name = "api", version.ref = "griefdefender" }
-residence = { group = "com.github.Zrips", name = "Residence", version.ref = "residence" }
-towny = { group = "com.palmergames.bukkit.towny", name = "towny", version.ref = "towny" }
 plotsquared-core = { group = "com.intellectualsites.plotsquared", name = "plotsquared-core", version.ref = "plotsquared" }
-plotsquared-bukkit = { group = "com.intellectualsites.plotsquared", name = "plotsquared-bukkit", version.ref = "plotsquared" }
 
-# Third Party
-bstats-base = { group = "org.bstats", name = "bstats-base", version.ref = "bstats" }
-bstats-bukkit = { group = "org.bstats", name = "bstats-bukkit", version.ref = "bstats" }
 sparsebitset = { group = "com.zaxxer", name = "SparseBitSet", version.ref = "sparsebitset" }
 parallelgzip = { group = "org.anarres", name = "parallelgzip", version.ref = "parallelgzip" }
 trueZip = { group = "de.schlichtherle", name = "truezip", version.ref = "truezip" }
@@ -107,11 +89,9 @@ commonsCli = { group = "commons-cli", name = "commons-cli", version.ref = "commo
 adventureApi = { group = "net.kyori", name = "adventure-api", version.ref = "adventure" }
 adventureMiniMessage = { group = "net.kyori", name = "adventure-text-minimessage", version.ref = "adventure" }
 paster = { group = "com.intellectualsites.paster", name = "Paster", version.ref = "paster" }
-vault = { group = "com.github.MilkBowl", name = "VaultAPI", version.ref = "vault" }
-serverlib = { group = "dev.notmyfault.serverlib", name = "ServerLib", version.ref = "serverlib" }
 checkerqual = { group = "org.checkerframework", name = "checker-qual", version.ref = "checkerqual" }
-
 autoService = { group = "com.google.auto.service", name = "auto-service", version.ref = "autoService" }
+guice = { group = "com.google.inject", name = "guice", version.ref = "guice" }
 
 linBus-bom = { group = "org.enginehub.lin-bus", name = "lin-bus-bom", version.ref = "linbus" }
 linBus-common = { group = "org.enginehub.lin-bus", name = "lin-bus-common" }
@@ -119,11 +99,6 @@ linBus-stream = { group = "org.enginehub.lin-bus", name = "lin-bus-stream" }
 linBus-tree = { group = "org.enginehub.lin-bus", name = "lin-bus-tree" }
 linBus-format-snbt = { group = "org.enginehub.lin-bus.format", name = "lin-bus-format-snbt" }
 
-guice = { group = "com.google.inject", name = "guice", version.ref = "guice" }
-
-# Internal
-## Text
-kyoriText-adapter-bukkit = { group = "net.kyori", name = "text-adapter-bukkit", version.ref = "text-adapter" }
 kyoriText-api = { group = "net.kyori", name = "text-api", version.ref = "text" }
 kyoriText-serializer-gson = { group = "net.kyori", name = "text-serializer-gson", version.ref = "text" }
 kyoriText-serializer-legacy = { group = "net.kyori", name = "text-serializer-legacy", version.ref = "text" }
@@ -134,16 +109,17 @@ junit-jupiter-api = { group = "org.junit.jupiter", name = "junit-jupiter-api" }
 junit-jupiter-params = { group = "org.junit.jupiter", name = "junit-jupiter-params" }
 junit-jupiter-engine = { group = "org.junit.jupiter", name = "junit-jupiter-engine" }
 junit-platform-launcher = { group = "org.junit.platform", name = "junit-platform-launcher" }
-
 jqwik = { group = "net.jqwik", name = "jqwik", version.ref = "jqwik" }
-
 mockito-bom = { group = "org.mockito", name = "mockito-bom", version.ref = "mockito" }
 mockito-core = { group = "org.mockito", name = "mockito-core" }
-mockito-junit-jupiter = { group = "org.mockito", name = "mockito-core" }
+mockito-junit-jupiter = { group = "org.mockito", name = "mockito-junit-jupiter" }
 
-log4j-core = { group = "org.apache.logging.log4j", name = "log4j-core", version.ref = "log4j" }
+fabric-minecraft = { module = "com.mojang:minecraft", version.ref = "fabric-minecraft" }
+fabric-loader = { module = "net.fabricmc:fabric-loader", version.ref = "fabric-loader" }
+fabric-permissions-api = { module = "me.lucko:fabric-permissions-api", version.ref = "fabric-permissions-api" }
+errorprone-annotations = { module = "com.google.errorprone:error_prone_annotations", version.ref = "errorprone" }
+fabric-mixin = { module = "net.fabricmc:sponge-mixin", version = "0.17.3+mixin.0.8.7" }
 
-## Piston
 [libraries.piston-core]
 module = "org.enginehub.piston:core"
 version.ref = "piston"
@@ -164,7 +140,14 @@ version.ref = "piston"
 module = "org.enginehub.piston.core-ap:runtime"
 version.ref = "piston"
 
+[libraries.cuiProtocol-common]
+module = "org.enginehub.worldeditcui-protocol:worldeditcui-protocol-common-mc26.2"
+version.ref = "cuiProtocol"
+
+[libraries.cuiProtocol-fabric]
+module = "org.enginehub.worldeditcui-protocol:worldeditcui-protocol-fabric-mc26.2"
+version.ref = "cuiProtocol"
+
 [plugins]
-pluginyml = { id = "net.minecrell.plugin-yml.bukkit", version.ref = "pluginyml" }
-mod-publish-plugin = { id = "me.modmuss50.mod-publish-plugin", version.ref = "mod-publish-plugin" }
+fabric-loom = { id = "net.fabricmc.fabric-loom", version.ref = "fabric-loom" }
 codecov = { id = "org.enginehub.codecov", version.ref = "codecov" }

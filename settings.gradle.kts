@@ -2,26 +2,53 @@ import kotlin.system.exitProcess
 
 pluginManagement {
     repositories {
-        gradlePluginPortal()
+        maven {
+            name = "Fabric"
+            url = uri("https://maven.fabricmc.net/")
+        }
         maven {
             name = "EngineHub Repository"
             url = uri("https://maven.enginehub.org/repo/")
         }
+        gradlePluginPortal()
+        mavenCentral()
+    }
+    plugins {
+        id("net.fabricmc.fabric-loom") version "1.17.17"
     }
 }
 plugins {
     id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
 }
 dependencyResolutionManagement {
+    // Loom needs its project-local Minecraft repos; EngineHub is declared on Loom modules.
+    repositoriesMode.set(RepositoriesMode.PREFER_PROJECT)
     repositories {
+        maven {
+            name = "Fabric"
+            url = uri("https://maven.fabricmc.net/")
+        }
         maven {
             name = "EngineHub Repository"
             url = uri("https://maven.enginehub.org/repo/")
-            content {
-                excludeGroup("net.kyori")
-            }
+        }
+        maven {
+            name = "EngineHub repo.enginehub.org"
+            url = uri("https://repo.enginehub.org/libs-release/")
+        }
+        maven {
+            name = "IntellectualSites"
+            url = uri("https://repo.intellectualsites.dev/repository/maven-all/")
+        }
+        maven {
+            name = "Modrinth"
+            url = uri("https://api.modrinth.com/maven")
         }
         mavenCentral()
+        maven {
+            name = "Minecraft Libraries"
+            url = uri("https://libraries.minecraft.net/")
+        }
     }
 }
 
@@ -29,7 +56,6 @@ if (!File("$rootDir/.git").exists()) {
     logger.lifecycle("""
     **************************************************************************************
     You need to fork and clone this repository! Don't download a .zip file.
-    If you need assistance, consult the GitHub docs: https://docs.github.com/get-started/quickstart/fork-a-repo
     **************************************************************************************
     """.trimIndent()
     ).also { exitProcess(1) }
@@ -37,15 +63,10 @@ if (!File("$rootDir/.git").exists()) {
 
 logger.lifecycle("""
 *******************************************
- You are building FastAsyncWorldEdit!
+ You are building FastAsyncWorldEdit (Fabric)!
 
- If you encounter trouble:
- 1) Read COMPILING.adoc if you haven't yet
- 2) Try running 'build' in a separate Gradle run
- 3) Use gradlew and not gradle
- 4) If you still need help, ask on Discord! https://discord.gg/intellectualsites
-
- Output files will be in [subproject]/build/libs
+ Target: Minecraft 26.2 / Fabric / Java 25
+ Output: worldedit-fabric/build/libs
 *******************************************
 """)
 
@@ -54,16 +75,12 @@ rootProject.name = "FastAsyncWorldEdit"
 includeBuild("build-logic")
 
 include("worldedit-libs")
-
-listOf("1_21", "1_21_4", "1_21_5", "1_21_6", "1_21_9", "1_21_11", "26.1", "26.2").forEach {
-    include("worldedit-bukkit:adapters:adapter-$it")
-}
-
-listOf("bukkit", "core", "cli").forEach {
-    include("worldedit-libs:$it")
-    include("worldedit-$it")
-}
+include("worldedit-libs:core")
 include("worldedit-libs:core:ap")
+include("worldedit-libs:core-mc")
+include("worldedit-libs:fabric")
 
-
-// enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+include("worldedit-core")
+include("worldedit-core-mc")
+include("worldedit-fabric")
+include("worldedit-fabric:adapters:adapter-26.2")

@@ -23,6 +23,7 @@ import com.fastasyncworldedit.core.world.block.ItemTypesCache;
 import com.sk89q.worldedit.world.registry.LegacyMapper;
 
 import javax.annotation.Nullable;
+import java.lang.reflect.Field;
 import java.util.Collection;
 import java.util.Locale;
 
@@ -35,3114 +36,3056 @@ import java.util.Locale;
 public final class ItemTypes {
 
     //FAWE start - init
-    static {
-        // Initializing the cache is what populates ItemType.REGISTRY from the running platform. Static initializers run in
-        // declaration order, so this must stay above the constants for them to resolve to anything.
-        ItemTypesCache.init();
-    }
-
     @Nullable
-    public static final ItemType ACACIA_BOAT = get("minecraft:acacia_boat");
+    public static final ItemType ACACIA_BOAT = init();
     @Nullable
-    public static final ItemType ACACIA_BUTTON = get("minecraft:acacia_button");
+    public static final ItemType ACACIA_BUTTON = init();
     @Nullable
-    public static final ItemType ACACIA_CHEST_BOAT = get("minecraft:acacia_chest_boat");
+    public static final ItemType ACACIA_CHEST_BOAT = init();
     @Nullable
-    public static final ItemType ACACIA_DOOR = get("minecraft:acacia_door");
+    public static final ItemType ACACIA_DOOR = init();
     @Nullable
-    public static final ItemType ACACIA_FENCE = get("minecraft:acacia_fence");
+    public static final ItemType ACACIA_FENCE = init();
     @Nullable
-    public static final ItemType ACACIA_FENCE_GATE = get("minecraft:acacia_fence_gate");
+    public static final ItemType ACACIA_FENCE_GATE = init();
     @Nullable
-    public static final ItemType ACACIA_HANGING_SIGN = get("minecraft:acacia_hanging_sign");
+    public static final ItemType ACACIA_HANGING_SIGN = init();
     @Nullable
-    public static final ItemType ACACIA_LEAVES = get("minecraft:acacia_leaves");
+    public static final ItemType ACACIA_LEAVES = init();
     @Nullable
-    public static final ItemType ACACIA_LOG = get("minecraft:acacia_log");
+    public static final ItemType ACACIA_LOG = init();
     @Nullable
-    public static final ItemType ACACIA_PLANKS = get("minecraft:acacia_planks");
+    public static final ItemType ACACIA_PLANKS = init();
     @Nullable
-    public static final ItemType ACACIA_PRESSURE_PLATE = get("minecraft:acacia_pressure_plate");
+    public static final ItemType ACACIA_PRESSURE_PLATE = init();
     @Nullable
-    public static final ItemType ACACIA_SAPLING = get("minecraft:acacia_sapling");
+    public static final ItemType ACACIA_SAPLING = init();
     @Nullable
-    public static final ItemType ACACIA_SHELF = get("minecraft:acacia_shelf");
+    public static final ItemType ACACIA_SHELF = init();
     @Nullable
-    public static final ItemType ACACIA_SIGN = get("minecraft:acacia_sign");
+    public static final ItemType ACACIA_SIGN = init();
     @Nullable
-    public static final ItemType ACACIA_SLAB = get("minecraft:acacia_slab");
+    public static final ItemType ACACIA_SLAB = init();
     @Nullable
-    public static final ItemType ACACIA_STAIRS = get("minecraft:acacia_stairs");
+    public static final ItemType ACACIA_STAIRS = init();
     @Nullable
-    public static final ItemType ACACIA_TRAPDOOR = get("minecraft:acacia_trapdoor");
+    public static final ItemType ACACIA_TRAPDOOR = init();
     @Nullable
-    public static final ItemType ACACIA_WOOD = get("minecraft:acacia_wood");
+    public static final ItemType ACACIA_WOOD = init();
     @Nullable
-    public static final ItemType ACTIVATOR_RAIL = get("minecraft:activator_rail");
+    public static final ItemType ACTIVATOR_RAIL = init();
     @Nullable
-    public static final ItemType AIR = get("minecraft:air");
+    public static final ItemType AIR = init();
     @Nullable
-    public static final ItemType ALLAY_SPAWN_EGG = get("minecraft:allay_spawn_egg");
+    public static final ItemType ALLAY_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType ALLIUM = get("minecraft:allium");
+    public static final ItemType ALLIUM = init();
     @Nullable
-    public static final ItemType AMETHYST_BLOCK = get("minecraft:amethyst_block");
+    public static final ItemType AMETHYST_BLOCK = init();
     @Nullable
-    public static final ItemType AMETHYST_CLUSTER = get("minecraft:amethyst_cluster");
+    public static final ItemType AMETHYST_CLUSTER = init();
     @Nullable
-    public static final ItemType AMETHYST_SHARD = get("minecraft:amethyst_shard");
+    public static final ItemType AMETHYST_SHARD = init();
     @Nullable
-    public static final ItemType ANCIENT_DEBRIS = get("minecraft:ancient_debris");
+    public static final ItemType ANCIENT_DEBRIS = init();
     @Nullable
-    public static final ItemType ANDESITE = get("minecraft:andesite");
+    public static final ItemType ANDESITE = init();
     @Nullable
-    public static final ItemType ANDESITE_SLAB = get("minecraft:andesite_slab");
+    public static final ItemType ANDESITE_SLAB = init();
     @Nullable
-    public static final ItemType ANDESITE_STAIRS = get("minecraft:andesite_stairs");
+    public static final ItemType ANDESITE_STAIRS = init();
     @Nullable
-    public static final ItemType ANDESITE_WALL = get("minecraft:andesite_wall");
+    public static final ItemType ANDESITE_WALL = init();
     @Nullable
-    public static final ItemType ANGLER_POTTERY_SHERD = get("minecraft:angler_pottery_sherd");
+    public static final ItemType ANGLER_POTTERY_SHERD = init();
     @Nullable
-    public static final ItemType ANVIL = get("minecraft:anvil");
+    public static final ItemType ANVIL = init();
     @Nullable
-    public static final ItemType APPLE = get("minecraft:apple");
+    public static final ItemType APPLE = init();
     @Nullable
-    public static final ItemType ARCHER_POTTERY_SHERD = get("minecraft:archer_pottery_sherd");
+    public static final ItemType ARCHER_POTTERY_SHERD = init();
     @Nullable
-    public static final ItemType ARMADILLO_SCUTE = get("minecraft:armadillo_scute");
+    public static final ItemType ARMOR_STAND = init();
     @Nullable
-    public static final ItemType ARMADILLO_SPAWN_EGG = get("minecraft:armadillo_spawn_egg");
+    public static final ItemType ARMADILLO_SCUTE = init();
     @Nullable
-    public static final ItemType ARMOR_STAND = get("minecraft:armor_stand");
+    public static final ItemType ARMADILLO_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType ARMS_UP_POTTERY_SHERD = get("minecraft:arms_up_pottery_sherd");
+    public static final ItemType ARMS_UP_POTTERY_SHERD = init();
     @Nullable
-    public static final ItemType ARROW = get("minecraft:arrow");
+    public static final ItemType ARROW = init();
     @Nullable
-    public static final ItemType AXOLOTL_BUCKET = get("minecraft:axolotl_bucket");
+    public static final ItemType AXOLOTL_BUCKET = init();
     @Nullable
-    public static final ItemType AXOLOTL_SPAWN_EGG = get("minecraft:axolotl_spawn_egg");
+    public static final ItemType AXOLOTL_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType AZALEA = get("minecraft:azalea");
+    public static final ItemType AZALEA = init();
     @Nullable
-    public static final ItemType AZALEA_LEAVES = get("minecraft:azalea_leaves");
+    public static final ItemType AZALEA_LEAVES = init();
     @Nullable
-    public static final ItemType AZURE_BLUET = get("minecraft:azure_bluet");
+    public static final ItemType AZURE_BLUET = init();
     @Nullable
-    public static final ItemType BAKED_POTATO = get("minecraft:baked_potato");
+    public static final ItemType BAKED_POTATO = init();
     @Nullable
-    public static final ItemType BAMBOO = get("minecraft:bamboo");
+    public static final ItemType BAMBOO = init();
     @Nullable
-    public static final ItemType BAMBOO_BLOCK = get("minecraft:bamboo_block");
+    public static final ItemType BAMBOO_BLOCK = init();
     @Nullable
-    public static final ItemType BAMBOO_BUTTON = get("minecraft:bamboo_button");
+    public static final ItemType BAMBOO_BUTTON = init();
     @Nullable
-    public static final ItemType BAMBOO_CHEST_RAFT = get("minecraft:bamboo_chest_raft");
+    public static final ItemType BAMBOO_CHEST_RAFT = init();
     @Nullable
-    public static final ItemType BAMBOO_DOOR = get("minecraft:bamboo_door");
+    public static final ItemType BAMBOO_DOOR = init();
     @Nullable
-    public static final ItemType BAMBOO_FENCE = get("minecraft:bamboo_fence");
+    public static final ItemType BAMBOO_FENCE = init();
     @Nullable
-    public static final ItemType BAMBOO_FENCE_GATE = get("minecraft:bamboo_fence_gate");
+    public static final ItemType BAMBOO_FENCE_GATE = init();
     @Nullable
-    public static final ItemType BAMBOO_HANGING_SIGN = get("minecraft:bamboo_hanging_sign");
+    public static final ItemType BAMBOO_HANGING_SIGN = init();
     @Nullable
-    public static final ItemType BAMBOO_MOSAIC = get("minecraft:bamboo_mosaic");
+    public static final ItemType BAMBOO_MOSAIC = init();
     @Nullable
-    public static final ItemType BAMBOO_MOSAIC_SLAB = get("minecraft:bamboo_mosaic_slab");
+    public static final ItemType BAMBOO_MOSAIC_SLAB = init();
     @Nullable
-    public static final ItemType BAMBOO_MOSAIC_STAIRS = get("minecraft:bamboo_mosaic_stairs");
+    public static final ItemType BAMBOO_MOSAIC_STAIRS = init();
     @Nullable
-    public static final ItemType BAMBOO_PLANKS = get("minecraft:bamboo_planks");
+    public static final ItemType BAMBOO_PLANKS = init();
     @Nullable
-    public static final ItemType BAMBOO_PRESSURE_PLATE = get("minecraft:bamboo_pressure_plate");
+    public static final ItemType BAMBOO_PRESSURE_PLATE = init();
     @Nullable
-    public static final ItemType BAMBOO_RAFT = get("minecraft:bamboo_raft");
+    public static final ItemType BAMBOO_SHELF = init();
     @Nullable
-    public static final ItemType BAMBOO_SHELF = get("minecraft:bamboo_shelf");
+    public static final ItemType BAMBOO_RAFT = init();
     @Nullable
-    public static final ItemType BAMBOO_SIGN = get("minecraft:bamboo_sign");
+    public static final ItemType BAMBOO_SIGN = init();
     @Nullable
-    public static final ItemType BAMBOO_SLAB = get("minecraft:bamboo_slab");
+    public static final ItemType BAMBOO_SLAB = init();
     @Nullable
-    public static final ItemType BAMBOO_STAIRS = get("minecraft:bamboo_stairs");
+    public static final ItemType BAMBOO_STAIRS = init();
     @Nullable
-    public static final ItemType BAMBOO_TRAPDOOR = get("minecraft:bamboo_trapdoor");
+    public static final ItemType BAMBOO_TRAPDOOR = init();
     @Nullable
-    public static final ItemType BARREL = get("minecraft:barrel");
+    public static final ItemType BARREL = init();
     @Nullable
-    public static final ItemType BARRIER = get("minecraft:barrier");
+    public static final ItemType BARRIER = init();
     @Nullable
-    public static final ItemType BASALT = get("minecraft:basalt");
+    public static final ItemType BASALT = init();
     @Nullable
-    public static final ItemType BAT_SPAWN_EGG = get("minecraft:bat_spawn_egg");
+    public static final ItemType BAT_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType BEACON = get("minecraft:beacon");
+    public static final ItemType BEACON = init();
     @Nullable
-    public static final ItemType BEDROCK = get("minecraft:bedrock");
+    public static final ItemType BEDROCK = init();
     @Nullable
-    public static final ItemType BEE_NEST = get("minecraft:bee_nest");
+    public static final ItemType BEE_NEST = init();
     @Nullable
-    public static final ItemType BEE_SPAWN_EGG = get("minecraft:bee_spawn_egg");
+    public static final ItemType BEE_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType BEEF = get("minecraft:beef");
+    public static final ItemType BEEF = init();
     @Nullable
-    public static final ItemType BEEHIVE = get("minecraft:beehive");
+    public static final ItemType BEEHIVE = init();
     @Nullable
-    public static final ItemType BEETROOT = get("minecraft:beetroot");
+    public static final ItemType BEETROOT = init();
     @Nullable
-    public static final ItemType BEETROOT_SEEDS = get("minecraft:beetroot_seeds");
+    public static final ItemType BEETROOT_SEEDS = init();
     @Nullable
-    public static final ItemType BEETROOT_SOUP = get("minecraft:beetroot_soup");
+    public static final ItemType BEETROOT_SOUP = init();
     @Nullable
-    public static final ItemType BELL = get("minecraft:bell");
+    public static final ItemType BELL = init();
     @Nullable
-    public static final ItemType BIG_DRIPLEAF = get("minecraft:big_dripleaf");
+    public static final ItemType BIG_DRIPLEAF = init();
     @Nullable
-    public static final ItemType BIRCH_BOAT = get("minecraft:birch_boat");
+    public static final ItemType BIRCH_BOAT = init();
     @Nullable
-    public static final ItemType BIRCH_BUTTON = get("minecraft:birch_button");
+    public static final ItemType BIRCH_BUTTON = init();
     @Nullable
-    public static final ItemType BIRCH_CHEST_BOAT = get("minecraft:birch_chest_boat");
+    public static final ItemType BIRCH_CHEST_BOAT = init();
     @Nullable
-    public static final ItemType BIRCH_DOOR = get("minecraft:birch_door");
+    public static final ItemType BIRCH_DOOR = init();
     @Nullable
-    public static final ItemType BIRCH_FENCE = get("minecraft:birch_fence");
+    public static final ItemType BIRCH_FENCE = init();
     @Nullable
-    public static final ItemType BIRCH_FENCE_GATE = get("minecraft:birch_fence_gate");
+    public static final ItemType BIRCH_FENCE_GATE = init();
     @Nullable
-    public static final ItemType BIRCH_HANGING_SIGN = get("minecraft:birch_hanging_sign");
+    public static final ItemType BIRCH_HANGING_SIGN = init();
     @Nullable
-    public static final ItemType BIRCH_LEAVES = get("minecraft:birch_leaves");
+    public static final ItemType BIRCH_LEAVES = init();
     @Nullable
-    public static final ItemType BIRCH_LOG = get("minecraft:birch_log");
+    public static final ItemType BIRCH_LOG = init();
     @Nullable
-    public static final ItemType BIRCH_PLANKS = get("minecraft:birch_planks");
+    public static final ItemType BIRCH_PLANKS = init();
     @Nullable
-    public static final ItemType BIRCH_PRESSURE_PLATE = get("minecraft:birch_pressure_plate");
+    public static final ItemType BIRCH_PRESSURE_PLATE = init();
     @Nullable
-    public static final ItemType BIRCH_SAPLING = get("minecraft:birch_sapling");
+    public static final ItemType BIRCH_SAPLING = init();
     @Nullable
-    public static final ItemType BIRCH_SHELF = get("minecraft:birch_shelf");
+    public static final ItemType BIRCH_SHELF = init();
     @Nullable
-    public static final ItemType BIRCH_SIGN = get("minecraft:birch_sign");
+    public static final ItemType BIRCH_SIGN = init();
     @Nullable
-    public static final ItemType BIRCH_SLAB = get("minecraft:birch_slab");
+    public static final ItemType BIRCH_SLAB = init();
     @Nullable
-    public static final ItemType BIRCH_STAIRS = get("minecraft:birch_stairs");
+    public static final ItemType BIRCH_STAIRS = init();
     @Nullable
-    public static final ItemType BIRCH_TRAPDOOR = get("minecraft:birch_trapdoor");
+    public static final ItemType BIRCH_TRAPDOOR = init();
     @Nullable
-    public static final ItemType BIRCH_WOOD = get("minecraft:birch_wood");
+    public static final ItemType BIRCH_WOOD = init();
     @Nullable
-    public static final ItemType BLACK_BANNER = get("minecraft:black_banner");
+    public static final ItemType BLACK_BANNER = init();
     @Nullable
-    public static final ItemType BLACK_BED = get("minecraft:black_bed");
+    public static final ItemType BLACK_BED = init();
     @Nullable
-    public static final ItemType BLACK_BUNDLE = get("minecraft:black_bundle");
+    public static final ItemType BLACK_BUNDLE = init();
     @Nullable
-    public static final ItemType BLACK_CANDLE = get("minecraft:black_candle");
+    public static final ItemType BLACK_CANDLE = init();
     @Nullable
-    public static final ItemType BLACK_CARPET = get("minecraft:black_carpet");
+    public static final ItemType BLACK_CARPET = init();
     @Nullable
-    public static final ItemType BLACK_CONCRETE = get("minecraft:black_concrete");
+    public static final ItemType BLACK_CONCRETE = init();
     @Nullable
-    public static final ItemType BLACK_CONCRETE_POWDER = get("minecraft:black_concrete_powder");
+    public static final ItemType BLACK_CONCRETE_POWDER = init();
     @Nullable
-    public static final ItemType BLACK_DYE = get("minecraft:black_dye");
+    public static final ItemType BLACK_DYE = init();
     @Nullable
-    public static final ItemType BLACK_GLAZED_TERRACOTTA = get("minecraft:black_glazed_terracotta");
+    public static final ItemType BLACK_GLAZED_TERRACOTTA = init();
     @Nullable
-    public static final ItemType BLACK_HARNESS = get("minecraft:black_harness");
+    public static final ItemType BLACK_SHULKER_BOX = init();
     @Nullable
-    public static final ItemType BLACK_SHULKER_BOX = get("minecraft:black_shulker_box");
+    public static final ItemType BLACK_STAINED_GLASS = init();
     @Nullable
-    public static final ItemType BLACK_STAINED_GLASS = get("minecraft:black_stained_glass");
+    public static final ItemType BLACK_STAINED_GLASS_PANE = init();
     @Nullable
-    public static final ItemType BLACK_STAINED_GLASS_PANE = get("minecraft:black_stained_glass_pane");
+    public static final ItemType BLACK_TERRACOTTA = init();
     @Nullable
-    public static final ItemType BLACK_TERRACOTTA = get("minecraft:black_terracotta");
+    public static final ItemType BLACK_WOOL = init();
     @Nullable
-    public static final ItemType BLACK_WOOL = get("minecraft:black_wool");
+    public static final ItemType BLACKSTONE = init();
     @Nullable
-    public static final ItemType BLACKSTONE = get("minecraft:blackstone");
+    public static final ItemType BLACKSTONE_SLAB = init();
     @Nullable
-    public static final ItemType BLACKSTONE_SLAB = get("minecraft:blackstone_slab");
+    public static final ItemType BLACKSTONE_STAIRS = init();
     @Nullable
-    public static final ItemType BLACKSTONE_STAIRS = get("minecraft:blackstone_stairs");
+    public static final ItemType BLACKSTONE_WALL = init();
     @Nullable
-    public static final ItemType BLACKSTONE_WALL = get("minecraft:blackstone_wall");
+    public static final ItemType BLADE_POTTERY_SHERD = init();
     @Nullable
-    public static final ItemType BLADE_POTTERY_SHERD = get("minecraft:blade_pottery_sherd");
+    public static final ItemType BLAST_FURNACE = init();
     @Nullable
-    public static final ItemType BLAST_FURNACE = get("minecraft:blast_furnace");
+    public static final ItemType BLAZE_POWDER = init();
     @Nullable
-    public static final ItemType BLAZE_POWDER = get("minecraft:blaze_powder");
+    public static final ItemType BLAZE_ROD = init();
     @Nullable
-    public static final ItemType BLAZE_ROD = get("minecraft:blaze_rod");
+    public static final ItemType BLAZE_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType BLAZE_SPAWN_EGG = get("minecraft:blaze_spawn_egg");
+    public static final ItemType BLUE_BANNER = init();
     @Nullable
-    public static final ItemType BLUE_BANNER = get("minecraft:blue_banner");
+    public static final ItemType BLUE_BED = init();
     @Nullable
-    public static final ItemType BLUE_BED = get("minecraft:blue_bed");
+    public static final ItemType BLUE_BUNDLE = init();
     @Nullable
-    public static final ItemType BLUE_BUNDLE = get("minecraft:blue_bundle");
+    public static final ItemType BLUE_CANDLE = init();
     @Nullable
-    public static final ItemType BLUE_CANDLE = get("minecraft:blue_candle");
+    public static final ItemType BROWN_CANDLE = init();
     @Nullable
-    public static final ItemType BLUE_CARPET = get("minecraft:blue_carpet");
+    public static final ItemType BLUE_CARPET = init();
     @Nullable
-    public static final ItemType BLUE_CONCRETE = get("minecraft:blue_concrete");
+    public static final ItemType BLUE_CONCRETE = init();
     @Nullable
-    public static final ItemType BLUE_CONCRETE_POWDER = get("minecraft:blue_concrete_powder");
+    public static final ItemType BLUE_CONCRETE_POWDER = init();
     @Nullable
-    public static final ItemType BLUE_DYE = get("minecraft:blue_dye");
+    public static final ItemType BLUE_DYE = init();
     @Nullable
-    public static final ItemType BLUE_EGG = get("minecraft:blue_egg");
+    public static final ItemType BLUE_EGG = init();
     @Nullable
-    public static final ItemType BLUE_GLAZED_TERRACOTTA = get("minecraft:blue_glazed_terracotta");
+    public static final ItemType BLUE_GLAZED_TERRACOTTA = init();
     @Nullable
-    public static final ItemType BLUE_HARNESS = get("minecraft:blue_harness");
+    public static final ItemType BLUE_ICE = init();
     @Nullable
-    public static final ItemType BLUE_ICE = get("minecraft:blue_ice");
+    public static final ItemType BLUE_ORCHID = init();
     @Nullable
-    public static final ItemType BLUE_ORCHID = get("minecraft:blue_orchid");
+    public static final ItemType BLUE_SHULKER_BOX = init();
     @Nullable
-    public static final ItemType BLUE_SHULKER_BOX = get("minecraft:blue_shulker_box");
+    public static final ItemType BLUE_STAINED_GLASS = init();
     @Nullable
-    public static final ItemType BLUE_STAINED_GLASS = get("minecraft:blue_stained_glass");
+    public static final ItemType BLUE_STAINED_GLASS_PANE = init();
     @Nullable
-    public static final ItemType BLUE_STAINED_GLASS_PANE = get("minecraft:blue_stained_glass_pane");
+    public static final ItemType BLUE_TERRACOTTA = init();
     @Nullable
-    public static final ItemType BLUE_TERRACOTTA = get("minecraft:blue_terracotta");
+    public static final ItemType BLUE_WOOL = init();
     @Nullable
-    public static final ItemType BLUE_WOOL = get("minecraft:blue_wool");
+    public static final ItemType BOGGED_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType BOGGED_SPAWN_EGG = get("minecraft:bogged_spawn_egg");
+    public static final ItemType BOLT_ARMOR_TRIM_SMITHING_TEMPLATE = init();
     @Nullable
-    public static final ItemType BOLT_ARMOR_TRIM_SMITHING_TEMPLATE = get("minecraft:bolt_armor_trim_smithing_template");
+    public static final ItemType BONE = init();
     @Nullable
-    public static final ItemType BONE = get("minecraft:bone");
+    public static final ItemType BONE_BLOCK = init();
     @Nullable
-    public static final ItemType BONE_BLOCK = get("minecraft:bone_block");
+    public static final ItemType BONE_MEAL = init();
     @Nullable
-    public static final ItemType BONE_MEAL = get("minecraft:bone_meal");
+    public static final ItemType BOOK = init();
     @Nullable
-    public static final ItemType BOOK = get("minecraft:book");
+    public static final ItemType BOOKSHELF = init();
     @Nullable
-    public static final ItemType BOOKSHELF = get("minecraft:bookshelf");
+    public static final ItemType BORDURE_INDENTED_BANNER_PATTERN = init();
     @Nullable
-    public static final ItemType BORDURE_INDENTED_BANNER_PATTERN = get("minecraft:bordure_indented_banner_pattern");
+    public static final ItemType BOW = init();
     @Nullable
-    public static final ItemType BOW = get("minecraft:bow");
+    public static final ItemType BOWL = init();
     @Nullable
-    public static final ItemType BOWL = get("minecraft:bowl");
+    public static final ItemType BRAIN_CORAL = init();
     @Nullable
-    public static final ItemType BRAIN_CORAL = get("minecraft:brain_coral");
+    public static final ItemType BRAIN_CORAL_BLOCK = init();
     @Nullable
-    public static final ItemType BRAIN_CORAL_BLOCK = get("minecraft:brain_coral_block");
+    public static final ItemType BRAIN_CORAL_FAN = init();
     @Nullable
-    public static final ItemType BRAIN_CORAL_FAN = get("minecraft:brain_coral_fan");
+    public static final ItemType BREAD = init();
     @Nullable
-    public static final ItemType BREAD = get("minecraft:bread");
+    public static final ItemType BREEZE_ROD = init();
     @Nullable
-    public static final ItemType BREEZE_ROD = get("minecraft:breeze_rod");
+    public static final ItemType BREEZE_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType BREEZE_SPAWN_EGG = get("minecraft:breeze_spawn_egg");
+    public static final ItemType BREWER_POTTERY_SHERD = init();
     @Nullable
-    public static final ItemType BREWER_POTTERY_SHERD = get("minecraft:brewer_pottery_sherd");
+    public static final ItemType BREWING_STAND = init();
     @Nullable
-    public static final ItemType BREWING_STAND = get("minecraft:brewing_stand");
+    public static final ItemType BRICK = init();
     @Nullable
-    public static final ItemType BRICK = get("minecraft:brick");
+    public static final ItemType BRICK_SLAB = init();
     @Nullable
-    public static final ItemType BRICK_SLAB = get("minecraft:brick_slab");
+    public static final ItemType BRICK_STAIRS = init();
     @Nullable
-    public static final ItemType BRICK_STAIRS = get("minecraft:brick_stairs");
+    public static final ItemType BRICK_WALL = init();
     @Nullable
-    public static final ItemType BRICK_WALL = get("minecraft:brick_wall");
+    public static final ItemType BRICKS = init();
     @Nullable
-    public static final ItemType BRICKS = get("minecraft:bricks");
+    public static final ItemType BROWN_BANNER = init();
     @Nullable
-    public static final ItemType BROWN_BANNER = get("minecraft:brown_banner");
+    public static final ItemType BROWN_BED = init();
     @Nullable
-    public static final ItemType BROWN_BED = get("minecraft:brown_bed");
+    public static final ItemType BROWN_BUNDLE = init();
     @Nullable
-    public static final ItemType BROWN_BUNDLE = get("minecraft:brown_bundle");
+    public static final ItemType BROWN_CARPET = init();
     @Nullable
-    public static final ItemType BROWN_CANDLE = get("minecraft:brown_candle");
+    public static final ItemType BROWN_CONCRETE = init();
     @Nullable
-    public static final ItemType BROWN_CARPET = get("minecraft:brown_carpet");
+    public static final ItemType BROWN_CONCRETE_POWDER = init();
     @Nullable
-    public static final ItemType BROWN_CONCRETE = get("minecraft:brown_concrete");
+    public static final ItemType BROWN_DYE = init();
     @Nullable
-    public static final ItemType BROWN_CONCRETE_POWDER = get("minecraft:brown_concrete_powder");
+    public static final ItemType BROWN_EGG = init();
     @Nullable
-    public static final ItemType BROWN_DYE = get("minecraft:brown_dye");
+    public static final ItemType BROWN_GLAZED_TERRACOTTA = init();
     @Nullable
-    public static final ItemType BROWN_EGG = get("minecraft:brown_egg");
+    public static final ItemType BROWN_MUSHROOM = init();
     @Nullable
-    public static final ItemType BROWN_GLAZED_TERRACOTTA = get("minecraft:brown_glazed_terracotta");
+    public static final ItemType BROWN_MUSHROOM_BLOCK = init();
     @Nullable
-    public static final ItemType BROWN_HARNESS = get("minecraft:brown_harness");
+    public static final ItemType BROWN_SHULKER_BOX = init();
     @Nullable
-    public static final ItemType BROWN_MUSHROOM = get("minecraft:brown_mushroom");
+    public static final ItemType BROWN_STAINED_GLASS = init();
     @Nullable
-    public static final ItemType BROWN_MUSHROOM_BLOCK = get("minecraft:brown_mushroom_block");
+    public static final ItemType BROWN_STAINED_GLASS_PANE = init();
     @Nullable
-    public static final ItemType BROWN_SHULKER_BOX = get("minecraft:brown_shulker_box");
+    public static final ItemType BROWN_TERRACOTTA = init();
     @Nullable
-    public static final ItemType BROWN_STAINED_GLASS = get("minecraft:brown_stained_glass");
+    public static final ItemType BROWN_WOOL = init();
     @Nullable
-    public static final ItemType BROWN_STAINED_GLASS_PANE = get("minecraft:brown_stained_glass_pane");
+    public static final ItemType BRUSH = init();
     @Nullable
-    public static final ItemType BROWN_TERRACOTTA = get("minecraft:brown_terracotta");
+    public static final ItemType BUBBLE_CORAL = init();
     @Nullable
-    public static final ItemType BROWN_WOOL = get("minecraft:brown_wool");
+    public static final ItemType BUBBLE_CORAL_BLOCK = init();
     @Nullable
-    public static final ItemType BRUSH = get("minecraft:brush");
+    public static final ItemType BUBBLE_CORAL_FAN = init();
     @Nullable
-    public static final ItemType BUBBLE_CORAL = get("minecraft:bubble_coral");
+    public static final ItemType BUCKET = init();
     @Nullable
-    public static final ItemType BUBBLE_CORAL_BLOCK = get("minecraft:bubble_coral_block");
+    public static final ItemType BUDDING_AMETHYST = init();
     @Nullable
-    public static final ItemType BUBBLE_CORAL_FAN = get("minecraft:bubble_coral_fan");
+    public static final ItemType BUNDLE = init();
     @Nullable
-    public static final ItemType BUCKET = get("minecraft:bucket");
+    public static final ItemType BURN_POTTERY_SHERD = init();
     @Nullable
-    public static final ItemType BUDDING_AMETHYST = get("minecraft:budding_amethyst");
+    public static final ItemType BUSH = init();
     @Nullable
-    public static final ItemType BUNDLE = get("minecraft:bundle");
+    public static final ItemType CACTUS = init();
     @Nullable
-    public static final ItemType BURN_POTTERY_SHERD = get("minecraft:burn_pottery_sherd");
-    @Nullable
-    public static final ItemType BUSH = get("minecraft:bush");
-    @Nullable
-    public static final ItemType CACTUS = get("minecraft:cactus");
-    @Nullable
-    public static final ItemType CACTUS_FLOWER = get("minecraft:cactus_flower");
+    public static final ItemType CACTUS_FLOWER = init();
     @Deprecated
     @Nullable
-    public static final ItemType CACTUS_GREEN = get("minecraft:cactus_green");
+    public static final ItemType CACTUS_GREEN = init();
     @Nullable
-    public static final ItemType CAKE = get("minecraft:cake");
+    public static final ItemType CAKE = init();
     @Nullable
-    public static final ItemType CALCITE = get("minecraft:calcite");
+    public static final ItemType CALCITE = init();
     @Nullable
-    public static final ItemType CALIBRATED_SCULK_SENSOR = get("minecraft:calibrated_sculk_sensor");
+    public static final ItemType CALIBRATED_SCULK_SENSOR = init();
     @Nullable
-    public static final ItemType CAMEL_HUSK_SPAWN_EGG = get("minecraft:camel_husk_spawn_egg");
+    public static final ItemType CAMEL_HUSK_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType CAMEL_SPAWN_EGG = get("minecraft:camel_spawn_egg");
+    public static final ItemType CAMEL_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType CAMPFIRE = get("minecraft:campfire");
+    public static final ItemType CAMPFIRE = init();
     @Nullable
-    public static final ItemType CANDLE = get("minecraft:candle");
+    public static final ItemType CANDLE = init();
     @Nullable
-    public static final ItemType CARROT = get("minecraft:carrot");
+    public static final ItemType CARROT = init();
     @Nullable
-    public static final ItemType CARROT_ON_A_STICK = get("minecraft:carrot_on_a_stick");
+    public static final ItemType CARROT_ON_A_STICK = init();
     @Nullable
-    public static final ItemType CARTOGRAPHY_TABLE = get("minecraft:cartography_table");
+    public static final ItemType CARTOGRAPHY_TABLE = init();
     @Nullable
-    public static final ItemType CARVED_PUMPKIN = get("minecraft:carved_pumpkin");
+    public static final ItemType CARVED_PUMPKIN = init();
     @Nullable
-    public static final ItemType CAT_SPAWN_EGG = get("minecraft:cat_spawn_egg");
+    public static final ItemType CAT_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType CAULDRON = get("minecraft:cauldron");
+    public static final ItemType CAULDRON = init();
     @Nullable
-    public static final ItemType CAVE_SPIDER_SPAWN_EGG = get("minecraft:cave_spider_spawn_egg");
+    public static final ItemType CAVE_SPIDER_SPAWN_EGG = init();
     @Deprecated
     @Nullable
-    public static final ItemType CHAIN = get("minecraft:chain");
+    public static final ItemType CHAIN = init();
     @Nullable
-    public static final ItemType CHAIN_COMMAND_BLOCK = get("minecraft:chain_command_block");
+    public static final ItemType CHAIN_COMMAND_BLOCK = init();
     @Nullable
-    public static final ItemType CHAINMAIL_BOOTS = get("minecraft:chainmail_boots");
+    public static final ItemType CHAINMAIL_BOOTS = init();
     @Nullable
-    public static final ItemType CHAINMAIL_CHESTPLATE = get("minecraft:chainmail_chestplate");
+    public static final ItemType CHAINMAIL_CHESTPLATE = init();
     @Nullable
-    public static final ItemType CHAINMAIL_HELMET = get("minecraft:chainmail_helmet");
+    public static final ItemType CHAINMAIL_HELMET = init();
     @Nullable
-    public static final ItemType CHAINMAIL_LEGGINGS = get("minecraft:chainmail_leggings");
+    public static final ItemType CHAINMAIL_LEGGINGS = init();
     @Nullable
-    public static final ItemType CHARCOAL = get("minecraft:charcoal");
+    public static final ItemType CHARCOAL = init();
     @Nullable
-    public static final ItemType CHERRY_BOAT = get("minecraft:cherry_boat");
+    public static final ItemType CHERRY_BOAT = init();
     @Nullable
-    public static final ItemType CHERRY_BUTTON = get("minecraft:cherry_button");
+    public static final ItemType CHERRY_BUTTON = init();
     @Nullable
-    public static final ItemType CHERRY_CHEST_BOAT = get("minecraft:cherry_chest_boat");
+    public static final ItemType CHERRY_CHEST_BOAT = init();
     @Nullable
-    public static final ItemType CHERRY_DOOR = get("minecraft:cherry_door");
+    public static final ItemType CHERRY_DOOR = init();
     @Nullable
-    public static final ItemType CHERRY_FENCE = get("minecraft:cherry_fence");
+    public static final ItemType CHERRY_FENCE = init();
     @Nullable
-    public static final ItemType CHERRY_FENCE_GATE = get("minecraft:cherry_fence_gate");
+    public static final ItemType CHERRY_FENCE_GATE = init();
     @Nullable
-    public static final ItemType CHERRY_HANGING_SIGN = get("minecraft:cherry_hanging_sign");
+    public static final ItemType CHERRY_HANGING_SIGN = init();
     @Nullable
-    public static final ItemType CHERRY_LEAVES = get("minecraft:cherry_leaves");
+    public static final ItemType CHERRY_LEAVES = init();
     @Nullable
-    public static final ItemType CHERRY_LOG = get("minecraft:cherry_log");
+    public static final ItemType CHERRY_LOG = init();
     @Nullable
-    public static final ItemType CHERRY_PLANKS = get("minecraft:cherry_planks");
+    public static final ItemType CHERRY_PLANKS = init();
     @Nullable
-    public static final ItemType CHERRY_PRESSURE_PLATE = get("minecraft:cherry_pressure_plate");
+    public static final ItemType CHERRY_PRESSURE_PLATE = init();
     @Nullable
-    public static final ItemType CHERRY_SAPLING = get("minecraft:cherry_sapling");
+    public static final ItemType CHERRY_SAPLING = init();
     @Nullable
-    public static final ItemType CHERRY_SHELF = get("minecraft:cherry_shelf");
+    public static final ItemType CHERRY_SHELF = init();
     @Nullable
-    public static final ItemType CHERRY_SIGN = get("minecraft:cherry_sign");
+    public static final ItemType CHERRY_SIGN = init();
     @Nullable
-    public static final ItemType CHERRY_SLAB = get("minecraft:cherry_slab");
+    public static final ItemType CHERRY_SLAB = init();
     @Nullable
-    public static final ItemType CHERRY_STAIRS = get("minecraft:cherry_stairs");
+    public static final ItemType CHERRY_STAIRS = init();
     @Nullable
-    public static final ItemType CHERRY_TRAPDOOR = get("minecraft:cherry_trapdoor");
+    public static final ItemType CHERRY_TRAPDOOR = init();
     @Nullable
-    public static final ItemType CHERRY_WOOD = get("minecraft:cherry_wood");
+    public static final ItemType CHERRY_WOOD = init();
     @Nullable
-    public static final ItemType CHEST = get("minecraft:chest");
+    public static final ItemType CHEST = init();
     @Nullable
-    public static final ItemType CHEST_MINECART = get("minecraft:chest_minecart");
+    public static final ItemType CHEST_MINECART = init();
     @Nullable
-    public static final ItemType CHICKEN = get("minecraft:chicken");
+    public static final ItemType CHICKEN = init();
     @Nullable
-    public static final ItemType CHICKEN_SPAWN_EGG = get("minecraft:chicken_spawn_egg");
+    public static final ItemType CHICKEN_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType CHIPPED_ANVIL = get("minecraft:chipped_anvil");
+    public static final ItemType CHIPPED_ANVIL = init();
     @Nullable
-    public static final ItemType CHISELED_BOOKSHELF = get("minecraft:chiseled_bookshelf");
+    public static final ItemType CHISELED_BOOKSHELF = init();
     @Nullable
-    public static final ItemType CHISELED_CINNABAR = get("minecraft:chiseled_cinnabar");
+    public static final ItemType CHISELED_CINNABAR = init();
     @Nullable
-    public static final ItemType CHISELED_COPPER = get("minecraft:chiseled_copper");
+    public static final ItemType CHISELED_COPPER = init();
     @Nullable
-    public static final ItemType CHISELED_DEEPSLATE = get("minecraft:chiseled_deepslate");
+    public static final ItemType CHISELED_DEEPSLATE = init();
     @Nullable
-    public static final ItemType CHISELED_NETHER_BRICKS = get("minecraft:chiseled_nether_bricks");
+    public static final ItemType CHISELED_NETHER_BRICKS = init();
     @Nullable
-    public static final ItemType CHISELED_POLISHED_BLACKSTONE = get("minecraft:chiseled_polished_blackstone");
+    public static final ItemType CHISELED_POLISHED_BLACKSTONE = init();
     @Nullable
-    public static final ItemType CHISELED_QUARTZ_BLOCK = get("minecraft:chiseled_quartz_block");
+    public static final ItemType CHISELED_QUARTZ_BLOCK = init();
     @Nullable
-    public static final ItemType CHISELED_RED_SANDSTONE = get("minecraft:chiseled_red_sandstone");
+    public static final ItemType CHISELED_RED_SANDSTONE = init();
     @Nullable
-    public static final ItemType CHISELED_RESIN_BRICKS = get("minecraft:chiseled_resin_bricks");
+    public static final ItemType CHISELED_RESIN_BRICKS = init();
     @Nullable
-    public static final ItemType CHISELED_SANDSTONE = get("minecraft:chiseled_sandstone");
+    public static final ItemType CHISELED_SANDSTONE = init();
     @Nullable
-    public static final ItemType CHISELED_STONE_BRICKS = get("minecraft:chiseled_stone_bricks");
+    public static final ItemType CHISELED_STONE_BRICKS = init();
     @Nullable
-    public static final ItemType CHISELED_SULFUR = get("minecraft:chiseled_sulfur");
+    public static final ItemType CHISELED_SULFUR = init();
     @Nullable
-    public static final ItemType CHISELED_TUFF = get("minecraft:chiseled_tuff");
+    public static final ItemType CHISELED_TUFF = init();
     @Nullable
-    public static final ItemType CHISELED_TUFF_BRICKS = get("minecraft:chiseled_tuff_bricks");
+    public static final ItemType CHISELED_TUFF_BRICKS = init();
     @Nullable
-    public static final ItemType CHORUS_FLOWER = get("minecraft:chorus_flower");
+    public static final ItemType CHORUS_FLOWER = init();
     @Nullable
-    public static final ItemType CHORUS_FRUIT = get("minecraft:chorus_fruit");
+    public static final ItemType CHORUS_FRUIT = init();
     @Nullable
-    public static final ItemType CHORUS_PLANT = get("minecraft:chorus_plant");
+    public static final ItemType CHORUS_PLANT = init();
     @Nullable
-    public static final ItemType CINNABAR = get("minecraft:cinnabar");
+    public static final ItemType CINNABAR = init();
     @Nullable
-    public static final ItemType CINNABAR_BRICK_SLAB = get("minecraft:cinnabar_brick_slab");
+    public static final ItemType CINNABAR_BRICK_SLAB = init();
     @Nullable
-    public static final ItemType CINNABAR_BRICK_STAIRS = get("minecraft:cinnabar_brick_stairs");
+    public static final ItemType CINNABAR_BRICK_STAIRS = init();
     @Nullable
-    public static final ItemType CINNABAR_BRICK_WALL = get("minecraft:cinnabar_brick_wall");
+    public static final ItemType CINNABAR_BRICK_WALL = init();
     @Nullable
-    public static final ItemType CINNABAR_BRICKS = get("minecraft:cinnabar_bricks");
+    public static final ItemType CINNABAR_BRICKS = init();
     @Nullable
-    public static final ItemType CINNABAR_SLAB = get("minecraft:cinnabar_slab");
+    public static final ItemType CINNABAR_SLAB = init();
     @Nullable
-    public static final ItemType CINNABAR_STAIRS = get("minecraft:cinnabar_stairs");
+    public static final ItemType CINNABAR_STAIRS = init();
     @Nullable
-    public static final ItemType CINNABAR_WALL = get("minecraft:cinnabar_wall");
+    public static final ItemType CINNABAR_WALL = init();
     @Nullable
-    public static final ItemType CLAY = get("minecraft:clay");
+    public static final ItemType CLAY = init();
     @Nullable
-    public static final ItemType CLAY_BALL = get("minecraft:clay_ball");
+    public static final ItemType CLAY_BALL = init();
     @Nullable
-    public static final ItemType CLOCK = get("minecraft:clock");
+    public static final ItemType CLOCK = init();
     @Nullable
-    public static final ItemType CLOSED_EYEBLOSSOM = get("minecraft:closed_eyeblossom");
+    public static final ItemType CLOSED_EYEBLOSSOM = init();
     @Nullable
-    public static final ItemType COAL = get("minecraft:coal");
+    public static final ItemType COAL = init();
     @Nullable
-    public static final ItemType COAL_BLOCK = get("minecraft:coal_block");
+    public static final ItemType COAL_BLOCK = init();
     @Nullable
-    public static final ItemType COAL_ORE = get("minecraft:coal_ore");
+    public static final ItemType COAL_ORE = init();
     @Nullable
-    public static final ItemType COARSE_DIRT = get("minecraft:coarse_dirt");
+    public static final ItemType COARSE_DIRT = init();
     @Nullable
-    public static final ItemType COAST_ARMOR_TRIM_SMITHING_TEMPLATE = get("minecraft:coast_armor_trim_smithing_template");
+    public static final ItemType COAST_ARMOR_TRIM_SMITHING_TEMPLATE = init();
     @Nullable
-    public static final ItemType COBBLED_DEEPSLATE = get("minecraft:cobbled_deepslate");
+    public static final ItemType COBBLED_DEEPSLATE = init();
     @Nullable
-    public static final ItemType COBBLED_DEEPSLATE_SLAB = get("minecraft:cobbled_deepslate_slab");
+    public static final ItemType COBBLED_DEEPSLATE_SLAB = init();
     @Nullable
-    public static final ItemType COBBLED_DEEPSLATE_STAIRS = get("minecraft:cobbled_deepslate_stairs");
+    public static final ItemType COBBLED_DEEPSLATE_STAIRS = init();
     @Nullable
-    public static final ItemType COBBLED_DEEPSLATE_WALL = get("minecraft:cobbled_deepslate_wall");
+    public static final ItemType COBBLED_DEEPSLATE_WALL = init();
     @Nullable
-    public static final ItemType COBBLESTONE = get("minecraft:cobblestone");
+    public static final ItemType COBBLESTONE = init();
     @Nullable
-    public static final ItemType COBBLESTONE_SLAB = get("minecraft:cobblestone_slab");
+    public static final ItemType COBBLESTONE_SLAB = init();
     @Nullable
-    public static final ItemType COBBLESTONE_STAIRS = get("minecraft:cobblestone_stairs");
+    public static final ItemType COBBLESTONE_STAIRS = init();
     @Nullable
-    public static final ItemType COBBLESTONE_WALL = get("minecraft:cobblestone_wall");
+    public static final ItemType COBBLESTONE_WALL = init();
     @Nullable
-    public static final ItemType COBWEB = get("minecraft:cobweb");
+    public static final ItemType COBWEB = init();
     @Nullable
-    public static final ItemType COCOA_BEANS = get("minecraft:cocoa_beans");
+    public static final ItemType COCOA_BEANS = init();
     @Nullable
-    public static final ItemType COD = get("minecraft:cod");
+    public static final ItemType COD = init();
     @Nullable
-    public static final ItemType COD_BUCKET = get("minecraft:cod_bucket");
+    public static final ItemType COD_BUCKET = init();
     @Nullable
-    public static final ItemType COD_SPAWN_EGG = get("minecraft:cod_spawn_egg");
+    public static final ItemType COD_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType COMMAND_BLOCK = get("minecraft:command_block");
+    public static final ItemType COMMAND_BLOCK = init();
     @Nullable
-    public static final ItemType COMMAND_BLOCK_MINECART = get("minecraft:command_block_minecart");
+    public static final ItemType COMMAND_BLOCK_MINECART = init();
     @Nullable
-    public static final ItemType COMPARATOR = get("minecraft:comparator");
+    public static final ItemType COMPARATOR = init();
     @Nullable
-    public static final ItemType COMPASS = get("minecraft:compass");
+    public static final ItemType COMPASS = init();
     @Nullable
-    public static final ItemType COMPOSTER = get("minecraft:composter");
+    public static final ItemType COMPOSTER = init();
     @Nullable
-    public static final ItemType CONDUIT = get("minecraft:conduit");
+    public static final ItemType CONDUIT = init();
     @Nullable
-    public static final ItemType COOKED_BEEF = get("minecraft:cooked_beef");
+    public static final ItemType COOKED_BEEF = init();
     @Nullable
-    public static final ItemType COOKED_CHICKEN = get("minecraft:cooked_chicken");
+    public static final ItemType COOKED_CHICKEN = init();
     @Nullable
-    public static final ItemType COOKED_COD = get("minecraft:cooked_cod");
+    public static final ItemType COOKED_COD = init();
     @Nullable
-    public static final ItemType COOKED_MUTTON = get("minecraft:cooked_mutton");
+    public static final ItemType COOKED_MUTTON = init();
     @Nullable
-    public static final ItemType COOKED_PORKCHOP = get("minecraft:cooked_porkchop");
+    public static final ItemType COOKED_PORKCHOP = init();
     @Nullable
-    public static final ItemType COOKED_RABBIT = get("minecraft:cooked_rabbit");
+    public static final ItemType COOKED_RABBIT = init();
     @Nullable
-    public static final ItemType COOKED_SALMON = get("minecraft:cooked_salmon");
+    public static final ItemType COOKED_SALMON = init();
     @Nullable
-    public static final ItemType COOKIE = get("minecraft:cookie");
+    public static final ItemType COOKIE = init();
     @Nullable
-    public static final ItemType COPPER_AXE = get("minecraft:copper_axe");
+    public static final ItemType COPPER_AXE = init();
     @Nullable
-    public static final ItemType COPPER_BARS = get("minecraft:copper_bars");
+    public static final ItemType COPPER_BARS = init();
     @Nullable
-    public static final ItemType COPPER_BLOCK = get("minecraft:copper_block");
+    public static final ItemType COPPER_BLOCK = init();
     @Nullable
-    public static final ItemType COPPER_BOOTS = get("minecraft:copper_boots");
+    public static final ItemType COPPER_BOOTS = init();
     @Nullable
-    public static final ItemType COPPER_BULB = get("minecraft:copper_bulb");
+    public static final ItemType COPPER_BULB = init();
     @Nullable
-    public static final ItemType COPPER_CHAIN = get("minecraft:copper_chain");
+    public static final ItemType COPPER_CHAIN = init();
     @Nullable
-    public static final ItemType COPPER_CHEST = get("minecraft:copper_chest");
+    public static final ItemType COPPER_CHEST = init();
     @Nullable
-    public static final ItemType COPPER_CHESTPLATE = get("minecraft:copper_chestplate");
+    public static final ItemType COPPER_CHESTPLATE = init();
     @Nullable
-    public static final ItemType COPPER_DOOR = get("minecraft:copper_door");
+    public static final ItemType COPPER_DOOR = init();
     @Nullable
-    public static final ItemType COPPER_GOLEM_SPAWN_EGG = get("minecraft:copper_golem_spawn_egg");
+    public static final ItemType COPPER_GOLEM_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType COPPER_GOLEM_STATUE = get("minecraft:copper_golem_statue");
+    public static final ItemType COPPER_GOLEM_STATUE = init();
     @Nullable
-    public static final ItemType COPPER_GRATE = get("minecraft:copper_grate");
+    public static final ItemType COPPER_GRATE = init();
     @Nullable
-    public static final ItemType COPPER_HELMET = get("minecraft:copper_helmet");
+    public static final ItemType COPPER_HELMET = init();
     @Nullable
-    public static final ItemType COPPER_HOE = get("minecraft:copper_hoe");
+    public static final ItemType COPPER_HOE = init();
     @Nullable
-    public static final ItemType COPPER_HORSE_ARMOR = get("minecraft:copper_horse_armor");
+    public static final ItemType COPPER_HORSE_ARMOR = init();
     @Nullable
-    public static final ItemType COPPER_INGOT = get("minecraft:copper_ingot");
+    public static final ItemType COPPER_INGOT = init();
     @Nullable
-    public static final ItemType COPPER_LANTERN = get("minecraft:copper_lantern");
+    public static final ItemType COPPER_LANTERN = init();
     @Nullable
-    public static final ItemType COPPER_LEGGINGS = get("minecraft:copper_leggings");
+    public static final ItemType COPPER_LEGGINGS = init();
     @Nullable
-    public static final ItemType COPPER_NAUTILUS_ARMOR = get("minecraft:copper_nautilus_armor");
+    public static final ItemType COPPER_NAUTILUS_ARMOR = init();
     @Nullable
-    public static final ItemType COPPER_NUGGET = get("minecraft:copper_nugget");
+    public static final ItemType COPPER_NUGGET = init();
     @Nullable
-    public static final ItemType COPPER_ORE = get("minecraft:copper_ore");
+    public static final ItemType COPPER_ORE = init();
     @Nullable
-    public static final ItemType COPPER_PICKAXE = get("minecraft:copper_pickaxe");
+    public static final ItemType COPPER_PICKAXE = init();
     @Nullable
-    public static final ItemType COPPER_SHOVEL = get("minecraft:copper_shovel");
+    public static final ItemType COPPER_SHOVEL = init();
     @Nullable
-    public static final ItemType COPPER_SPEAR = get("minecraft:copper_spear");
+    public static final ItemType COPPER_SPEAR = init();
     @Nullable
-    public static final ItemType COPPER_SWORD = get("minecraft:copper_sword");
+    public static final ItemType COPPER_SWORD = init();
     @Nullable
-    public static final ItemType COPPER_TORCH = get("minecraft:copper_torch");
+    public static final ItemType COPPER_TORCH = init();
     @Nullable
-    public static final ItemType COPPER_TRAPDOOR = get("minecraft:copper_trapdoor");
+    public static final ItemType COPPER_TRAPDOOR = init();
     @Nullable
-    public static final ItemType CORNFLOWER = get("minecraft:cornflower");
+    public static final ItemType CORNFLOWER = init();
     @Nullable
-    public static final ItemType COW_SPAWN_EGG = get("minecraft:cow_spawn_egg");
+    public static final ItemType COW_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType CRACKED_DEEPSLATE_BRICKS = get("minecraft:cracked_deepslate_bricks");
+    public static final ItemType CRACKED_DEEPSLATE_BRICKS = init();
     @Nullable
-    public static final ItemType CRACKED_DEEPSLATE_TILES = get("minecraft:cracked_deepslate_tiles");
+    public static final ItemType CRACKED_DEEPSLATE_TILES = init();
     @Nullable
-    public static final ItemType CRACKED_NETHER_BRICKS = get("minecraft:cracked_nether_bricks");
+    public static final ItemType CRACKED_NETHER_BRICKS = init();
     @Nullable
-    public static final ItemType CRACKED_POLISHED_BLACKSTONE_BRICKS = get("minecraft:cracked_polished_blackstone_bricks");
+    public static final ItemType CRACKED_POLISHED_BLACKSTONE_BRICKS = init();
     @Nullable
-    public static final ItemType CRACKED_STONE_BRICKS = get("minecraft:cracked_stone_bricks");
+    public static final ItemType CRACKED_STONE_BRICKS = init();
     @Nullable
-    public static final ItemType CRAFTER = get("minecraft:crafter");
+    public static final ItemType CRAFTER = init();
     @Nullable
-    public static final ItemType CRAFTING_TABLE = get("minecraft:crafting_table");
+    public static final ItemType CRAFTING_TABLE = init();
+    @Nullable public static final ItemType CREAKING_HEART = init();
+    @Nullable public static final ItemType CREAKING_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType CREAKING_HEART = get("minecraft:creaking_heart");
+    public static final ItemType CREEPER_BANNER_PATTERN = init();
     @Nullable
-    public static final ItemType CREAKING_SPAWN_EGG = get("minecraft:creaking_spawn_egg");
+    public static final ItemType CREEPER_HEAD = init();
     @Nullable
-    public static final ItemType CREEPER_BANNER_PATTERN = get("minecraft:creeper_banner_pattern");
+    public static final ItemType CREEPER_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType CREEPER_HEAD = get("minecraft:creeper_head");
+    public static final ItemType CRIMSON_BUTTON = init();
     @Nullable
-    public static final ItemType CREEPER_SPAWN_EGG = get("minecraft:creeper_spawn_egg");
+    public static final ItemType CRIMSON_DOOR = init();
     @Nullable
-    public static final ItemType CRIMSON_BUTTON = get("minecraft:crimson_button");
+    public static final ItemType CRIMSON_FENCE = init();
     @Nullable
-    public static final ItemType CRIMSON_DOOR = get("minecraft:crimson_door");
+    public static final ItemType CRIMSON_FENCE_GATE = init();
     @Nullable
-    public static final ItemType CRIMSON_FENCE = get("minecraft:crimson_fence");
+    public static final ItemType CRIMSON_FUNGUS = init();
     @Nullable
-    public static final ItemType CRIMSON_FENCE_GATE = get("minecraft:crimson_fence_gate");
+    public static final ItemType CRIMSON_HANGING_SIGN = init();
     @Nullable
-    public static final ItemType CRIMSON_FUNGUS = get("minecraft:crimson_fungus");
+    public static final ItemType CRIMSON_HYPHAE = init();
     @Nullable
-    public static final ItemType CRIMSON_HANGING_SIGN = get("minecraft:crimson_hanging_sign");
+    public static final ItemType CRIMSON_NYLIUM = init();
     @Nullable
-    public static final ItemType CRIMSON_HYPHAE = get("minecraft:crimson_hyphae");
+    public static final ItemType CRIMSON_PLANKS = init();
     @Nullable
-    public static final ItemType CRIMSON_NYLIUM = get("minecraft:crimson_nylium");
+    public static final ItemType CRIMSON_PRESSURE_PLATE = init();
     @Nullable
-    public static final ItemType CRIMSON_PLANKS = get("minecraft:crimson_planks");
+    public static final ItemType CRIMSON_ROOTS = init();
     @Nullable
-    public static final ItemType CRIMSON_PRESSURE_PLATE = get("minecraft:crimson_pressure_plate");
+    public static final ItemType CRIMSON_SHELF = init();
     @Nullable
-    public static final ItemType CRIMSON_ROOTS = get("minecraft:crimson_roots");
+    public static final ItemType CRIMSON_SIGN = init();
     @Nullable
-    public static final ItemType CRIMSON_SHELF = get("minecraft:crimson_shelf");
+    public static final ItemType CRIMSON_SLAB = init();
     @Nullable
-    public static final ItemType CRIMSON_SIGN = get("minecraft:crimson_sign");
+    public static final ItemType CRIMSON_STAIRS = init();
     @Nullable
-    public static final ItemType CRIMSON_SLAB = get("minecraft:crimson_slab");
+    public static final ItemType CRIMSON_STEM = init();
     @Nullable
-    public static final ItemType CRIMSON_STAIRS = get("minecraft:crimson_stairs");
+    public static final ItemType CRIMSON_TRAPDOOR = init();
     @Nullable
-    public static final ItemType CRIMSON_STEM = get("minecraft:crimson_stem");
+    public static final ItemType CROSSBOW = init();
     @Nullable
-    public static final ItemType CRIMSON_TRAPDOOR = get("minecraft:crimson_trapdoor");
+    public static final ItemType CRYING_OBSIDIAN = init();
     @Nullable
-    public static final ItemType CROSSBOW = get("minecraft:crossbow");
+    public static final ItemType CUT_COPPER = init();
     @Nullable
-    public static final ItemType CRYING_OBSIDIAN = get("minecraft:crying_obsidian");
+    public static final ItemType CUT_COPPER_SLAB = init();
     @Nullable
-    public static final ItemType CUT_COPPER = get("minecraft:cut_copper");
+    public static final ItemType CUT_COPPER_STAIRS = init();
     @Nullable
-    public static final ItemType CUT_COPPER_SLAB = get("minecraft:cut_copper_slab");
+    public static final ItemType CUT_RED_SANDSTONE = init();
     @Nullable
-    public static final ItemType CUT_COPPER_STAIRS = get("minecraft:cut_copper_stairs");
+    public static final ItemType CUT_RED_SANDSTONE_SLAB = init();
     @Nullable
-    public static final ItemType CUT_RED_SANDSTONE = get("minecraft:cut_red_sandstone");
+    public static final ItemType CUT_SANDSTONE = init();
     @Nullable
-    public static final ItemType CUT_RED_SANDSTONE_SLAB = get("minecraft:cut_red_sandstone_slab");
+    public static final ItemType CUT_SANDSTONE_SLAB = init();
     @Nullable
-    public static final ItemType CUT_SANDSTONE = get("minecraft:cut_sandstone");
+    public static final ItemType CYAN_BANNER = init();
     @Nullable
-    public static final ItemType CUT_SANDSTONE_SLAB = get("minecraft:cut_sandstone_slab");
+    public static final ItemType CYAN_BED = init();
+    @Nullable public static final ItemType CYAN_BUNDLE = init();
     @Nullable
-    public static final ItemType CYAN_BANNER = get("minecraft:cyan_banner");
+    public static final ItemType CYAN_CANDLE = init();
     @Nullable
-    public static final ItemType CYAN_BED = get("minecraft:cyan_bed");
+    public static final ItemType CYAN_CARPET = init();
     @Nullable
-    public static final ItemType CYAN_BUNDLE = get("minecraft:cyan_bundle");
+    public static final ItemType CYAN_CONCRETE = init();
     @Nullable
-    public static final ItemType CYAN_CANDLE = get("minecraft:cyan_candle");
+    public static final ItemType CYAN_CONCRETE_POWDER = init();
     @Nullable
-    public static final ItemType CYAN_CARPET = get("minecraft:cyan_carpet");
+    public static final ItemType CYAN_DYE = init();
     @Nullable
-    public static final ItemType CYAN_CONCRETE = get("minecraft:cyan_concrete");
+    public static final ItemType CYAN_GLAZED_TERRACOTTA = init();
     @Nullable
-    public static final ItemType CYAN_CONCRETE_POWDER = get("minecraft:cyan_concrete_powder");
+    public static final ItemType CYAN_SHULKER_BOX = init();
     @Nullable
-    public static final ItemType CYAN_DYE = get("minecraft:cyan_dye");
+    public static final ItemType CYAN_STAINED_GLASS = init();
     @Nullable
-    public static final ItemType CYAN_GLAZED_TERRACOTTA = get("minecraft:cyan_glazed_terracotta");
+    public static final ItemType CYAN_STAINED_GLASS_PANE = init();
     @Nullable
-    public static final ItemType CYAN_HARNESS = get("minecraft:cyan_harness");
+    public static final ItemType CYAN_TERRACOTTA = init();
     @Nullable
-    public static final ItemType CYAN_SHULKER_BOX = get("minecraft:cyan_shulker_box");
+    public static final ItemType CYAN_WOOL = init();
     @Nullable
-    public static final ItemType CYAN_STAINED_GLASS = get("minecraft:cyan_stained_glass");
+    public static final ItemType DAMAGED_ANVIL = init();
     @Nullable
-    public static final ItemType CYAN_STAINED_GLASS_PANE = get("minecraft:cyan_stained_glass_pane");
-    @Nullable
-    public static final ItemType CYAN_TERRACOTTA = get("minecraft:cyan_terracotta");
-    @Nullable
-    public static final ItemType CYAN_WOOL = get("minecraft:cyan_wool");
-    @Nullable
-    public static final ItemType DAMAGED_ANVIL = get("minecraft:damaged_anvil");
-    @Nullable
-    public static final ItemType DANDELION = get("minecraft:dandelion");
+    public static final ItemType DANDELION = init();
     @Deprecated
     @Nullable
-    public static final ItemType DANDELION_YELLOW = get("minecraft:dandelion_yellow");
+    public static final ItemType DANDELION_YELLOW = init();
     @Nullable
-    public static final ItemType DANGER_POTTERY_SHERD = get("minecraft:danger_pottery_sherd");
+    public static final ItemType DANGER_POTTERY_SHERD = init();
     @Nullable
-    public static final ItemType DARK_OAK_BOAT = get("minecraft:dark_oak_boat");
+    public static final ItemType DARK_OAK_BOAT = init();
     @Nullable
-    public static final ItemType DARK_OAK_BUTTON = get("minecraft:dark_oak_button");
+    public static final ItemType DARK_OAK_BUTTON = init();
     @Nullable
-    public static final ItemType DARK_OAK_CHEST_BOAT = get("minecraft:dark_oak_chest_boat");
+    public static final ItemType DARK_OAK_CHEST_BOAT = init();
     @Nullable
-    public static final ItemType DARK_OAK_DOOR = get("minecraft:dark_oak_door");
+    public static final ItemType DARK_OAK_DOOR = init();
     @Nullable
-    public static final ItemType DARK_OAK_FENCE = get("minecraft:dark_oak_fence");
+    public static final ItemType DARK_OAK_FENCE = init();
     @Nullable
-    public static final ItemType DARK_OAK_FENCE_GATE = get("minecraft:dark_oak_fence_gate");
+    public static final ItemType DARK_OAK_FENCE_GATE = init();
     @Nullable
-    public static final ItemType DARK_OAK_HANGING_SIGN = get("minecraft:dark_oak_hanging_sign");
+    public static final ItemType DARK_OAK_HANGING_SIGN = init();
     @Nullable
-    public static final ItemType DARK_OAK_LEAVES = get("minecraft:dark_oak_leaves");
+    public static final ItemType DARK_OAK_LEAVES = init();
     @Nullable
-    public static final ItemType DARK_OAK_LOG = get("minecraft:dark_oak_log");
+    public static final ItemType DARK_OAK_LOG = init();
     @Nullable
-    public static final ItemType DARK_OAK_PLANKS = get("minecraft:dark_oak_planks");
+    public static final ItemType DARK_OAK_PLANKS = init();
     @Nullable
-    public static final ItemType DARK_OAK_PRESSURE_PLATE = get("minecraft:dark_oak_pressure_plate");
+    public static final ItemType DARK_OAK_PRESSURE_PLATE = init();
     @Nullable
-    public static final ItemType DARK_OAK_SAPLING = get("minecraft:dark_oak_sapling");
+    public static final ItemType DARK_OAK_SAPLING = init();
     @Nullable
-    public static final ItemType DARK_OAK_SHELF = get("minecraft:dark_oak_shelf");
+    public static final ItemType DARK_OAK_SHELF = init();
     @Nullable
-    public static final ItemType DARK_OAK_SIGN = get("minecraft:dark_oak_sign");
+    public static final ItemType DARK_OAK_SIGN = init();
     @Nullable
-    public static final ItemType DARK_OAK_SLAB = get("minecraft:dark_oak_slab");
+    public static final ItemType DARK_OAK_SLAB = init();
     @Nullable
-    public static final ItemType DARK_OAK_STAIRS = get("minecraft:dark_oak_stairs");
+    public static final ItemType DARK_OAK_STAIRS = init();
     @Nullable
-    public static final ItemType DARK_OAK_TRAPDOOR = get("minecraft:dark_oak_trapdoor");
+    public static final ItemType DARK_OAK_TRAPDOOR = init();
     @Nullable
-    public static final ItemType DARK_OAK_WOOD = get("minecraft:dark_oak_wood");
+    public static final ItemType DARK_OAK_WOOD = init();
     @Nullable
-    public static final ItemType DARK_PRISMARINE = get("minecraft:dark_prismarine");
+    public static final ItemType DARK_PRISMARINE = init();
     @Nullable
-    public static final ItemType DARK_PRISMARINE_SLAB = get("minecraft:dark_prismarine_slab");
+    public static final ItemType DARK_PRISMARINE_SLAB = init();
     @Nullable
-    public static final ItemType DARK_PRISMARINE_STAIRS = get("minecraft:dark_prismarine_stairs");
+    public static final ItemType DARK_PRISMARINE_STAIRS = init();
     @Nullable
-    public static final ItemType DAYLIGHT_DETECTOR = get("minecraft:daylight_detector");
+    public static final ItemType DAYLIGHT_DETECTOR = init();
     @Nullable
-    public static final ItemType DEAD_BRAIN_CORAL = get("minecraft:dead_brain_coral");
+    public static final ItemType DEAD_BRAIN_CORAL = init();
     @Nullable
-    public static final ItemType DEAD_BRAIN_CORAL_BLOCK = get("minecraft:dead_brain_coral_block");
+    public static final ItemType DEAD_BRAIN_CORAL_BLOCK = init();
     @Nullable
-    public static final ItemType DEAD_BRAIN_CORAL_FAN = get("minecraft:dead_brain_coral_fan");
+    public static final ItemType DEAD_BRAIN_CORAL_FAN = init();
     @Nullable
-    public static final ItemType DEAD_BUBBLE_CORAL = get("minecraft:dead_bubble_coral");
+    public static final ItemType DEAD_BUBBLE_CORAL = init();
     @Nullable
-    public static final ItemType DEAD_BUBBLE_CORAL_BLOCK = get("minecraft:dead_bubble_coral_block");
+    public static final ItemType DEAD_BUBBLE_CORAL_BLOCK = init();
     @Nullable
-    public static final ItemType DEAD_BUBBLE_CORAL_FAN = get("minecraft:dead_bubble_coral_fan");
+    public static final ItemType DEAD_BUBBLE_CORAL_FAN = init();
     @Nullable
-    public static final ItemType DEAD_BUSH = get("minecraft:dead_bush");
+    public static final ItemType DEAD_BUSH = init();
     @Nullable
-    public static final ItemType DEAD_FIRE_CORAL = get("minecraft:dead_fire_coral");
+    public static final ItemType DEAD_FIRE_CORAL = init();
     @Nullable
-    public static final ItemType DEAD_FIRE_CORAL_BLOCK = get("minecraft:dead_fire_coral_block");
+    public static final ItemType DEAD_FIRE_CORAL_BLOCK = init();
     @Nullable
-    public static final ItemType DEAD_FIRE_CORAL_FAN = get("minecraft:dead_fire_coral_fan");
+    public static final ItemType DEAD_FIRE_CORAL_FAN = init();
     @Nullable
-    public static final ItemType DEAD_HORN_CORAL = get("minecraft:dead_horn_coral");
+    public static final ItemType DEAD_HORN_CORAL = init();
     @Nullable
-    public static final ItemType DEAD_HORN_CORAL_BLOCK = get("minecraft:dead_horn_coral_block");
+    public static final ItemType DEAD_HORN_CORAL_BLOCK = init();
     @Nullable
-    public static final ItemType DEAD_HORN_CORAL_FAN = get("minecraft:dead_horn_coral_fan");
+    public static final ItemType DEAD_HORN_CORAL_FAN = init();
     @Nullable
-    public static final ItemType DEAD_TUBE_CORAL = get("minecraft:dead_tube_coral");
+    public static final ItemType DEAD_TUBE_CORAL = init();
     @Nullable
-    public static final ItemType DEAD_TUBE_CORAL_BLOCK = get("minecraft:dead_tube_coral_block");
+    public static final ItemType DEAD_TUBE_CORAL_BLOCK = init();
     @Nullable
-    public static final ItemType DEAD_TUBE_CORAL_FAN = get("minecraft:dead_tube_coral_fan");
+    public static final ItemType DEAD_TUBE_CORAL_FAN = init();
     @Nullable
-    public static final ItemType DEBUG_STICK = get("minecraft:debug_stick");
+    public static final ItemType DEBUG_STICK = init();
     @Nullable
-    public static final ItemType DECORATED_POT = get("minecraft:decorated_pot");
+    public static final ItemType DECORATED_POT = init();
     @Nullable
-    public static final ItemType DEEPSLATE = get("minecraft:deepslate");
+    public static final ItemType DEEPSLATE = init();
     @Nullable
-    public static final ItemType DEEPSLATE_BRICK_SLAB = get("minecraft:deepslate_brick_slab");
+    public static final ItemType DEEPSLATE_BRICK_SLAB = init();
     @Nullable
-    public static final ItemType DEEPSLATE_BRICK_STAIRS = get("minecraft:deepslate_brick_stairs");
+    public static final ItemType DEEPSLATE_BRICK_STAIRS = init();
     @Nullable
-    public static final ItemType DEEPSLATE_BRICK_WALL = get("minecraft:deepslate_brick_wall");
+    public static final ItemType DEEPSLATE_BRICK_WALL = init();
     @Nullable
-    public static final ItemType DEEPSLATE_BRICKS = get("minecraft:deepslate_bricks");
+    public static final ItemType DEEPSLATE_BRICKS = init();
     @Nullable
-    public static final ItemType DEEPSLATE_COAL_ORE = get("minecraft:deepslate_coal_ore");
+    public static final ItemType DEEPSLATE_COAL_ORE = init();
     @Nullable
-    public static final ItemType DEEPSLATE_COPPER_ORE = get("minecraft:deepslate_copper_ore");
+    public static final ItemType DEEPSLATE_COPPER_ORE = init();
     @Nullable
-    public static final ItemType DEEPSLATE_DIAMOND_ORE = get("minecraft:deepslate_diamond_ore");
+    public static final ItemType DEEPSLATE_DIAMOND_ORE = init();
     @Nullable
-    public static final ItemType DEEPSLATE_EMERALD_ORE = get("minecraft:deepslate_emerald_ore");
+    public static final ItemType DEEPSLATE_EMERALD_ORE = init();
     @Nullable
-    public static final ItemType DEEPSLATE_GOLD_ORE = get("minecraft:deepslate_gold_ore");
+    public static final ItemType DEEPSLATE_GOLD_ORE = init();
     @Nullable
-    public static final ItemType DEEPSLATE_IRON_ORE = get("minecraft:deepslate_iron_ore");
+    public static final ItemType DEEPSLATE_IRON_ORE = init();
     @Nullable
-    public static final ItemType DEEPSLATE_LAPIS_ORE = get("minecraft:deepslate_lapis_ore");
+    public static final ItemType DEEPSLATE_LAPIS_ORE = init();
     @Nullable
-    public static final ItemType DEEPSLATE_REDSTONE_ORE = get("minecraft:deepslate_redstone_ore");
+    public static final ItemType DEEPSLATE_REDSTONE_ORE = init();
     @Nullable
-    public static final ItemType DEEPSLATE_TILE_SLAB = get("minecraft:deepslate_tile_slab");
+    public static final ItemType DEEPSLATE_TILE_SLAB = init();
     @Nullable
-    public static final ItemType DEEPSLATE_TILE_STAIRS = get("minecraft:deepslate_tile_stairs");
+    public static final ItemType DEEPSLATE_TILE_STAIRS = init();
     @Nullable
-    public static final ItemType DEEPSLATE_TILE_WALL = get("minecraft:deepslate_tile_wall");
+    public static final ItemType DEEPSLATE_TILE_WALL = init();
     @Nullable
-    public static final ItemType DEEPSLATE_TILES = get("minecraft:deepslate_tiles");
+    public static final ItemType DEEPSLATE_TILES = init();
     @Nullable
-    public static final ItemType DETECTOR_RAIL = get("minecraft:detector_rail");
+    public static final ItemType DETECTOR_RAIL = init();
     @Nullable
-    public static final ItemType DIAMOND = get("minecraft:diamond");
+    public static final ItemType DIAMOND = init();
     @Nullable
-    public static final ItemType DIAMOND_AXE = get("minecraft:diamond_axe");
+    public static final ItemType DIAMOND_AXE = init();
     @Nullable
-    public static final ItemType DIAMOND_BLOCK = get("minecraft:diamond_block");
+    public static final ItemType DIAMOND_BLOCK = init();
     @Nullable
-    public static final ItemType DIAMOND_BOOTS = get("minecraft:diamond_boots");
+    public static final ItemType DIAMOND_BOOTS = init();
     @Nullable
-    public static final ItemType DIAMOND_CHESTPLATE = get("minecraft:diamond_chestplate");
+    public static final ItemType DIAMOND_CHESTPLATE = init();
     @Nullable
-    public static final ItemType DIAMOND_HELMET = get("minecraft:diamond_helmet");
+    public static final ItemType DIAMOND_HELMET = init();
     @Nullable
-    public static final ItemType DIAMOND_HOE = get("minecraft:diamond_hoe");
+    public static final ItemType DIAMOND_HOE = init();
     @Nullable
-    public static final ItemType DIAMOND_HORSE_ARMOR = get("minecraft:diamond_horse_armor");
+    public static final ItemType DIAMOND_HORSE_ARMOR = init();
     @Nullable
-    public static final ItemType DIAMOND_LEGGINGS = get("minecraft:diamond_leggings");
+    public static final ItemType DIAMOND_LEGGINGS = init();
     @Nullable
-    public static final ItemType DIAMOND_NAUTILUS_ARMOR = get("minecraft:diamond_nautilus_armor");
+    public static final ItemType DIAMOND_NAUTILUS_ARMOR = init();
     @Nullable
-    public static final ItemType DIAMOND_ORE = get("minecraft:diamond_ore");
+    public static final ItemType DIAMOND_ORE = init();
     @Nullable
-    public static final ItemType DIAMOND_PICKAXE = get("minecraft:diamond_pickaxe");
+    public static final ItemType DIAMOND_PICKAXE = init();
     @Nullable
-    public static final ItemType DIAMOND_SHOVEL = get("minecraft:diamond_shovel");
+    public static final ItemType DIAMOND_SHOVEL = init();
     @Nullable
-    public static final ItemType DIAMOND_SPEAR = get("minecraft:diamond_spear");
+    public static final ItemType DIAMOND_SPEAR = init();
     @Nullable
-    public static final ItemType DIAMOND_SWORD = get("minecraft:diamond_sword");
+    public static final ItemType DIAMOND_SWORD = init();
     @Nullable
-    public static final ItemType DIORITE = get("minecraft:diorite");
+    public static final ItemType DIORITE = init();
     @Nullable
-    public static final ItemType DIORITE_SLAB = get("minecraft:diorite_slab");
+    public static final ItemType DIORITE_SLAB = init();
     @Nullable
-    public static final ItemType DIORITE_STAIRS = get("minecraft:diorite_stairs");
+    public static final ItemType DIORITE_STAIRS = init();
     @Nullable
-    public static final ItemType DIORITE_WALL = get("minecraft:diorite_wall");
+    public static final ItemType DIORITE_WALL = init();
     @Nullable
-    public static final ItemType DIRT = get("minecraft:dirt");
+    public static final ItemType DIRT = init();
     @Nullable
-    public static final ItemType DIRT_PATH = get("minecraft:dirt_path");
+    public static final ItemType DIRT_PATH = init();
     @Nullable
-    public static final ItemType DISC_FRAGMENT_5 = get("minecraft:disc_fragment_5");
+    public static final ItemType DISC_FRAGMENT_5 = init();
     @Nullable
-    public static final ItemType DISPENSER = get("minecraft:dispenser");
+    public static final ItemType DISPENSER = init();
     @Nullable
-    public static final ItemType DOLPHIN_SPAWN_EGG = get("minecraft:dolphin_spawn_egg");
+    public static final ItemType DOLPHIN_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType DONKEY_SPAWN_EGG = get("minecraft:donkey_spawn_egg");
+    public static final ItemType DONKEY_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType DRAGON_BREATH = get("minecraft:dragon_breath");
+    public static final ItemType DRAGON_BREATH = init();
     @Nullable
-    public static final ItemType DRAGON_EGG = get("minecraft:dragon_egg");
+    public static final ItemType DRAGON_EGG = init();
     @Nullable
-    public static final ItemType DRAGON_HEAD = get("minecraft:dragon_head");
+    public static final ItemType DRAGON_HEAD = init();
     @Nullable
-    public static final ItemType DRIED_GHAST = get("minecraft:dried_ghast");
+    public static final ItemType DRIED_KELP = init();
     @Nullable
-    public static final ItemType DRIED_KELP = get("minecraft:dried_kelp");
+    public static final ItemType DRIED_KELP_BLOCK = init();
     @Nullable
-    public static final ItemType DRIED_KELP_BLOCK = get("minecraft:dried_kelp_block");
+    public static final ItemType DRIPSTONE_BLOCK = init();
     @Nullable
-    public static final ItemType DRIPSTONE_BLOCK = get("minecraft:dripstone_block");
+    public static final ItemType DROPPER = init();
     @Nullable
-    public static final ItemType DROPPER = get("minecraft:dropper");
+    public static final ItemType DROWNED_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType DROWNED_SPAWN_EGG = get("minecraft:drowned_spawn_egg");
+    public static final ItemType DUNE_ARMOR_TRIM_SMITHING_TEMPLATE = init();
     @Nullable
-    public static final ItemType DUNE_ARMOR_TRIM_SMITHING_TEMPLATE = get("minecraft:dune_armor_trim_smithing_template");
+    public static final ItemType ECHO_SHARD = init();
     @Nullable
-    public static final ItemType ECHO_SHARD = get("minecraft:echo_shard");
+    public static final ItemType EGG = init();
     @Nullable
-    public static final ItemType EGG = get("minecraft:egg");
+    public static final ItemType ELDER_GUARDIAN_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType ELDER_GUARDIAN_SPAWN_EGG = get("minecraft:elder_guardian_spawn_egg");
+    public static final ItemType ELYTRA = init();
     @Nullable
-    public static final ItemType ELYTRA = get("minecraft:elytra");
+    public static final ItemType EMERALD = init();
     @Nullable
-    public static final ItemType EMERALD = get("minecraft:emerald");
+    public static final ItemType EMERALD_BLOCK = init();
     @Nullable
-    public static final ItemType EMERALD_BLOCK = get("minecraft:emerald_block");
+    public static final ItemType EMERALD_ORE = init();
     @Nullable
-    public static final ItemType EMERALD_ORE = get("minecraft:emerald_ore");
+    public static final ItemType ENCHANTED_BOOK = init();
     @Nullable
-    public static final ItemType ENCHANTED_BOOK = get("minecraft:enchanted_book");
+    public static final ItemType ENCHANTED_GOLDEN_APPLE = init();
     @Nullable
-    public static final ItemType ENCHANTED_GOLDEN_APPLE = get("minecraft:enchanted_golden_apple");
+    public static final ItemType ENCHANTING_TABLE = init();
     @Nullable
-    public static final ItemType ENCHANTING_TABLE = get("minecraft:enchanting_table");
+    public static final ItemType END_CRYSTAL = init();
     @Nullable
-    public static final ItemType END_CRYSTAL = get("minecraft:end_crystal");
+    public static final ItemType END_PORTAL_FRAME = init();
     @Nullable
-    public static final ItemType END_PORTAL_FRAME = get("minecraft:end_portal_frame");
+    public static final ItemType END_ROD = init();
     @Nullable
-    public static final ItemType END_ROD = get("minecraft:end_rod");
+    public static final ItemType END_STONE = init();
     @Nullable
-    public static final ItemType END_STONE = get("minecraft:end_stone");
+    public static final ItemType END_STONE_BRICK_SLAB = init();
     @Nullable
-    public static final ItemType END_STONE_BRICK_SLAB = get("minecraft:end_stone_brick_slab");
+    public static final ItemType END_STONE_BRICK_STAIRS = init();
     @Nullable
-    public static final ItemType END_STONE_BRICK_STAIRS = get("minecraft:end_stone_brick_stairs");
+    public static final ItemType END_STONE_BRICK_WALL = init();
     @Nullable
-    public static final ItemType END_STONE_BRICK_WALL = get("minecraft:end_stone_brick_wall");
+    public static final ItemType END_STONE_BRICKS = init();
     @Nullable
-    public static final ItemType END_STONE_BRICKS = get("minecraft:end_stone_bricks");
+    public static final ItemType ENDER_CHEST = init();
     @Nullable
-    public static final ItemType ENDER_CHEST = get("minecraft:ender_chest");
+    public static final ItemType ENDER_DRAGON_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType ENDER_DRAGON_SPAWN_EGG = get("minecraft:ender_dragon_spawn_egg");
+    public static final ItemType ENDER_EYE = init();
     @Nullable
-    public static final ItemType ENDER_EYE = get("minecraft:ender_eye");
+    public static final ItemType ENDER_PEARL = init();
     @Nullable
-    public static final ItemType ENDER_PEARL = get("minecraft:ender_pearl");
+    public static final ItemType ENDERMAN_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType ENDERMAN_SPAWN_EGG = get("minecraft:enderman_spawn_egg");
+    public static final ItemType ENDERMITE_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType ENDERMITE_SPAWN_EGG = get("minecraft:endermite_spawn_egg");
+    public static final ItemType EVOKER_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType EVOKER_SPAWN_EGG = get("minecraft:evoker_spawn_egg");
+    public static final ItemType EXPERIENCE_BOTTLE = init();
     @Nullable
-    public static final ItemType EXPERIENCE_BOTTLE = get("minecraft:experience_bottle");
+    public static final ItemType EXPLORER_POTTERY_SHERD = init();
     @Nullable
-    public static final ItemType EXPLORER_POTTERY_SHERD = get("minecraft:explorer_pottery_sherd");
+    public static final ItemType EXPOSED_CHISELED_COPPER = init();
     @Nullable
-    public static final ItemType EXPOSED_CHISELED_COPPER = get("minecraft:exposed_chiseled_copper");
+    public static final ItemType EXPOSED_COPPER = init();
     @Nullable
-    public static final ItemType EXPOSED_COPPER = get("minecraft:exposed_copper");
+    public static final ItemType EXPOSED_COPPER_BARS = init();
     @Nullable
-    public static final ItemType EXPOSED_COPPER_BARS = get("minecraft:exposed_copper_bars");
+    public static final ItemType EXPOSED_COPPER_BULB = init();
     @Nullable
-    public static final ItemType EXPOSED_COPPER_BULB = get("minecraft:exposed_copper_bulb");
+    public static final ItemType EXPOSED_COPPER_CHAIN = init();
     @Nullable
-    public static final ItemType EXPOSED_COPPER_CHAIN = get("minecraft:exposed_copper_chain");
+    public static final ItemType EXPOSED_COPPER_CHEST = init();
     @Nullable
-    public static final ItemType EXPOSED_COPPER_CHEST = get("minecraft:exposed_copper_chest");
+    public static final ItemType EXPOSED_COPPER_DOOR = init();
     @Nullable
-    public static final ItemType EXPOSED_COPPER_DOOR = get("minecraft:exposed_copper_door");
+    public static final ItemType EXPOSED_COPPER_GOLEM_STATUE = init();
     @Nullable
-    public static final ItemType EXPOSED_COPPER_GOLEM_STATUE = get("minecraft:exposed_copper_golem_statue");
+    public static final ItemType EXPOSED_COPPER_GRATE = init();
     @Nullable
-    public static final ItemType EXPOSED_COPPER_GRATE = get("minecraft:exposed_copper_grate");
+    public static final ItemType EXPOSED_COPPER_LANTERN = init();
     @Nullable
-    public static final ItemType EXPOSED_COPPER_LANTERN = get("minecraft:exposed_copper_lantern");
+    public static final ItemType EXPOSED_COPPER_TRAPDOOR = init();
     @Nullable
-    public static final ItemType EXPOSED_COPPER_TRAPDOOR = get("minecraft:exposed_copper_trapdoor");
+    public static final ItemType EXPOSED_CUT_COPPER = init();
     @Nullable
-    public static final ItemType EXPOSED_CUT_COPPER = get("minecraft:exposed_cut_copper");
+    public static final ItemType EXPOSED_CUT_COPPER_SLAB = init();
     @Nullable
-    public static final ItemType EXPOSED_CUT_COPPER_SLAB = get("minecraft:exposed_cut_copper_slab");
+    public static final ItemType EXPOSED_CUT_COPPER_STAIRS = init();
     @Nullable
-    public static final ItemType EXPOSED_CUT_COPPER_STAIRS = get("minecraft:exposed_cut_copper_stairs");
+    public static final ItemType EXPOSED_LIGHTNING_ROD = init();
     @Nullable
-    public static final ItemType EXPOSED_LIGHTNING_ROD = get("minecraft:exposed_lightning_rod");
+    public static final ItemType EYE_ARMOR_TRIM_SMITHING_TEMPLATE = init();
     @Nullable
-    public static final ItemType EYE_ARMOR_TRIM_SMITHING_TEMPLATE = get("minecraft:eye_armor_trim_smithing_template");
+    public static final ItemType FARMLAND = init();
     @Nullable
-    public static final ItemType FARMLAND = get("minecraft:farmland");
+    public static final ItemType FEATHER = init();
     @Nullable
-    public static final ItemType FEATHER = get("minecraft:feather");
+    public static final ItemType FERMENTED_SPIDER_EYE = init();
     @Nullable
-    public static final ItemType FERMENTED_SPIDER_EYE = get("minecraft:fermented_spider_eye");
+    public static final ItemType FERN = init();
+    @Nullable public static final ItemType FIELD_MASONED_BANNER_PATTERN = init();
     @Nullable
-    public static final ItemType FERN = get("minecraft:fern");
+    public static final ItemType FILLED_MAP = init();
     @Nullable
-    public static final ItemType FIELD_MASONED_BANNER_PATTERN = get("minecraft:field_masoned_banner_pattern");
+    public static final ItemType FIRE_CHARGE = init();
     @Nullable
-    public static final ItemType FILLED_MAP = get("minecraft:filled_map");
+    public static final ItemType FIRE_CORAL = init();
     @Nullable
-    public static final ItemType FIRE_CHARGE = get("minecraft:fire_charge");
+    public static final ItemType FIRE_CORAL_BLOCK = init();
     @Nullable
-    public static final ItemType FIRE_CORAL = get("minecraft:fire_coral");
+    public static final ItemType FIRE_CORAL_FAN = init();
     @Nullable
-    public static final ItemType FIRE_CORAL_BLOCK = get("minecraft:fire_coral_block");
+    public static final ItemType FIREFLY_BUSH = init();
     @Nullable
-    public static final ItemType FIRE_CORAL_FAN = get("minecraft:fire_coral_fan");
+    public static final ItemType FIREWORK_ROCKET = init();
     @Nullable
-    public static final ItemType FIREFLY_BUSH = get("minecraft:firefly_bush");
+    public static final ItemType FIREWORK_STAR = init();
     @Nullable
-    public static final ItemType FIREWORK_ROCKET = get("minecraft:firework_rocket");
+    public static final ItemType FISHING_ROD = init();
     @Nullable
-    public static final ItemType FIREWORK_STAR = get("minecraft:firework_star");
+    public static final ItemType FLETCHING_TABLE = init();
     @Nullable
-    public static final ItemType FISHING_ROD = get("minecraft:fishing_rod");
+    public static final ItemType FLINT = init();
     @Nullable
-    public static final ItemType FLETCHING_TABLE = get("minecraft:fletching_table");
+    public static final ItemType FLINT_AND_STEEL = init();
     @Nullable
-    public static final ItemType FLINT = get("minecraft:flint");
+    public static final ItemType FLOW_ARMOR_TRIM_SMITHING_TEMPLATE = init();
     @Nullable
-    public static final ItemType FLINT_AND_STEEL = get("minecraft:flint_and_steel");
+    public static final ItemType FLOW_BANNER_PATTERN = init();
     @Nullable
-    public static final ItemType FLOW_ARMOR_TRIM_SMITHING_TEMPLATE = get("minecraft:flow_armor_trim_smithing_template");
+    public static final ItemType FLOW_POTTERY_SHERD = init();
     @Nullable
-    public static final ItemType FLOW_BANNER_PATTERN = get("minecraft:flow_banner_pattern");
+    public static final ItemType FLOWER_BANNER_PATTERN = init();
     @Nullable
-    public static final ItemType FLOW_POTTERY_SHERD = get("minecraft:flow_pottery_sherd");
+    public static final ItemType FLOWER_POT = init();
     @Nullable
-    public static final ItemType FLOWER_BANNER_PATTERN = get("minecraft:flower_banner_pattern");
+    public static final ItemType FLOWERING_AZALEA = init();
     @Nullable
-    public static final ItemType FLOWER_POT = get("minecraft:flower_pot");
+    public static final ItemType FLOWERING_AZALEA_LEAVES = init();
     @Nullable
-    public static final ItemType FLOWERING_AZALEA = get("minecraft:flowering_azalea");
+    public static final ItemType FOX_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType FLOWERING_AZALEA_LEAVES = get("minecraft:flowering_azalea_leaves");
+    public static final ItemType FRIEND_POTTERY_SHERD = init();
     @Nullable
-    public static final ItemType FOX_SPAWN_EGG = get("minecraft:fox_spawn_egg");
+    public static final ItemType FROG_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType FRIEND_POTTERY_SHERD = get("minecraft:friend_pottery_sherd");
+    public static final ItemType FROGSPAWN = init();
     @Nullable
-    public static final ItemType FROG_SPAWN_EGG = get("minecraft:frog_spawn_egg");
+    public static final ItemType FURNACE = init();
     @Nullable
-    public static final ItemType FROGSPAWN = get("minecraft:frogspawn");
+    public static final ItemType FURNACE_MINECART = init();
     @Nullable
-    public static final ItemType FURNACE = get("minecraft:furnace");
+    public static final ItemType GHAST_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType FURNACE_MINECART = get("minecraft:furnace_minecart");
+    public static final ItemType GHAST_TEAR = init();
     @Nullable
-    public static final ItemType GHAST_SPAWN_EGG = get("minecraft:ghast_spawn_egg");
+    public static final ItemType GILDED_BLACKSTONE = init();
     @Nullable
-    public static final ItemType GHAST_TEAR = get("minecraft:ghast_tear");
+    public static final ItemType GLASS = init();
     @Nullable
-    public static final ItemType GILDED_BLACKSTONE = get("minecraft:gilded_blackstone");
+    public static final ItemType GLASS_BOTTLE = init();
     @Nullable
-    public static final ItemType GLASS = get("minecraft:glass");
+    public static final ItemType GLASS_PANE = init();
     @Nullable
-    public static final ItemType GLASS_BOTTLE = get("minecraft:glass_bottle");
+    public static final ItemType GLISTERING_MELON_SLICE = init();
     @Nullable
-    public static final ItemType GLASS_PANE = get("minecraft:glass_pane");
+    public static final ItemType GLOBE_BANNER_PATTERN = init();
     @Nullable
-    public static final ItemType GLISTERING_MELON_SLICE = get("minecraft:glistering_melon_slice");
+    public static final ItemType GLOW_BERRIES = init();
     @Nullable
-    public static final ItemType GLOBE_BANNER_PATTERN = get("minecraft:globe_banner_pattern");
+    public static final ItemType GLOW_INK_SAC = init();
     @Nullable
-    public static final ItemType GLOW_BERRIES = get("minecraft:glow_berries");
+    public static final ItemType GLOW_ITEM_FRAME = init();
     @Nullable
-    public static final ItemType GLOW_INK_SAC = get("minecraft:glow_ink_sac");
+    public static final ItemType GLOW_LICHEN = init();
     @Nullable
-    public static final ItemType GLOW_ITEM_FRAME = get("minecraft:glow_item_frame");
+    public static final ItemType GLOW_SQUID_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType GLOW_LICHEN = get("minecraft:glow_lichen");
+    public static final ItemType GLOWSTONE = init();
     @Nullable
-    public static final ItemType GLOW_SQUID_SPAWN_EGG = get("minecraft:glow_squid_spawn_egg");
+    public static final ItemType GLOWSTONE_DUST = init();
     @Nullable
-    public static final ItemType GLOWSTONE = get("minecraft:glowstone");
+    public static final ItemType GOAT_HORN = init();
     @Nullable
-    public static final ItemType GLOWSTONE_DUST = get("minecraft:glowstone_dust");
+    public static final ItemType GOAT_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType GOAT_HORN = get("minecraft:goat_horn");
+    public static final ItemType GOLD_BLOCK = init();
     @Nullable
-    public static final ItemType GOAT_SPAWN_EGG = get("minecraft:goat_spawn_egg");
+    public static final ItemType GOLD_INGOT = init();
     @Nullable
-    public static final ItemType GOLD_BLOCK = get("minecraft:gold_block");
+    public static final ItemType GOLD_NUGGET = init();
     @Nullable
-    public static final ItemType GOLD_INGOT = get("minecraft:gold_ingot");
+    public static final ItemType GOLD_ORE = init();
     @Nullable
-    public static final ItemType GOLD_NUGGET = get("minecraft:gold_nugget");
+    public static final ItemType GOLDEN_APPLE = init();
     @Nullable
-    public static final ItemType GOLD_ORE = get("minecraft:gold_ore");
+    public static final ItemType GOLDEN_AXE = init();
     @Nullable
-    public static final ItemType GOLDEN_APPLE = get("minecraft:golden_apple");
+    public static final ItemType GOLDEN_BOOTS = init();
     @Nullable
-    public static final ItemType GOLDEN_AXE = get("minecraft:golden_axe");
+    public static final ItemType GOLDEN_CARROT = init();
     @Nullable
-    public static final ItemType GOLDEN_BOOTS = get("minecraft:golden_boots");
+    public static final ItemType GOLDEN_CHESTPLATE = init();
     @Nullable
-    public static final ItemType GOLDEN_CARROT = get("minecraft:golden_carrot");
+    public static final ItemType GOLDEN_DANDELION = init();
     @Nullable
-    public static final ItemType GOLDEN_CHESTPLATE = get("minecraft:golden_chestplate");
+    public static final ItemType GOLDEN_HELMET = init();
     @Nullable
-    public static final ItemType GOLDEN_DANDELION = get("minecraft:golden_dandelion");
+    public static final ItemType GOLDEN_HOE = init();
     @Nullable
-    public static final ItemType GOLDEN_HELMET = get("minecraft:golden_helmet");
+    public static final ItemType GOLDEN_HORSE_ARMOR = init();
     @Nullable
-    public static final ItemType GOLDEN_HOE = get("minecraft:golden_hoe");
+    public static final ItemType GOLDEN_LEGGINGS = init();
     @Nullable
-    public static final ItemType GOLDEN_HORSE_ARMOR = get("minecraft:golden_horse_armor");
+    public static final ItemType GOLDEN_NAUTILUS_ARMOR = init();
     @Nullable
-    public static final ItemType GOLDEN_LEGGINGS = get("minecraft:golden_leggings");
+    public static final ItemType GOLDEN_PICKAXE = init();
     @Nullable
-    public static final ItemType GOLDEN_NAUTILUS_ARMOR = get("minecraft:golden_nautilus_armor");
+    public static final ItemType GOLDEN_SHOVEL = init();
     @Nullable
-    public static final ItemType GOLDEN_PICKAXE = get("minecraft:golden_pickaxe");
+    public static final ItemType GOLDEN_SPEAR = init();
     @Nullable
-    public static final ItemType GOLDEN_SHOVEL = get("minecraft:golden_shovel");
+    public static final ItemType GOLDEN_SWORD = init();
     @Nullable
-    public static final ItemType GOLDEN_SPEAR = get("minecraft:golden_spear");
+    public static final ItemType GRANITE = init();
     @Nullable
-    public static final ItemType GOLDEN_SWORD = get("minecraft:golden_sword");
+    public static final ItemType GRANITE_SLAB = init();
     @Nullable
-    public static final ItemType GRANITE = get("minecraft:granite");
+    public static final ItemType GRANITE_STAIRS = init();
     @Nullable
-    public static final ItemType GRANITE_SLAB = get("minecraft:granite_slab");
-    @Nullable
-    public static final ItemType GRANITE_STAIRS = get("minecraft:granite_stairs");
-    @Nullable
-    public static final ItemType GRANITE_WALL = get("minecraft:granite_wall");
+    public static final ItemType GRANITE_WALL = init();
     @Nullable @Deprecated
-    public static final ItemType GRASS = get("minecraft:grass");
+    public static final ItemType GRASS = init();
     @Nullable
-    public static final ItemType GRASS_BLOCK = get("minecraft:grass_block");
+    public static final ItemType GRASS_BLOCK = init();
     @Deprecated
     @Nullable
-    public static final ItemType GRASS_PATH = get("minecraft:grass_path");
+    public static final ItemType GRASS_PATH = init();
     @Nullable
-    public static final ItemType GRAVEL = get("minecraft:gravel");
+    public static final ItemType GRAVEL = init();
     @Nullable
-    public static final ItemType GRAY_BANNER = get("minecraft:gray_banner");
+    public static final ItemType GRAY_BANNER = init();
     @Nullable
-    public static final ItemType GRAY_BED = get("minecraft:gray_bed");
+    public static final ItemType GRAY_BED = init();
+    @Nullable public static final ItemType GRAY_BUNDLE = init();
     @Nullable
-    public static final ItemType GRAY_BUNDLE = get("minecraft:gray_bundle");
+    public static final ItemType GRAY_CANDLE = init();
     @Nullable
-    public static final ItemType GRAY_CANDLE = get("minecraft:gray_candle");
+    public static final ItemType GRAY_CARPET = init();
     @Nullable
-    public static final ItemType GRAY_CARPET = get("minecraft:gray_carpet");
+    public static final ItemType GRAY_CONCRETE = init();
     @Nullable
-    public static final ItemType GRAY_CONCRETE = get("minecraft:gray_concrete");
+    public static final ItemType GRAY_CONCRETE_POWDER = init();
     @Nullable
-    public static final ItemType GRAY_CONCRETE_POWDER = get("minecraft:gray_concrete_powder");
+    public static final ItemType GRAY_DYE = init();
     @Nullable
-    public static final ItemType GRAY_DYE = get("minecraft:gray_dye");
+    public static final ItemType GRAY_GLAZED_TERRACOTTA = init();
     @Nullable
-    public static final ItemType GRAY_GLAZED_TERRACOTTA = get("minecraft:gray_glazed_terracotta");
+    public static final ItemType GRAY_SHULKER_BOX = init();
     @Nullable
-    public static final ItemType GRAY_HARNESS = get("minecraft:gray_harness");
+    public static final ItemType GRAY_STAINED_GLASS = init();
     @Nullable
-    public static final ItemType GRAY_SHULKER_BOX = get("minecraft:gray_shulker_box");
+    public static final ItemType GRAY_STAINED_GLASS_PANE = init();
     @Nullable
-    public static final ItemType GRAY_STAINED_GLASS = get("minecraft:gray_stained_glass");
+    public static final ItemType GRAY_TERRACOTTA = init();
     @Nullable
-    public static final ItemType GRAY_STAINED_GLASS_PANE = get("minecraft:gray_stained_glass_pane");
+    public static final ItemType GRAY_WOOL = init();
     @Nullable
-    public static final ItemType GRAY_TERRACOTTA = get("minecraft:gray_terracotta");
+    public static final ItemType GREEN_BANNER = init();
     @Nullable
-    public static final ItemType GRAY_WOOL = get("minecraft:gray_wool");
+    public static final ItemType GREEN_BED = init();
+    @Nullable public static final ItemType GREEN_BUNDLE = init();
     @Nullable
-    public static final ItemType GREEN_BANNER = get("minecraft:green_banner");
+    public static final ItemType GREEN_CANDLE = init();
     @Nullable
-    public static final ItemType GREEN_BED = get("minecraft:green_bed");
+    public static final ItemType GREEN_CARPET = init();
     @Nullable
-    public static final ItemType GREEN_BUNDLE = get("minecraft:green_bundle");
+    public static final ItemType GREEN_CONCRETE = init();
     @Nullable
-    public static final ItemType GREEN_CANDLE = get("minecraft:green_candle");
+    public static final ItemType GREEN_CONCRETE_POWDER = init();
     @Nullable
-    public static final ItemType GREEN_CARPET = get("minecraft:green_carpet");
+    public static final ItemType GREEN_DYE = init();
     @Nullable
-    public static final ItemType GREEN_CONCRETE = get("minecraft:green_concrete");
+    public static final ItemType GREEN_GLAZED_TERRACOTTA = init();
     @Nullable
-    public static final ItemType GREEN_CONCRETE_POWDER = get("minecraft:green_concrete_powder");
+    public static final ItemType GREEN_SHULKER_BOX = init();
     @Nullable
-    public static final ItemType GREEN_DYE = get("minecraft:green_dye");
+    public static final ItemType GREEN_STAINED_GLASS = init();
     @Nullable
-    public static final ItemType GREEN_GLAZED_TERRACOTTA = get("minecraft:green_glazed_terracotta");
+    public static final ItemType GREEN_STAINED_GLASS_PANE = init();
     @Nullable
-    public static final ItemType GREEN_HARNESS = get("minecraft:green_harness");
+    public static final ItemType GREEN_TERRACOTTA = init();
     @Nullable
-    public static final ItemType GREEN_SHULKER_BOX = get("minecraft:green_shulker_box");
+    public static final ItemType GREEN_WOOL = init();
     @Nullable
-    public static final ItemType GREEN_STAINED_GLASS = get("minecraft:green_stained_glass");
+    public static final ItemType GRINDSTONE = init();
     @Nullable
-    public static final ItemType GREEN_STAINED_GLASS_PANE = get("minecraft:green_stained_glass_pane");
+    public static final ItemType GUARDIAN_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType GREEN_TERRACOTTA = get("minecraft:green_terracotta");
+    public static final ItemType GUNPOWDER = init();
     @Nullable
-    public static final ItemType GREEN_WOOL = get("minecraft:green_wool");
+    public static final ItemType GUSTER_BANNER_PATTERN = init();
     @Nullable
-    public static final ItemType GRINDSTONE = get("minecraft:grindstone");
+    public static final ItemType GUSTER_POTTERY_SHERD = init();
     @Nullable
-    public static final ItemType GUARDIAN_SPAWN_EGG = get("minecraft:guardian_spawn_egg");
+    public static final ItemType HANGING_ROOTS = init();
     @Nullable
-    public static final ItemType GUNPOWDER = get("minecraft:gunpowder");
+    public static final ItemType HAY_BLOCK = init();
     @Nullable
-    public static final ItemType GUSTER_BANNER_PATTERN = get("minecraft:guster_banner_pattern");
+    public static final ItemType HEART_OF_THE_SEA = init();
     @Nullable
-    public static final ItemType GUSTER_POTTERY_SHERD = get("minecraft:guster_pottery_sherd");
+    public static final ItemType HEART_POTTERY_SHERD = init();
     @Nullable
-    public static final ItemType HANGING_ROOTS = get("minecraft:hanging_roots");
+    public static final ItemType HEARTBREAK_POTTERY_SHERD = init();
     @Nullable
-    public static final ItemType HAPPY_GHAST_SPAWN_EGG = get("minecraft:happy_ghast_spawn_egg");
+    public static final ItemType HEAVY_CORE = init();
     @Nullable
-    public static final ItemType HAY_BLOCK = get("minecraft:hay_block");
+    public static final ItemType HEAVY_WEIGHTED_PRESSURE_PLATE = init();
     @Nullable
-    public static final ItemType HEART_OF_THE_SEA = get("minecraft:heart_of_the_sea");
+    public static final ItemType HOGLIN_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType HEART_POTTERY_SHERD = get("minecraft:heart_pottery_sherd");
+    public static final ItemType HONEY_BLOCK = init();
     @Nullable
-    public static final ItemType HEARTBREAK_POTTERY_SHERD = get("minecraft:heartbreak_pottery_sherd");
+    public static final ItemType HONEY_BOTTLE = init();
     @Nullable
-    public static final ItemType HEAVY_CORE = get("minecraft:heavy_core");
+    public static final ItemType HONEYCOMB = init();
     @Nullable
-    public static final ItemType HEAVY_WEIGHTED_PRESSURE_PLATE = get("minecraft:heavy_weighted_pressure_plate");
+    public static final ItemType HONEYCOMB_BLOCK = init();
     @Nullable
-    public static final ItemType HOGLIN_SPAWN_EGG = get("minecraft:hoglin_spawn_egg");
+    public static final ItemType HOPPER = init();
     @Nullable
-    public static final ItemType HONEY_BLOCK = get("minecraft:honey_block");
+    public static final ItemType HOPPER_MINECART = init();
     @Nullable
-    public static final ItemType HONEY_BOTTLE = get("minecraft:honey_bottle");
+    public static final ItemType HORN_CORAL = init();
     @Nullable
-    public static final ItemType HONEYCOMB = get("minecraft:honeycomb");
+    public static final ItemType HORN_CORAL_BLOCK = init();
     @Nullable
-    public static final ItemType HONEYCOMB_BLOCK = get("minecraft:honeycomb_block");
+    public static final ItemType HORN_CORAL_FAN = init();
     @Nullable
-    public static final ItemType HOPPER = get("minecraft:hopper");
+    public static final ItemType HORSE_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType HOPPER_MINECART = get("minecraft:hopper_minecart");
+    public static final ItemType HOST_ARMOR_TRIM_SMITHING_TEMPLATE = init();
     @Nullable
-    public static final ItemType HORN_CORAL = get("minecraft:horn_coral");
+    public static final ItemType HOWL_POTTERY_SHERD = init();
     @Nullable
-    public static final ItemType HORN_CORAL_BLOCK = get("minecraft:horn_coral_block");
+    public static final ItemType HUSK_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType HORN_CORAL_FAN = get("minecraft:horn_coral_fan");
+    public static final ItemType ICE = init();
     @Nullable
-    public static final ItemType HORSE_SPAWN_EGG = get("minecraft:horse_spawn_egg");
+    public static final ItemType INFESTED_CHISELED_STONE_BRICKS = init();
     @Nullable
-    public static final ItemType HOST_ARMOR_TRIM_SMITHING_TEMPLATE = get("minecraft:host_armor_trim_smithing_template");
+    public static final ItemType INFESTED_COBBLESTONE = init();
     @Nullable
-    public static final ItemType HOWL_POTTERY_SHERD = get("minecraft:howl_pottery_sherd");
+    public static final ItemType INFESTED_CRACKED_STONE_BRICKS = init();
     @Nullable
-    public static final ItemType HUSK_SPAWN_EGG = get("minecraft:husk_spawn_egg");
+    public static final ItemType INFESTED_DEEPSLATE = init();
     @Nullable
-    public static final ItemType ICE = get("minecraft:ice");
+    public static final ItemType INFESTED_MOSSY_STONE_BRICKS = init();
     @Nullable
-    public static final ItemType INFESTED_CHISELED_STONE_BRICKS = get("minecraft:infested_chiseled_stone_bricks");
+    public static final ItemType INFESTED_STONE = init();
     @Nullable
-    public static final ItemType INFESTED_COBBLESTONE = get("minecraft:infested_cobblestone");
+    public static final ItemType INFESTED_STONE_BRICKS = init();
     @Nullable
-    public static final ItemType INFESTED_CRACKED_STONE_BRICKS = get("minecraft:infested_cracked_stone_bricks");
+    public static final ItemType INK_SAC = init();
     @Nullable
-    public static final ItemType INFESTED_DEEPSLATE = get("minecraft:infested_deepslate");
+    public static final ItemType IRON_AXE = init();
     @Nullable
-    public static final ItemType INFESTED_MOSSY_STONE_BRICKS = get("minecraft:infested_mossy_stone_bricks");
+    public static final ItemType IRON_BARS = init();
     @Nullable
-    public static final ItemType INFESTED_STONE = get("minecraft:infested_stone");
+    public static final ItemType IRON_BLOCK = init();
     @Nullable
-    public static final ItemType INFESTED_STONE_BRICKS = get("minecraft:infested_stone_bricks");
+    public static final ItemType IRON_BOOTS = init();
     @Nullable
-    public static final ItemType INK_SAC = get("minecraft:ink_sac");
+    public static final ItemType IRON_CHAIN = init();
     @Nullable
-    public static final ItemType IRON_AXE = get("minecraft:iron_axe");
+    public static final ItemType IRON_CHESTPLATE = init();
     @Nullable
-    public static final ItemType IRON_BARS = get("minecraft:iron_bars");
+    public static final ItemType IRON_DOOR = init();
     @Nullable
-    public static final ItemType IRON_BLOCK = get("minecraft:iron_block");
+    public static final ItemType IRON_GOLEM_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType IRON_BOOTS = get("minecraft:iron_boots");
+    public static final ItemType IRON_HELMET = init();
     @Nullable
-    public static final ItemType IRON_CHAIN = get("minecraft:iron_chain");
+    public static final ItemType IRON_HOE = init();
     @Nullable
-    public static final ItemType IRON_CHESTPLATE = get("minecraft:iron_chestplate");
+    public static final ItemType IRON_HORSE_ARMOR = init();
     @Nullable
-    public static final ItemType IRON_DOOR = get("minecraft:iron_door");
+    public static final ItemType IRON_INGOT = init();
     @Nullable
-    public static final ItemType IRON_GOLEM_SPAWN_EGG = get("minecraft:iron_golem_spawn_egg");
+    public static final ItemType IRON_LEGGINGS = init();
     @Nullable
-    public static final ItemType IRON_HELMET = get("minecraft:iron_helmet");
+    public static final ItemType IRON_NAUTILUS_ARMOR = init();
     @Nullable
-    public static final ItemType IRON_HOE = get("minecraft:iron_hoe");
+    public static final ItemType IRON_NUGGET = init();
     @Nullable
-    public static final ItemType IRON_HORSE_ARMOR = get("minecraft:iron_horse_armor");
+    public static final ItemType IRON_ORE = init();
     @Nullable
-    public static final ItemType IRON_INGOT = get("minecraft:iron_ingot");
+    public static final ItemType IRON_PICKAXE = init();
     @Nullable
-    public static final ItemType IRON_LEGGINGS = get("minecraft:iron_leggings");
+    public static final ItemType IRON_SHOVEL = init();
     @Nullable
-    public static final ItemType IRON_NAUTILUS_ARMOR = get("minecraft:iron_nautilus_armor");
+    public static final ItemType IRON_SPEAR = init();
     @Nullable
-    public static final ItemType IRON_NUGGET = get("minecraft:iron_nugget");
+    public static final ItemType IRON_SWORD = init();
     @Nullable
-    public static final ItemType IRON_ORE = get("minecraft:iron_ore");
+    public static final ItemType IRON_TRAPDOOR = init();
     @Nullable
-    public static final ItemType IRON_PICKAXE = get("minecraft:iron_pickaxe");
+    public static final ItemType ITEM_FRAME = init();
     @Nullable
-    public static final ItemType IRON_SHOVEL = get("minecraft:iron_shovel");
+    public static final ItemType JACK_O_LANTERN = init();
     @Nullable
-    public static final ItemType IRON_SPEAR = get("minecraft:iron_spear");
+    public static final ItemType JIGSAW = init();
     @Nullable
-    public static final ItemType IRON_SWORD = get("minecraft:iron_sword");
+    public static final ItemType JUKEBOX = init();
     @Nullable
-    public static final ItemType IRON_TRAPDOOR = get("minecraft:iron_trapdoor");
+    public static final ItemType JUNGLE_BOAT = init();
     @Nullable
-    public static final ItemType ITEM_FRAME = get("minecraft:item_frame");
+    public static final ItemType JUNGLE_BUTTON = init();
     @Nullable
-    public static final ItemType JACK_O_LANTERN = get("minecraft:jack_o_lantern");
+    public static final ItemType JUNGLE_CHEST_BOAT = init();
     @Nullable
-    public static final ItemType JIGSAW = get("minecraft:jigsaw");
+    public static final ItemType JUNGLE_DOOR = init();
     @Nullable
-    public static final ItemType JUKEBOX = get("minecraft:jukebox");
+    public static final ItemType JUNGLE_FENCE = init();
     @Nullable
-    public static final ItemType JUNGLE_BOAT = get("minecraft:jungle_boat");
+    public static final ItemType JUNGLE_FENCE_GATE = init();
     @Nullable
-    public static final ItemType JUNGLE_BUTTON = get("minecraft:jungle_button");
+    public static final ItemType JUNGLE_HANGING_SIGN = init();
     @Nullable
-    public static final ItemType JUNGLE_CHEST_BOAT = get("minecraft:jungle_chest_boat");
+    public static final ItemType JUNGLE_LEAVES = init();
     @Nullable
-    public static final ItemType JUNGLE_DOOR = get("minecraft:jungle_door");
+    public static final ItemType JUNGLE_LOG = init();
     @Nullable
-    public static final ItemType JUNGLE_FENCE = get("minecraft:jungle_fence");
+    public static final ItemType JUNGLE_PLANKS = init();
     @Nullable
-    public static final ItemType JUNGLE_FENCE_GATE = get("minecraft:jungle_fence_gate");
+    public static final ItemType JUNGLE_PRESSURE_PLATE = init();
     @Nullable
-    public static final ItemType JUNGLE_HANGING_SIGN = get("minecraft:jungle_hanging_sign");
+    public static final ItemType JUNGLE_SAPLING = init();
     @Nullable
-    public static final ItemType JUNGLE_LEAVES = get("minecraft:jungle_leaves");
+    public static final ItemType JUNGLE_SHELF = init();
     @Nullable
-    public static final ItemType JUNGLE_LOG = get("minecraft:jungle_log");
+    public static final ItemType JUNGLE_SIGN = init();
     @Nullable
-    public static final ItemType JUNGLE_PLANKS = get("minecraft:jungle_planks");
+    public static final ItemType JUNGLE_SLAB = init();
     @Nullable
-    public static final ItemType JUNGLE_PRESSURE_PLATE = get("minecraft:jungle_pressure_plate");
+    public static final ItemType JUNGLE_STAIRS = init();
     @Nullable
-    public static final ItemType JUNGLE_SAPLING = get("minecraft:jungle_sapling");
+    public static final ItemType JUNGLE_TRAPDOOR = init();
     @Nullable
-    public static final ItemType JUNGLE_SHELF = get("minecraft:jungle_shelf");
+    public static final ItemType JUNGLE_WOOD = init();
     @Nullable
-    public static final ItemType JUNGLE_SIGN = get("minecraft:jungle_sign");
+    public static final ItemType KELP = init();
     @Nullable
-    public static final ItemType JUNGLE_SLAB = get("minecraft:jungle_slab");
+    public static final ItemType KNOWLEDGE_BOOK = init();
     @Nullable
-    public static final ItemType JUNGLE_STAIRS = get("minecraft:jungle_stairs");
+    public static final ItemType LADDER = init();
     @Nullable
-    public static final ItemType JUNGLE_TRAPDOOR = get("minecraft:jungle_trapdoor");
+    public static final ItemType LANTERN = init();
     @Nullable
-    public static final ItemType JUNGLE_WOOD = get("minecraft:jungle_wood");
+    public static final ItemType LAPIS_BLOCK = init();
     @Nullable
-    public static final ItemType KELP = get("minecraft:kelp");
+    public static final ItemType LAPIS_LAZULI = init();
     @Nullable
-    public static final ItemType KNOWLEDGE_BOOK = get("minecraft:knowledge_book");
+    public static final ItemType LAPIS_ORE = init();
     @Nullable
-    public static final ItemType LADDER = get("minecraft:ladder");
+    public static final ItemType LARGE_AMETHYST_BUD = init();
     @Nullable
-    public static final ItemType LANTERN = get("minecraft:lantern");
+    public static final ItemType LARGE_FERN = init();
     @Nullable
-    public static final ItemType LAPIS_BLOCK = get("minecraft:lapis_block");
+    public static final ItemType LAVA_BUCKET = init();
     @Nullable
-    public static final ItemType LAPIS_LAZULI = get("minecraft:lapis_lazuli");
+    public static final ItemType LEAD = init();
     @Nullable
-    public static final ItemType LAPIS_ORE = get("minecraft:lapis_ore");
+    public static final ItemType LEAF_LITTER = init();
     @Nullable
-    public static final ItemType LARGE_AMETHYST_BUD = get("minecraft:large_amethyst_bud");
+    public static final ItemType LEATHER = init();
     @Nullable
-    public static final ItemType LARGE_FERN = get("minecraft:large_fern");
+    public static final ItemType LEATHER_BOOTS = init();
     @Nullable
-    public static final ItemType LAVA_BUCKET = get("minecraft:lava_bucket");
+    public static final ItemType LEATHER_CHESTPLATE = init();
     @Nullable
-    public static final ItemType LEAD = get("minecraft:lead");
+    public static final ItemType LEATHER_HELMET = init();
     @Nullable
-    public static final ItemType LEAF_LITTER = get("minecraft:leaf_litter");
+    public static final ItemType LEATHER_HORSE_ARMOR = init();
     @Nullable
-    public static final ItemType LEATHER = get("minecraft:leather");
+    public static final ItemType LEATHER_LEGGINGS = init();
     @Nullable
-    public static final ItemType LEATHER_BOOTS = get("minecraft:leather_boots");
+    public static final ItemType LECTERN = init();
     @Nullable
-    public static final ItemType LEATHER_CHESTPLATE = get("minecraft:leather_chestplate");
+    public static final ItemType LEVER = init();
     @Nullable
-    public static final ItemType LEATHER_HELMET = get("minecraft:leather_helmet");
+    public static final ItemType LIGHT = init();
     @Nullable
-    public static final ItemType LEATHER_HORSE_ARMOR = get("minecraft:leather_horse_armor");
+    public static final ItemType LIGHT_BLUE_BANNER = init();
     @Nullable
-    public static final ItemType LEATHER_LEGGINGS = get("minecraft:leather_leggings");
+    public static final ItemType LIGHT_BLUE_BED = init();
+    @Nullable public static final ItemType LIGHT_BLUE_BUNDLE = init();
     @Nullable
-    public static final ItemType LECTERN = get("minecraft:lectern");
+    public static final ItemType LIGHT_BLUE_CANDLE = init();
     @Nullable
-    public static final ItemType LEVER = get("minecraft:lever");
+    public static final ItemType LIGHT_BLUE_CARPET = init();
     @Nullable
-    public static final ItemType LIGHT = get("minecraft:light");
+    public static final ItemType LIGHT_BLUE_CONCRETE = init();
     @Nullable
-    public static final ItemType LIGHT_BLUE_BANNER = get("minecraft:light_blue_banner");
+    public static final ItemType LIGHT_BLUE_CONCRETE_POWDER = init();
     @Nullable
-    public static final ItemType LIGHT_BLUE_BED = get("minecraft:light_blue_bed");
+    public static final ItemType LIGHT_BLUE_DYE = init();
     @Nullable
-    public static final ItemType LIGHT_BLUE_BUNDLE = get("minecraft:light_blue_bundle");
+    public static final ItemType LIGHT_BLUE_GLAZED_TERRACOTTA = init();
     @Nullable
-    public static final ItemType LIGHT_BLUE_CANDLE = get("minecraft:light_blue_candle");
+    public static final ItemType LIGHT_BLUE_SHULKER_BOX = init();
     @Nullable
-    public static final ItemType LIGHT_BLUE_CARPET = get("minecraft:light_blue_carpet");
+    public static final ItemType LIGHT_BLUE_STAINED_GLASS = init();
     @Nullable
-    public static final ItemType LIGHT_BLUE_CONCRETE = get("minecraft:light_blue_concrete");
+    public static final ItemType LIGHT_BLUE_STAINED_GLASS_PANE = init();
     @Nullable
-    public static final ItemType LIGHT_BLUE_CONCRETE_POWDER = get("minecraft:light_blue_concrete_powder");
+    public static final ItemType LIGHT_BLUE_TERRACOTTA = init();
     @Nullable
-    public static final ItemType LIGHT_BLUE_DYE = get("minecraft:light_blue_dye");
+    public static final ItemType LIGHT_BLUE_WOOL = init();
     @Nullable
-    public static final ItemType LIGHT_BLUE_GLAZED_TERRACOTTA = get("minecraft:light_blue_glazed_terracotta");
+    public static final ItemType LIGHT_GRAY_BANNER = init();
     @Nullable
-    public static final ItemType LIGHT_BLUE_HARNESS = get("minecraft:light_blue_harness");
+    public static final ItemType LIGHT_GRAY_BED = init();
+    @Nullable public static final ItemType LIGHT_GRAY_BUNDLE = init();
     @Nullable
-    public static final ItemType LIGHT_BLUE_SHULKER_BOX = get("minecraft:light_blue_shulker_box");
+    public static final ItemType LIGHT_GRAY_CANDLE = init();
     @Nullable
-    public static final ItemType LIGHT_BLUE_STAINED_GLASS = get("minecraft:light_blue_stained_glass");
+    public static final ItemType LIGHT_GRAY_CARPET = init();
     @Nullable
-    public static final ItemType LIGHT_BLUE_STAINED_GLASS_PANE = get("minecraft:light_blue_stained_glass_pane");
+    public static final ItemType LIGHT_GRAY_CONCRETE = init();
     @Nullable
-    public static final ItemType LIGHT_BLUE_TERRACOTTA = get("minecraft:light_blue_terracotta");
+    public static final ItemType LIGHT_GRAY_CONCRETE_POWDER = init();
     @Nullable
-    public static final ItemType LIGHT_BLUE_WOOL = get("minecraft:light_blue_wool");
+    public static final ItemType LIGHT_GRAY_DYE = init();
     @Nullable
-    public static final ItemType LIGHT_GRAY_BANNER = get("minecraft:light_gray_banner");
+    public static final ItemType LIGHT_GRAY_GLAZED_TERRACOTTA = init();
     @Nullable
-    public static final ItemType LIGHT_GRAY_BED = get("minecraft:light_gray_bed");
+    public static final ItemType LIGHT_GRAY_SHULKER_BOX = init();
     @Nullable
-    public static final ItemType LIGHT_GRAY_BUNDLE = get("minecraft:light_gray_bundle");
+    public static final ItemType LIGHT_GRAY_STAINED_GLASS = init();
     @Nullable
-    public static final ItemType LIGHT_GRAY_CANDLE = get("minecraft:light_gray_candle");
+    public static final ItemType LIGHT_GRAY_STAINED_GLASS_PANE = init();
     @Nullable
-    public static final ItemType LIGHT_GRAY_CARPET = get("minecraft:light_gray_carpet");
+    public static final ItemType LIGHT_GRAY_TERRACOTTA = init();
     @Nullable
-    public static final ItemType LIGHT_GRAY_CONCRETE = get("minecraft:light_gray_concrete");
+    public static final ItemType LIGHT_GRAY_WOOL = init();
     @Nullable
-    public static final ItemType LIGHT_GRAY_CONCRETE_POWDER = get("minecraft:light_gray_concrete_powder");
+    public static final ItemType LIGHT_WEIGHTED_PRESSURE_PLATE = init();
     @Nullable
-    public static final ItemType LIGHT_GRAY_DYE = get("minecraft:light_gray_dye");
+    public static final ItemType LIGHTNING_ROD = init();
     @Nullable
-    public static final ItemType LIGHT_GRAY_GLAZED_TERRACOTTA = get("minecraft:light_gray_glazed_terracotta");
+    public static final ItemType LILAC = init();
     @Nullable
-    public static final ItemType LIGHT_GRAY_HARNESS = get("minecraft:light_gray_harness");
+    public static final ItemType LILY_OF_THE_VALLEY = init();
     @Nullable
-    public static final ItemType LIGHT_GRAY_SHULKER_BOX = get("minecraft:light_gray_shulker_box");
+    public static final ItemType LILY_PAD = init();
     @Nullable
-    public static final ItemType LIGHT_GRAY_STAINED_GLASS = get("minecraft:light_gray_stained_glass");
+    public static final ItemType LIME_BANNER = init();
     @Nullable
-    public static final ItemType LIGHT_GRAY_STAINED_GLASS_PANE = get("minecraft:light_gray_stained_glass_pane");
+    public static final ItemType LIME_BED = init();
+    @Nullable public static final ItemType LIME_BUNDLE = init();
     @Nullable
-    public static final ItemType LIGHT_GRAY_TERRACOTTA = get("minecraft:light_gray_terracotta");
+    public static final ItemType LIME_CANDLE = init();
     @Nullable
-    public static final ItemType LIGHT_GRAY_WOOL = get("minecraft:light_gray_wool");
+    public static final ItemType LIME_CARPET = init();
     @Nullable
-    public static final ItemType LIGHT_WEIGHTED_PRESSURE_PLATE = get("minecraft:light_weighted_pressure_plate");
+    public static final ItemType LIME_CONCRETE = init();
     @Nullable
-    public static final ItemType LIGHTNING_ROD = get("minecraft:lightning_rod");
+    public static final ItemType LIME_CONCRETE_POWDER = init();
     @Nullable
-    public static final ItemType LILAC = get("minecraft:lilac");
+    public static final ItemType LIME_DYE = init();
     @Nullable
-    public static final ItemType LILY_OF_THE_VALLEY = get("minecraft:lily_of_the_valley");
+    public static final ItemType LIME_GLAZED_TERRACOTTA = init();
     @Nullable
-    public static final ItemType LILY_PAD = get("minecraft:lily_pad");
+    public static final ItemType LIME_SHULKER_BOX = init();
     @Nullable
-    public static final ItemType LIME_BANNER = get("minecraft:lime_banner");
+    public static final ItemType LIME_STAINED_GLASS = init();
     @Nullable
-    public static final ItemType LIME_BED = get("minecraft:lime_bed");
+    public static final ItemType LIME_STAINED_GLASS_PANE = init();
     @Nullable
-    public static final ItemType LIME_BUNDLE = get("minecraft:lime_bundle");
+    public static final ItemType LIME_TERRACOTTA = init();
     @Nullable
-    public static final ItemType LIME_CANDLE = get("minecraft:lime_candle");
+    public static final ItemType LIME_WOOL = init();
     @Nullable
-    public static final ItemType LIME_CARPET = get("minecraft:lime_carpet");
+    public static final ItemType LINGERING_POTION = init();
     @Nullable
-    public static final ItemType LIME_CONCRETE = get("minecraft:lime_concrete");
+    public static final ItemType LLAMA_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType LIME_CONCRETE_POWDER = get("minecraft:lime_concrete_powder");
+    public static final ItemType LODESTONE = init();
     @Nullable
-    public static final ItemType LIME_DYE = get("minecraft:lime_dye");
+    public static final ItemType LOOM = init();
     @Nullable
-    public static final ItemType LIME_GLAZED_TERRACOTTA = get("minecraft:lime_glazed_terracotta");
+    public static final ItemType MACE = init();
     @Nullable
-    public static final ItemType LIME_HARNESS = get("minecraft:lime_harness");
+    public static final ItemType MAGENTA_BANNER = init();
     @Nullable
-    public static final ItemType LIME_SHULKER_BOX = get("minecraft:lime_shulker_box");
+    public static final ItemType MAGENTA_BED = init();
+    @Nullable public static final ItemType MAGENTA_BUNDLE = init();
     @Nullable
-    public static final ItemType LIME_STAINED_GLASS = get("minecraft:lime_stained_glass");
+    public static final ItemType MAGENTA_CANDLE = init();
     @Nullable
-    public static final ItemType LIME_STAINED_GLASS_PANE = get("minecraft:lime_stained_glass_pane");
+    public static final ItemType MAGENTA_CARPET = init();
     @Nullable
-    public static final ItemType LIME_TERRACOTTA = get("minecraft:lime_terracotta");
+    public static final ItemType MAGENTA_CONCRETE = init();
     @Nullable
-    public static final ItemType LIME_WOOL = get("minecraft:lime_wool");
+    public static final ItemType MAGENTA_CONCRETE_POWDER = init();
     @Nullable
-    public static final ItemType LINGERING_POTION = get("minecraft:lingering_potion");
+    public static final ItemType MAGENTA_DYE = init();
     @Nullable
-    public static final ItemType LLAMA_SPAWN_EGG = get("minecraft:llama_spawn_egg");
+    public static final ItemType MAGENTA_GLAZED_TERRACOTTA = init();
     @Nullable
-    public static final ItemType LODESTONE = get("minecraft:lodestone");
+    public static final ItemType MAGENTA_SHULKER_BOX = init();
     @Nullable
-    public static final ItemType LOOM = get("minecraft:loom");
+    public static final ItemType MAGENTA_STAINED_GLASS = init();
     @Nullable
-    public static final ItemType MACE = get("minecraft:mace");
+    public static final ItemType MAGENTA_STAINED_GLASS_PANE = init();
     @Nullable
-    public static final ItemType MAGENTA_BANNER = get("minecraft:magenta_banner");
+    public static final ItemType MAGENTA_TERRACOTTA = init();
     @Nullable
-    public static final ItemType MAGENTA_BED = get("minecraft:magenta_bed");
+    public static final ItemType MAGENTA_WOOL = init();
     @Nullable
-    public static final ItemType MAGENTA_BUNDLE = get("minecraft:magenta_bundle");
+    public static final ItemType MAGMA_BLOCK = init();
     @Nullable
-    public static final ItemType MAGENTA_CANDLE = get("minecraft:magenta_candle");
+    public static final ItemType MAGMA_CREAM = init();
     @Nullable
-    public static final ItemType MAGENTA_CARPET = get("minecraft:magenta_carpet");
+    public static final ItemType MAGMA_CUBE_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType MAGENTA_CONCRETE = get("minecraft:magenta_concrete");
+    public static final ItemType MANGROVE_BOAT = init();
     @Nullable
-    public static final ItemType MAGENTA_CONCRETE_POWDER = get("minecraft:magenta_concrete_powder");
+    public static final ItemType MANGROVE_BUTTON = init();
     @Nullable
-    public static final ItemType MAGENTA_DYE = get("minecraft:magenta_dye");
+    public static final ItemType MANGROVE_CHEST_BOAT = init();
     @Nullable
-    public static final ItemType MAGENTA_GLAZED_TERRACOTTA = get("minecraft:magenta_glazed_terracotta");
+    public static final ItemType MANGROVE_DOOR = init();
     @Nullable
-    public static final ItemType MAGENTA_HARNESS = get("minecraft:magenta_harness");
+    public static final ItemType MANGROVE_FENCE = init();
     @Nullable
-    public static final ItemType MAGENTA_SHULKER_BOX = get("minecraft:magenta_shulker_box");
+    public static final ItemType MANGROVE_FENCE_GATE = init();
     @Nullable
-    public static final ItemType MAGENTA_STAINED_GLASS = get("minecraft:magenta_stained_glass");
+    public static final ItemType MANGROVE_HANGING_SIGN = init();
     @Nullable
-    public static final ItemType MAGENTA_STAINED_GLASS_PANE = get("minecraft:magenta_stained_glass_pane");
+    public static final ItemType MANGROVE_LEAVES = init();
     @Nullable
-    public static final ItemType MAGENTA_TERRACOTTA = get("minecraft:magenta_terracotta");
+    public static final ItemType MANGROVE_LOG = init();
     @Nullable
-    public static final ItemType MAGENTA_WOOL = get("minecraft:magenta_wool");
+    public static final ItemType MANGROVE_PLANKS = init();
     @Nullable
-    public static final ItemType MAGMA_BLOCK = get("minecraft:magma_block");
+    public static final ItemType MANGROVE_PRESSURE_PLATE = init();
     @Nullable
-    public static final ItemType MAGMA_CREAM = get("minecraft:magma_cream");
+    public static final ItemType MANGROVE_PROPAGULE = init();
     @Nullable
-    public static final ItemType MAGMA_CUBE_SPAWN_EGG = get("minecraft:magma_cube_spawn_egg");
+    public static final ItemType MANGROVE_ROOTS = init();
     @Nullable
-    public static final ItemType MANGROVE_BOAT = get("minecraft:mangrove_boat");
+    public static final ItemType MANGROVE_SHELF = init();
     @Nullable
-    public static final ItemType MANGROVE_BUTTON = get("minecraft:mangrove_button");
+    public static final ItemType MANGROVE_SIGN = init();
     @Nullable
-    public static final ItemType MANGROVE_CHEST_BOAT = get("minecraft:mangrove_chest_boat");
+    public static final ItemType MANGROVE_SLAB = init();
     @Nullable
-    public static final ItemType MANGROVE_DOOR = get("minecraft:mangrove_door");
+    public static final ItemType MANGROVE_STAIRS = init();
     @Nullable
-    public static final ItemType MANGROVE_FENCE = get("minecraft:mangrove_fence");
+    public static final ItemType MANGROVE_TRAPDOOR = init();
     @Nullable
-    public static final ItemType MANGROVE_FENCE_GATE = get("minecraft:mangrove_fence_gate");
+    public static final ItemType MANGROVE_WOOD = init();
     @Nullable
-    public static final ItemType MANGROVE_HANGING_SIGN = get("minecraft:mangrove_hanging_sign");
+    public static final ItemType MAP = init();
     @Nullable
-    public static final ItemType MANGROVE_LEAVES = get("minecraft:mangrove_leaves");
+    public static final ItemType MEDIUM_AMETHYST_BUD = init();
     @Nullable
-    public static final ItemType MANGROVE_LOG = get("minecraft:mangrove_log");
+    public static final ItemType MELON = init();
     @Nullable
-    public static final ItemType MANGROVE_PLANKS = get("minecraft:mangrove_planks");
+    public static final ItemType MELON_SEEDS = init();
     @Nullable
-    public static final ItemType MANGROVE_PRESSURE_PLATE = get("minecraft:mangrove_pressure_plate");
+    public static final ItemType MELON_SLICE = init();
     @Nullable
-    public static final ItemType MANGROVE_PROPAGULE = get("minecraft:mangrove_propagule");
+    public static final ItemType MILK_BUCKET = init();
     @Nullable
-    public static final ItemType MANGROVE_ROOTS = get("minecraft:mangrove_roots");
+    public static final ItemType MINECART = init();
     @Nullable
-    public static final ItemType MANGROVE_SHELF = get("minecraft:mangrove_shelf");
+    public static final ItemType MINER_POTTERY_SHERD = init();
     @Nullable
-    public static final ItemType MANGROVE_SIGN = get("minecraft:mangrove_sign");
+    public static final ItemType MOJANG_BANNER_PATTERN = init();
     @Nullable
-    public static final ItemType MANGROVE_SLAB = get("minecraft:mangrove_slab");
+    public static final ItemType MOOSHROOM_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType MANGROVE_STAIRS = get("minecraft:mangrove_stairs");
+    public static final ItemType MOSS_BLOCK = init();
     @Nullable
-    public static final ItemType MANGROVE_TRAPDOOR = get("minecraft:mangrove_trapdoor");
+    public static final ItemType MOSS_CARPET = init();
     @Nullable
-    public static final ItemType MANGROVE_WOOD = get("minecraft:mangrove_wood");
+    public static final ItemType MOSSY_COBBLESTONE = init();
     @Nullable
-    public static final ItemType MAP = get("minecraft:map");
+    public static final ItemType MOSSY_COBBLESTONE_SLAB = init();
     @Nullable
-    public static final ItemType MEDIUM_AMETHYST_BUD = get("minecraft:medium_amethyst_bud");
+    public static final ItemType MOSSY_COBBLESTONE_STAIRS = init();
     @Nullable
-    public static final ItemType MELON = get("minecraft:melon");
+    public static final ItemType MOSSY_COBBLESTONE_WALL = init();
     @Nullable
-    public static final ItemType MELON_SEEDS = get("minecraft:melon_seeds");
+    public static final ItemType MOSSY_STONE_BRICK_SLAB = init();
     @Nullable
-    public static final ItemType MELON_SLICE = get("minecraft:melon_slice");
+    public static final ItemType MOSSY_STONE_BRICK_STAIRS = init();
     @Nullable
-    public static final ItemType MILK_BUCKET = get("minecraft:milk_bucket");
+    public static final ItemType MOSSY_STONE_BRICK_WALL = init();
     @Nullable
-    public static final ItemType MINECART = get("minecraft:minecart");
+    public static final ItemType MOSSY_STONE_BRICKS = init();
     @Nullable
-    public static final ItemType MINER_POTTERY_SHERD = get("minecraft:miner_pottery_sherd");
+    public static final ItemType MOURNER_POTTERY_SHERD = init();
     @Nullable
-    public static final ItemType MOJANG_BANNER_PATTERN = get("minecraft:mojang_banner_pattern");
+    public static final ItemType MUD = init();
     @Nullable
-    public static final ItemType MOOSHROOM_SPAWN_EGG = get("minecraft:mooshroom_spawn_egg");
+    public static final ItemType MUD_BRICK_SLAB = init();
     @Nullable
-    public static final ItemType MOSS_BLOCK = get("minecraft:moss_block");
+    public static final ItemType MUD_BRICK_STAIRS = init();
     @Nullable
-    public static final ItemType MOSS_CARPET = get("minecraft:moss_carpet");
+    public static final ItemType MUD_BRICK_WALL = init();
     @Nullable
-    public static final ItemType MOSSY_COBBLESTONE = get("minecraft:mossy_cobblestone");
+    public static final ItemType MUD_BRICKS = init();
     @Nullable
-    public static final ItemType MOSSY_COBBLESTONE_SLAB = get("minecraft:mossy_cobblestone_slab");
+    public static final ItemType MUDDY_MANGROVE_ROOTS = init();
     @Nullable
-    public static final ItemType MOSSY_COBBLESTONE_STAIRS = get("minecraft:mossy_cobblestone_stairs");
+    public static final ItemType MULE_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType MOSSY_COBBLESTONE_WALL = get("minecraft:mossy_cobblestone_wall");
+    public static final ItemType MUSHROOM_STEM = init();
     @Nullable
-    public static final ItemType MOSSY_STONE_BRICK_SLAB = get("minecraft:mossy_stone_brick_slab");
+    public static final ItemType MUSHROOM_STEW = init();
     @Nullable
-    public static final ItemType MOSSY_STONE_BRICK_STAIRS = get("minecraft:mossy_stone_brick_stairs");
+    public static final ItemType MUSIC_DISC_11 = init();
     @Nullable
-    public static final ItemType MOSSY_STONE_BRICK_WALL = get("minecraft:mossy_stone_brick_wall");
+    public static final ItemType MUSIC_DISC_13 = init();
     @Nullable
-    public static final ItemType MOSSY_STONE_BRICKS = get("minecraft:mossy_stone_bricks");
+    public static final ItemType MUSIC_DISC_5 = init();
     @Nullable
-    public static final ItemType MOURNER_POTTERY_SHERD = get("minecraft:mourner_pottery_sherd");
+    public static final ItemType MUSIC_DISC_BLOCKS = init();
     @Nullable
-    public static final ItemType MUD = get("minecraft:mud");
+    public static final ItemType MUSIC_DISC_BOUNCE = init();
     @Nullable
-    public static final ItemType MUD_BRICK_SLAB = get("minecraft:mud_brick_slab");
+    public static final ItemType MUSIC_DISC_CAT = init();
     @Nullable
-    public static final ItemType MUD_BRICK_STAIRS = get("minecraft:mud_brick_stairs");
+    public static final ItemType MUSIC_DISC_CHIRP = init();
     @Nullable
-    public static final ItemType MUD_BRICK_WALL = get("minecraft:mud_brick_wall");
+    public static final ItemType MUSIC_DISC_CREATOR = init();
     @Nullable
-    public static final ItemType MUD_BRICKS = get("minecraft:mud_bricks");
+    public static final ItemType MUSIC_DISC_CREATOR_MUSIC_BOX = init();
     @Nullable
-    public static final ItemType MUDDY_MANGROVE_ROOTS = get("minecraft:muddy_mangrove_roots");
+    public static final ItemType MUSIC_DISC_FAR = init();
     @Nullable
-    public static final ItemType MULE_SPAWN_EGG = get("minecraft:mule_spawn_egg");
+    public static final ItemType MUSIC_DISC_LAVA_CHICKEN = init();
     @Nullable
-    public static final ItemType MUSHROOM_STEM = get("minecraft:mushroom_stem");
+    public static final ItemType MUSIC_DISC_MALL = init();
     @Nullable
-    public static final ItemType MUSHROOM_STEW = get("minecraft:mushroom_stew");
+    public static final ItemType MUSIC_DISC_MELLOHI = init();
     @Nullable
-    public static final ItemType MUSIC_DISC_11 = get("minecraft:music_disc_11");
+    public static final ItemType MUSIC_DISC_OTHERSIDE = init();
     @Nullable
-    public static final ItemType MUSIC_DISC_13 = get("minecraft:music_disc_13");
+    public static final ItemType MUSIC_DISC_PIGSTEP = init();
     @Nullable
-    public static final ItemType MUSIC_DISC_5 = get("minecraft:music_disc_5");
+    public static final ItemType MUSIC_DISC_PRECIPICE = init();
     @Nullable
-    public static final ItemType MUSIC_DISC_BLOCKS = get("minecraft:music_disc_blocks");
+    public static final ItemType MUSIC_DISC_RELIC = init();
     @Nullable
-    public static final ItemType MUSIC_DISC_BOUNCE = get("minecraft:music_disc_bounce");
+    public static final ItemType MUSIC_DISC_STAL = init();
     @Nullable
-    public static final ItemType MUSIC_DISC_CAT = get("minecraft:music_disc_cat");
+    public static final ItemType MUSIC_DISC_STRAD = init();
     @Nullable
-    public static final ItemType MUSIC_DISC_CHIRP = get("minecraft:music_disc_chirp");
+    public static final ItemType MUSIC_DISC_WAIT = init();
     @Nullable
-    public static final ItemType MUSIC_DISC_CREATOR = get("minecraft:music_disc_creator");
+    public static final ItemType MUSIC_DISC_WARD = init();
     @Nullable
-    public static final ItemType MUSIC_DISC_CREATOR_MUSIC_BOX = get("minecraft:music_disc_creator_music_box");
+    public static final ItemType MUTTON = init();
     @Nullable
-    public static final ItemType MUSIC_DISC_FAR = get("minecraft:music_disc_far");
+    public static final ItemType MYCELIUM = init();
     @Nullable
-    public static final ItemType MUSIC_DISC_LAVA_CHICKEN = get("minecraft:music_disc_lava_chicken");
+    public static final ItemType NAME_TAG = init();
     @Nullable
-    public static final ItemType MUSIC_DISC_MALL = get("minecraft:music_disc_mall");
+    public static final ItemType NAUTILUS_SHELL = init();
     @Nullable
-    public static final ItemType MUSIC_DISC_MELLOHI = get("minecraft:music_disc_mellohi");
+    public static final ItemType NAUTILUS_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType MUSIC_DISC_OTHERSIDE = get("minecraft:music_disc_otherside");
+    public static final ItemType NETHER_BRICK = init();
     @Nullable
-    public static final ItemType MUSIC_DISC_PIGSTEP = get("minecraft:music_disc_pigstep");
+    public static final ItemType NETHER_BRICK_FENCE = init();
     @Nullable
-    public static final ItemType MUSIC_DISC_PRECIPICE = get("minecraft:music_disc_precipice");
+    public static final ItemType NETHER_BRICK_SLAB = init();
     @Nullable
-    public static final ItemType MUSIC_DISC_RELIC = get("minecraft:music_disc_relic");
+    public static final ItemType NETHER_BRICK_STAIRS = init();
     @Nullable
-    public static final ItemType MUSIC_DISC_STAL = get("minecraft:music_disc_stal");
+    public static final ItemType NETHER_BRICK_WALL = init();
     @Nullable
-    public static final ItemType MUSIC_DISC_STRAD = get("minecraft:music_disc_strad");
+    public static final ItemType NETHER_BRICKS = init();
     @Nullable
-    public static final ItemType MUSIC_DISC_TEARS = get("minecraft:music_disc_tears");
+    public static final ItemType NETHER_GOLD_ORE = init();
     @Nullable
-    public static final ItemType MUSIC_DISC_WAIT = get("minecraft:music_disc_wait");
+    public static final ItemType NETHER_QUARTZ_ORE = init();
     @Nullable
-    public static final ItemType MUSIC_DISC_WARD = get("minecraft:music_disc_ward");
+    public static final ItemType NETHER_SPROUTS = init();
     @Nullable
-    public static final ItemType MUTTON = get("minecraft:mutton");
+    public static final ItemType NETHER_STAR = init();
     @Nullable
-    public static final ItemType MYCELIUM = get("minecraft:mycelium");
+    public static final ItemType NETHER_WART = init();
     @Nullable
-    public static final ItemType NAME_TAG = get("minecraft:name_tag");
+    public static final ItemType NETHER_WART_BLOCK = init();
     @Nullable
-    public static final ItemType NAUTILUS_SHELL = get("minecraft:nautilus_shell");
+    public static final ItemType NETHERITE_AXE = init();
     @Nullable
-    public static final ItemType NAUTILUS_SPAWN_EGG = get("minecraft:nautilus_spawn_egg");
+    public static final ItemType NETHERITE_BLOCK = init();
     @Nullable
-    public static final ItemType NETHER_BRICK = get("minecraft:nether_brick");
+    public static final ItemType NETHERITE_BOOTS = init();
     @Nullable
-    public static final ItemType NETHER_BRICK_FENCE = get("minecraft:nether_brick_fence");
+    public static final ItemType NETHERITE_CHESTPLATE = init();
     @Nullable
-    public static final ItemType NETHER_BRICK_SLAB = get("minecraft:nether_brick_slab");
+    public static final ItemType NETHERITE_HELMET = init();
     @Nullable
-    public static final ItemType NETHER_BRICK_STAIRS = get("minecraft:nether_brick_stairs");
+    public static final ItemType NETHERITE_HOE = init();
     @Nullable
-    public static final ItemType NETHER_BRICK_WALL = get("minecraft:nether_brick_wall");
+    public static final ItemType NETHERITE_HORSE_ARMOR = init();
     @Nullable
-    public static final ItemType NETHER_BRICKS = get("minecraft:nether_bricks");
+    public static final ItemType NETHERITE_INGOT = init();
     @Nullable
-    public static final ItemType NETHER_GOLD_ORE = get("minecraft:nether_gold_ore");
+    public static final ItemType NETHERITE_LEGGINGS = init();
     @Nullable
-    public static final ItemType NETHER_QUARTZ_ORE = get("minecraft:nether_quartz_ore");
+    public static final ItemType NETHERITE_NAUTILUS_ARMOR = init();
     @Nullable
-    public static final ItemType NETHER_SPROUTS = get("minecraft:nether_sprouts");
+    public static final ItemType NETHERITE_PICKAXE = init();
     @Nullable
-    public static final ItemType NETHER_STAR = get("minecraft:nether_star");
+    public static final ItemType NETHERITE_SCRAP = init();
     @Nullable
-    public static final ItemType NETHER_WART = get("minecraft:nether_wart");
+    public static final ItemType NETHERITE_SHOVEL = init();
     @Nullable
-    public static final ItemType NETHER_WART_BLOCK = get("minecraft:nether_wart_block");
+    public static final ItemType NETHERITE_SPEAR = init();
     @Nullable
-    public static final ItemType NETHERITE_AXE = get("minecraft:netherite_axe");
+    public static final ItemType NETHERITE_SWORD = init();
     @Nullable
-    public static final ItemType NETHERITE_BLOCK = get("minecraft:netherite_block");
+    public static final ItemType NETHERITE_UPGRADE_SMITHING_TEMPLATE = init();
     @Nullable
-    public static final ItemType NETHERITE_BOOTS = get("minecraft:netherite_boots");
+    public static final ItemType NETHERRACK = init();
     @Nullable
-    public static final ItemType NETHERITE_CHESTPLATE = get("minecraft:netherite_chestplate");
+    public static final ItemType NOTE_BLOCK = init();
     @Nullable
-    public static final ItemType NETHERITE_HELMET = get("minecraft:netherite_helmet");
+    public static final ItemType OAK_BOAT = init();
     @Nullable
-    public static final ItemType NETHERITE_HOE = get("minecraft:netherite_hoe");
+    public static final ItemType OAK_BUTTON = init();
     @Nullable
-    public static final ItemType NETHERITE_HORSE_ARMOR = get("minecraft:netherite_horse_armor");
+    public static final ItemType OAK_CHEST_BOAT = init();
     @Nullable
-    public static final ItemType NETHERITE_INGOT = get("minecraft:netherite_ingot");
+    public static final ItemType OAK_DOOR = init();
     @Nullable
-    public static final ItemType NETHERITE_LEGGINGS = get("minecraft:netherite_leggings");
+    public static final ItemType OAK_FENCE = init();
     @Nullable
-    public static final ItemType NETHERITE_NAUTILUS_ARMOR = get("minecraft:netherite_nautilus_armor");
+    public static final ItemType OAK_FENCE_GATE = init();
     @Nullable
-    public static final ItemType NETHERITE_PICKAXE = get("minecraft:netherite_pickaxe");
+    public static final ItemType OAK_HANGING_SIGN = init();
     @Nullable
-    public static final ItemType NETHERITE_SCRAP = get("minecraft:netherite_scrap");
+    public static final ItemType OAK_LEAVES = init();
     @Nullable
-    public static final ItemType NETHERITE_SHOVEL = get("minecraft:netherite_shovel");
+    public static final ItemType OAK_LOG = init();
     @Nullable
-    public static final ItemType NETHERITE_SPEAR = get("minecraft:netherite_spear");
+    public static final ItemType OAK_PLANKS = init();
     @Nullable
-    public static final ItemType NETHERITE_SWORD = get("minecraft:netherite_sword");
+    public static final ItemType OAK_PRESSURE_PLATE = init();
     @Nullable
-    public static final ItemType NETHERITE_UPGRADE_SMITHING_TEMPLATE = get("minecraft:netherite_upgrade_smithing_template");
+    public static final ItemType OAK_SAPLING = init();
     @Nullable
-    public static final ItemType NETHERRACK = get("minecraft:netherrack");
+    public static final ItemType OAK_SHELF = init();
     @Nullable
-    public static final ItemType NOTE_BLOCK = get("minecraft:note_block");
+    public static final ItemType OAK_SIGN = init();
     @Nullable
-    public static final ItemType OAK_BOAT = get("minecraft:oak_boat");
+    public static final ItemType OAK_SLAB = init();
     @Nullable
-    public static final ItemType OAK_BUTTON = get("minecraft:oak_button");
+    public static final ItemType OAK_STAIRS = init();
     @Nullable
-    public static final ItemType OAK_CHEST_BOAT = get("minecraft:oak_chest_boat");
+    public static final ItemType OAK_TRAPDOOR = init();
     @Nullable
-    public static final ItemType OAK_DOOR = get("minecraft:oak_door");
+    public static final ItemType OAK_WOOD = init();
     @Nullable
-    public static final ItemType OAK_FENCE = get("minecraft:oak_fence");
+    public static final ItemType OBSERVER = init();
     @Nullable
-    public static final ItemType OAK_FENCE_GATE = get("minecraft:oak_fence_gate");
+    public static final ItemType OBSIDIAN = init();
     @Nullable
-    public static final ItemType OAK_HANGING_SIGN = get("minecraft:oak_hanging_sign");
+    public static final ItemType OCELOT_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType OAK_LEAVES = get("minecraft:oak_leaves");
+    public static final ItemType OCHRE_FROGLIGHT = init();
     @Nullable
-    public static final ItemType OAK_LOG = get("minecraft:oak_log");
+    public static final ItemType OMINOUS_BOTTLE = init();
     @Nullable
-    public static final ItemType OAK_PLANKS = get("minecraft:oak_planks");
+    public static final ItemType OMINOUS_TRIAL_KEY = init();
     @Nullable
-    public static final ItemType OAK_PRESSURE_PLATE = get("minecraft:oak_pressure_plate");
+    public static final ItemType OPEN_EYEBLOSSOM = init();
     @Nullable
-    public static final ItemType OAK_SAPLING = get("minecraft:oak_sapling");
+    public static final ItemType ORANGE_BANNER = init();
     @Nullable
-    public static final ItemType OAK_SHELF = get("minecraft:oak_shelf");
+    public static final ItemType ORANGE_BED = init();
+    @Nullable public static final ItemType ORANGE_BUNDLE = init();
     @Nullable
-    public static final ItemType OAK_SIGN = get("minecraft:oak_sign");
+    public static final ItemType ORANGE_CANDLE = init();
     @Nullable
-    public static final ItemType OAK_SLAB = get("minecraft:oak_slab");
+    public static final ItemType ORANGE_CARPET = init();
     @Nullable
-    public static final ItemType OAK_STAIRS = get("minecraft:oak_stairs");
+    public static final ItemType ORANGE_CONCRETE = init();
     @Nullable
-    public static final ItemType OAK_TRAPDOOR = get("minecraft:oak_trapdoor");
+    public static final ItemType ORANGE_CONCRETE_POWDER = init();
     @Nullable
-    public static final ItemType OAK_WOOD = get("minecraft:oak_wood");
+    public static final ItemType ORANGE_DYE = init();
     @Nullable
-    public static final ItemType OBSERVER = get("minecraft:observer");
+    public static final ItemType ORANGE_GLAZED_TERRACOTTA = init();
     @Nullable
-    public static final ItemType OBSIDIAN = get("minecraft:obsidian");
+    public static final ItemType ORANGE_SHULKER_BOX = init();
     @Nullable
-    public static final ItemType OCELOT_SPAWN_EGG = get("minecraft:ocelot_spawn_egg");
+    public static final ItemType ORANGE_STAINED_GLASS = init();
     @Nullable
-    public static final ItemType OCHRE_FROGLIGHT = get("minecraft:ochre_froglight");
+    public static final ItemType ORANGE_STAINED_GLASS_PANE = init();
     @Nullable
-    public static final ItemType OMINOUS_BOTTLE = get("minecraft:ominous_bottle");
+    public static final ItemType ORANGE_TERRACOTTA = init();
     @Nullable
-    public static final ItemType OMINOUS_TRIAL_KEY = get("minecraft:ominous_trial_key");
+    public static final ItemType ORANGE_TULIP = init();
     @Nullable
-    public static final ItemType OPEN_EYEBLOSSOM = get("minecraft:open_eyeblossom");
+    public static final ItemType ORANGE_WOOL = init();
     @Nullable
-    public static final ItemType ORANGE_BANNER = get("minecraft:orange_banner");
+    public static final ItemType OXEYE_DAISY = init();
     @Nullable
-    public static final ItemType ORANGE_BED = get("minecraft:orange_bed");
+    public static final ItemType OXIDIZED_CHISELED_COPPER = init();
     @Nullable
-    public static final ItemType ORANGE_BUNDLE = get("minecraft:orange_bundle");
+    public static final ItemType OXIDIZED_COPPER = init();
     @Nullable
-    public static final ItemType ORANGE_CANDLE = get("minecraft:orange_candle");
+    public static final ItemType OXIDIZED_COPPER_BARS = init();
     @Nullable
-    public static final ItemType ORANGE_CARPET = get("minecraft:orange_carpet");
+    public static final ItemType OXIDIZED_COPPER_BULB = init();
     @Nullable
-    public static final ItemType ORANGE_CONCRETE = get("minecraft:orange_concrete");
+    public static final ItemType OXIDIZED_COPPER_CHAIN = init();
     @Nullable
-    public static final ItemType ORANGE_CONCRETE_POWDER = get("minecraft:orange_concrete_powder");
+    public static final ItemType OXIDIZED_COPPER_CHEST = init();
     @Nullable
-    public static final ItemType ORANGE_DYE = get("minecraft:orange_dye");
+    public static final ItemType OXIDIZED_COPPER_DOOR = init();
     @Nullable
-    public static final ItemType ORANGE_GLAZED_TERRACOTTA = get("minecraft:orange_glazed_terracotta");
+    public static final ItemType OXIDIZED_COPPER_GOLEM_STATUE = init();
     @Nullable
-    public static final ItemType ORANGE_HARNESS = get("minecraft:orange_harness");
+    public static final ItemType OXIDIZED_COPPER_GRATE = init();
     @Nullable
-    public static final ItemType ORANGE_SHULKER_BOX = get("minecraft:orange_shulker_box");
+    public static final ItemType OXIDIZED_COPPER_LANTERN = init();
     @Nullable
-    public static final ItemType ORANGE_STAINED_GLASS = get("minecraft:orange_stained_glass");
+    public static final ItemType OXIDIZED_COPPER_TRAPDOOR = init();
     @Nullable
-    public static final ItemType ORANGE_STAINED_GLASS_PANE = get("minecraft:orange_stained_glass_pane");
+    public static final ItemType OXIDIZED_CUT_COPPER = init();
     @Nullable
-    public static final ItemType ORANGE_TERRACOTTA = get("minecraft:orange_terracotta");
+    public static final ItemType OXIDIZED_CUT_COPPER_SLAB = init();
     @Nullable
-    public static final ItemType ORANGE_TULIP = get("minecraft:orange_tulip");
+    public static final ItemType OXIDIZED_CUT_COPPER_STAIRS = init();
     @Nullable
-    public static final ItemType ORANGE_WOOL = get("minecraft:orange_wool");
+    public static final ItemType OXIDIZED_LIGHTNING_ROD = init();
     @Nullable
-    public static final ItemType OXEYE_DAISY = get("minecraft:oxeye_daisy");
+    public static final ItemType PACKED_ICE = init();
     @Nullable
-    public static final ItemType OXIDIZED_CHISELED_COPPER = get("minecraft:oxidized_chiseled_copper");
+    public static final ItemType PACKED_MUD = init();
     @Nullable
-    public static final ItemType OXIDIZED_COPPER = get("minecraft:oxidized_copper");
+    public static final ItemType PAINTING = init();
+    @Nullable public static final ItemType PALE_HANGING_MOSS = init();
+    @Nullable public static final ItemType PALE_MOSS_BLOCK = init();
+    @Nullable public static final ItemType PALE_MOSS_CARPET = init();
+    @Nullable public static final ItemType PALE_OAK_BOAT = init();
+    @Nullable public static final ItemType PALE_OAK_BUTTON = init();
+    @Nullable public static final ItemType PALE_OAK_CHEST_BOAT = init();
+    @Nullable public static final ItemType PALE_OAK_DOOR = init();
+    @Nullable public static final ItemType PALE_OAK_FENCE = init();
+    @Nullable public static final ItemType PALE_OAK_FENCE_GATE = init();
+    @Nullable public static final ItemType PALE_OAK_HANGING_SIGN = init();
+    @Nullable public static final ItemType PALE_OAK_LEAVES = init();
+    @Nullable public static final ItemType PALE_OAK_LOG = init();
+    @Nullable public static final ItemType PALE_OAK_PLANKS = init();
+    @Nullable public static final ItemType PALE_OAK_PRESSURE_PLATE = init();
+    @Nullable public static final ItemType PALE_OAK_SAPLING = init();
+    @Nullable public static final ItemType PALE_OAK_SHELF = init();
+    @Nullable public static final ItemType PALE_OAK_SIGN = init();
+    @Nullable public static final ItemType PALE_OAK_SLAB = init();
+    @Nullable public static final ItemType PALE_OAK_STAIRS = init();
+    @Nullable public static final ItemType PALE_OAK_TRAPDOOR = init();
+    @Nullable public static final ItemType PALE_OAK_WOOD = init();
     @Nullable
-    public static final ItemType OXIDIZED_COPPER_BARS = get("minecraft:oxidized_copper_bars");
+    public static final ItemType PANDA_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType OXIDIZED_COPPER_BULB = get("minecraft:oxidized_copper_bulb");
+    public static final ItemType PAPER = init();
     @Nullable
-    public static final ItemType OXIDIZED_COPPER_CHAIN = get("minecraft:oxidized_copper_chain");
+    public static final ItemType PARCHED_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType OXIDIZED_COPPER_CHEST = get("minecraft:oxidized_copper_chest");
+    public static final ItemType PARROT_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType OXIDIZED_COPPER_DOOR = get("minecraft:oxidized_copper_door");
+    public static final ItemType PEARLESCENT_FROGLIGHT = init();
     @Nullable
-    public static final ItemType OXIDIZED_COPPER_GOLEM_STATUE = get("minecraft:oxidized_copper_golem_statue");
+    public static final ItemType PEONY = init();
     @Nullable
-    public static final ItemType OXIDIZED_COPPER_GRATE = get("minecraft:oxidized_copper_grate");
+    public static final ItemType PETRIFIED_OAK_SLAB = init();
     @Nullable
-    public static final ItemType OXIDIZED_COPPER_LANTERN = get("minecraft:oxidized_copper_lantern");
+    public static final ItemType PHANTOM_MEMBRANE = init();
     @Nullable
-    public static final ItemType OXIDIZED_COPPER_TRAPDOOR = get("minecraft:oxidized_copper_trapdoor");
+    public static final ItemType PHANTOM_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType OXIDIZED_CUT_COPPER = get("minecraft:oxidized_cut_copper");
+    public static final ItemType PIG_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType OXIDIZED_CUT_COPPER_SLAB = get("minecraft:oxidized_cut_copper_slab");
+    public static final ItemType PIGLIN_BANNER_PATTERN = init();
     @Nullable
-    public static final ItemType OXIDIZED_CUT_COPPER_STAIRS = get("minecraft:oxidized_cut_copper_stairs");
+    public static final ItemType PIGLIN_BRUTE_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType OXIDIZED_LIGHTNING_ROD = get("minecraft:oxidized_lightning_rod");
+    public static final ItemType PIGLIN_HEAD = init();
     @Nullable
-    public static final ItemType PACKED_ICE = get("minecraft:packed_ice");
+    public static final ItemType PIGLIN_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType PACKED_MUD = get("minecraft:packed_mud");
+    public static final ItemType PILLAGER_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType PAINTING = get("minecraft:painting");
+    public static final ItemType PINK_BANNER = init();
     @Nullable
-    public static final ItemType PALE_HANGING_MOSS = get("minecraft:pale_hanging_moss");
+    public static final ItemType PINK_BED = init();
+    @Nullable public static final ItemType PINK_BUNDLE = init();
     @Nullable
-    public static final ItemType PALE_MOSS_BLOCK = get("minecraft:pale_moss_block");
+    public static final ItemType PINK_CANDLE = init();
     @Nullable
-    public static final ItemType PALE_MOSS_CARPET = get("minecraft:pale_moss_carpet");
+    public static final ItemType PINK_CARPET = init();
     @Nullable
-    public static final ItemType PALE_OAK_BOAT = get("minecraft:pale_oak_boat");
+    public static final ItemType PINK_CONCRETE = init();
     @Nullable
-    public static final ItemType PALE_OAK_BUTTON = get("minecraft:pale_oak_button");
+    public static final ItemType PINK_CONCRETE_POWDER = init();
     @Nullable
-    public static final ItemType PALE_OAK_CHEST_BOAT = get("minecraft:pale_oak_chest_boat");
+    public static final ItemType PINK_DYE = init();
     @Nullable
-    public static final ItemType PALE_OAK_DOOR = get("minecraft:pale_oak_door");
+    public static final ItemType PINK_GLAZED_TERRACOTTA = init();
     @Nullable
-    public static final ItemType PALE_OAK_FENCE = get("minecraft:pale_oak_fence");
+    public static final ItemType PINK_PETALS = init();
     @Nullable
-    public static final ItemType PALE_OAK_FENCE_GATE = get("minecraft:pale_oak_fence_gate");
+    public static final ItemType PINK_SHULKER_BOX = init();
     @Nullable
-    public static final ItemType PALE_OAK_HANGING_SIGN = get("minecraft:pale_oak_hanging_sign");
+    public static final ItemType PINK_STAINED_GLASS = init();
     @Nullable
-    public static final ItemType PALE_OAK_LEAVES = get("minecraft:pale_oak_leaves");
+    public static final ItemType PINK_STAINED_GLASS_PANE = init();
     @Nullable
-    public static final ItemType PALE_OAK_LOG = get("minecraft:pale_oak_log");
+    public static final ItemType PINK_TERRACOTTA = init();
     @Nullable
-    public static final ItemType PALE_OAK_PLANKS = get("minecraft:pale_oak_planks");
+    public static final ItemType PINK_TULIP = init();
     @Nullable
-    public static final ItemType PALE_OAK_PRESSURE_PLATE = get("minecraft:pale_oak_pressure_plate");
+    public static final ItemType PINK_WOOL = init();
     @Nullable
-    public static final ItemType PALE_OAK_SAPLING = get("minecraft:pale_oak_sapling");
+    public static final ItemType PISTON = init();
     @Nullable
-    public static final ItemType PALE_OAK_SHELF = get("minecraft:pale_oak_shelf");
+    public static final ItemType PITCHER_PLANT = init();
     @Nullable
-    public static final ItemType PALE_OAK_SIGN = get("minecraft:pale_oak_sign");
+    public static final ItemType PITCHER_POD = init();
     @Nullable
-    public static final ItemType PALE_OAK_SLAB = get("minecraft:pale_oak_slab");
+    public static final ItemType PLAYER_HEAD = init();
     @Nullable
-    public static final ItemType PALE_OAK_STAIRS = get("minecraft:pale_oak_stairs");
+    public static final ItemType PLENTY_POTTERY_SHERD = init();
     @Nullable
-    public static final ItemType PALE_OAK_TRAPDOOR = get("minecraft:pale_oak_trapdoor");
+    public static final ItemType PODZOL = init();
     @Nullable
-    public static final ItemType PALE_OAK_WOOD = get("minecraft:pale_oak_wood");
+    public static final ItemType POINTED_DRIPSTONE = init();
     @Nullable
-    public static final ItemType PANDA_SPAWN_EGG = get("minecraft:panda_spawn_egg");
+    public static final ItemType POISONOUS_POTATO = init();
     @Nullable
-    public static final ItemType PAPER = get("minecraft:paper");
+    public static final ItemType POLAR_BEAR_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType PARCHED_SPAWN_EGG = get("minecraft:parched_spawn_egg");
+    public static final ItemType POLISHED_ANDESITE = init();
     @Nullable
-    public static final ItemType PARROT_SPAWN_EGG = get("minecraft:parrot_spawn_egg");
+    public static final ItemType POLISHED_ANDESITE_SLAB = init();
     @Nullable
-    public static final ItemType PEARLESCENT_FROGLIGHT = get("minecraft:pearlescent_froglight");
+    public static final ItemType POLISHED_ANDESITE_STAIRS = init();
     @Nullable
-    public static final ItemType PEONY = get("minecraft:peony");
+    public static final ItemType POLISHED_BASALT = init();
     @Nullable
-    public static final ItemType PETRIFIED_OAK_SLAB = get("minecraft:petrified_oak_slab");
+    public static final ItemType POLISHED_BLACKSTONE = init();
     @Nullable
-    public static final ItemType PHANTOM_MEMBRANE = get("minecraft:phantom_membrane");
+    public static final ItemType POLISHED_BLACKSTONE_BRICK_SLAB = init();
     @Nullable
-    public static final ItemType PHANTOM_SPAWN_EGG = get("minecraft:phantom_spawn_egg");
+    public static final ItemType POLISHED_BLACKSTONE_BRICK_STAIRS = init();
     @Nullable
-    public static final ItemType PIG_SPAWN_EGG = get("minecraft:pig_spawn_egg");
+    public static final ItemType POLISHED_BLACKSTONE_BRICK_WALL = init();
     @Nullable
-    public static final ItemType PIGLIN_BANNER_PATTERN = get("minecraft:piglin_banner_pattern");
+    public static final ItemType POLISHED_BLACKSTONE_BRICKS = init();
     @Nullable
-    public static final ItemType PIGLIN_BRUTE_SPAWN_EGG = get("minecraft:piglin_brute_spawn_egg");
+    public static final ItemType POLISHED_BLACKSTONE_BUTTON = init();
     @Nullable
-    public static final ItemType PIGLIN_HEAD = get("minecraft:piglin_head");
+    public static final ItemType POLISHED_BLACKSTONE_PRESSURE_PLATE = init();
     @Nullable
-    public static final ItemType PIGLIN_SPAWN_EGG = get("minecraft:piglin_spawn_egg");
+    public static final ItemType POLISHED_BLACKSTONE_SLAB = init();
     @Nullable
-    public static final ItemType PILLAGER_SPAWN_EGG = get("minecraft:pillager_spawn_egg");
+    public static final ItemType POLISHED_BLACKSTONE_STAIRS = init();
     @Nullable
-    public static final ItemType PINK_BANNER = get("minecraft:pink_banner");
+    public static final ItemType POLISHED_BLACKSTONE_WALL = init();
     @Nullable
-    public static final ItemType PINK_BED = get("minecraft:pink_bed");
+    public static final ItemType POLISHED_CINNABAR = init();
     @Nullable
-    public static final ItemType PINK_BUNDLE = get("minecraft:pink_bundle");
+    public static final ItemType POLISHED_CINNABAR_SLAB = init();
     @Nullable
-    public static final ItemType PINK_CANDLE = get("minecraft:pink_candle");
+    public static final ItemType POLISHED_CINNABAR_STAIRS = init();
     @Nullable
-    public static final ItemType PINK_CARPET = get("minecraft:pink_carpet");
+    public static final ItemType POLISHED_CINNABAR_WALL = init();
     @Nullable
-    public static final ItemType PINK_CONCRETE = get("minecraft:pink_concrete");
+    public static final ItemType POLISHED_DEEPSLATE = init();
     @Nullable
-    public static final ItemType PINK_CONCRETE_POWDER = get("minecraft:pink_concrete_powder");
+    public static final ItemType POLISHED_DEEPSLATE_SLAB = init();
     @Nullable
-    public static final ItemType PINK_DYE = get("minecraft:pink_dye");
+    public static final ItemType POLISHED_DEEPSLATE_STAIRS = init();
     @Nullable
-    public static final ItemType PINK_GLAZED_TERRACOTTA = get("minecraft:pink_glazed_terracotta");
+    public static final ItemType POLISHED_DEEPSLATE_WALL = init();
     @Nullable
-    public static final ItemType PINK_HARNESS = get("minecraft:pink_harness");
+    public static final ItemType POLISHED_DIORITE = init();
     @Nullable
-    public static final ItemType PINK_PETALS = get("minecraft:pink_petals");
+    public static final ItemType POLISHED_DIORITE_SLAB = init();
     @Nullable
-    public static final ItemType PINK_SHULKER_BOX = get("minecraft:pink_shulker_box");
+    public static final ItemType POLISHED_DIORITE_STAIRS = init();
     @Nullable
-    public static final ItemType PINK_STAINED_GLASS = get("minecraft:pink_stained_glass");
+    public static final ItemType POLISHED_GRANITE = init();
     @Nullable
-    public static final ItemType PINK_STAINED_GLASS_PANE = get("minecraft:pink_stained_glass_pane");
+    public static final ItemType POLISHED_GRANITE_SLAB = init();
     @Nullable
-    public static final ItemType PINK_TERRACOTTA = get("minecraft:pink_terracotta");
+    public static final ItemType POLISHED_GRANITE_STAIRS = init();
     @Nullable
-    public static final ItemType PINK_TULIP = get("minecraft:pink_tulip");
+    public static final ItemType POLISHED_SULFUR = init();
     @Nullable
-    public static final ItemType PINK_WOOL = get("minecraft:pink_wool");
+    public static final ItemType POLISHED_SULFUR_SLAB = init();
     @Nullable
-    public static final ItemType PISTON = get("minecraft:piston");
+    public static final ItemType POLISHED_SULFUR_STAIRS = init();
     @Nullable
-    public static final ItemType PITCHER_PLANT = get("minecraft:pitcher_plant");
+    public static final ItemType POLISHED_SULFUR_WALL = init();
     @Nullable
-    public static final ItemType PITCHER_POD = get("minecraft:pitcher_pod");
+    public static final ItemType POLISHED_TUFF = init();
     @Nullable
-    public static final ItemType PLAYER_HEAD = get("minecraft:player_head");
+    public static final ItemType POLISHED_TUFF_SLAB = init();
     @Nullable
-    public static final ItemType PLENTY_POTTERY_SHERD = get("minecraft:plenty_pottery_sherd");
+    public static final ItemType POLISHED_TUFF_STAIRS = init();
     @Nullable
-    public static final ItemType PODZOL = get("minecraft:podzol");
+    public static final ItemType POLISHED_TUFF_WALL = init();
     @Nullable
-    public static final ItemType POINTED_DRIPSTONE = get("minecraft:pointed_dripstone");
+    public static final ItemType POPPED_CHORUS_FRUIT = init();
     @Nullable
-    public static final ItemType POISONOUS_POTATO = get("minecraft:poisonous_potato");
+    public static final ItemType POPPY = init();
     @Nullable
-    public static final ItemType POLAR_BEAR_SPAWN_EGG = get("minecraft:polar_bear_spawn_egg");
+    public static final ItemType PORKCHOP = init();
     @Nullable
-    public static final ItemType POLISHED_ANDESITE = get("minecraft:polished_andesite");
+    public static final ItemType POTATO = init();
     @Nullable
-    public static final ItemType POLISHED_ANDESITE_SLAB = get("minecraft:polished_andesite_slab");
+    public static final ItemType POTENT_SULFUR = init();
     @Nullable
-    public static final ItemType POLISHED_ANDESITE_STAIRS = get("minecraft:polished_andesite_stairs");
+    public static final ItemType POTION = init();
     @Nullable
-    public static final ItemType POLISHED_BASALT = get("minecraft:polished_basalt");
+    public static final ItemType POWDER_SNOW_BUCKET = init();
     @Nullable
-    public static final ItemType POLISHED_BLACKSTONE = get("minecraft:polished_blackstone");
+    public static final ItemType POWERED_RAIL = init();
     @Nullable
-    public static final ItemType POLISHED_BLACKSTONE_BRICK_SLAB = get("minecraft:polished_blackstone_brick_slab");
+    public static final ItemType PRISMARINE = init();
     @Nullable
-    public static final ItemType POLISHED_BLACKSTONE_BRICK_STAIRS = get("minecraft:polished_blackstone_brick_stairs");
+    public static final ItemType PRISMARINE_BRICK_SLAB = init();
     @Nullable
-    public static final ItemType POLISHED_BLACKSTONE_BRICK_WALL = get("minecraft:polished_blackstone_brick_wall");
+    public static final ItemType PRISMARINE_BRICK_STAIRS = init();
     @Nullable
-    public static final ItemType POLISHED_BLACKSTONE_BRICKS = get("minecraft:polished_blackstone_bricks");
+    public static final ItemType PRISMARINE_BRICKS = init();
     @Nullable
-    public static final ItemType POLISHED_BLACKSTONE_BUTTON = get("minecraft:polished_blackstone_button");
+    public static final ItemType PRISMARINE_CRYSTALS = init();
     @Nullable
-    public static final ItemType POLISHED_BLACKSTONE_PRESSURE_PLATE = get("minecraft:polished_blackstone_pressure_plate");
+    public static final ItemType PRISMARINE_SHARD = init();
     @Nullable
-    public static final ItemType POLISHED_BLACKSTONE_SLAB = get("minecraft:polished_blackstone_slab");
+    public static final ItemType PRISMARINE_SLAB = init();
     @Nullable
-    public static final ItemType POLISHED_BLACKSTONE_STAIRS = get("minecraft:polished_blackstone_stairs");
+    public static final ItemType PRISMARINE_STAIRS = init();
     @Nullable
-    public static final ItemType POLISHED_BLACKSTONE_WALL = get("minecraft:polished_blackstone_wall");
+    public static final ItemType PRISMARINE_WALL = init();
     @Nullable
-    public static final ItemType POLISHED_CINNABAR = get("minecraft:polished_cinnabar");
+    public static final ItemType PRIZE_POTTERY_SHERD = init();
     @Nullable
-    public static final ItemType POLISHED_CINNABAR_SLAB = get("minecraft:polished_cinnabar_slab");
+    public static final ItemType PUFFERFISH = init();
     @Nullable
-    public static final ItemType POLISHED_CINNABAR_STAIRS = get("minecraft:polished_cinnabar_stairs");
+    public static final ItemType PUFFERFISH_BUCKET = init();
     @Nullable
-    public static final ItemType POLISHED_CINNABAR_WALL = get("minecraft:polished_cinnabar_wall");
+    public static final ItemType PUFFERFISH_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType POLISHED_DEEPSLATE = get("minecraft:polished_deepslate");
+    public static final ItemType PUMPKIN = init();
     @Nullable
-    public static final ItemType POLISHED_DEEPSLATE_SLAB = get("minecraft:polished_deepslate_slab");
+    public static final ItemType PUMPKIN_PIE = init();
     @Nullable
-    public static final ItemType POLISHED_DEEPSLATE_STAIRS = get("minecraft:polished_deepslate_stairs");
+    public static final ItemType PUMPKIN_SEEDS = init();
     @Nullable
-    public static final ItemType POLISHED_DEEPSLATE_WALL = get("minecraft:polished_deepslate_wall");
+    public static final ItemType PURPLE_BANNER = init();
     @Nullable
-    public static final ItemType POLISHED_DIORITE = get("minecraft:polished_diorite");
+    public static final ItemType PURPLE_BED = init();
+    @Nullable public static final ItemType PURPLE_BUNDLE = init();
     @Nullable
-    public static final ItemType POLISHED_DIORITE_SLAB = get("minecraft:polished_diorite_slab");
+    public static final ItemType PURPLE_CANDLE = init();
     @Nullable
-    public static final ItemType POLISHED_DIORITE_STAIRS = get("minecraft:polished_diorite_stairs");
+    public static final ItemType PURPLE_CARPET = init();
     @Nullable
-    public static final ItemType POLISHED_GRANITE = get("minecraft:polished_granite");
+    public static final ItemType PURPLE_CONCRETE = init();
     @Nullable
-    public static final ItemType POLISHED_GRANITE_SLAB = get("minecraft:polished_granite_slab");
+    public static final ItemType PURPLE_CONCRETE_POWDER = init();
     @Nullable
-    public static final ItemType POLISHED_GRANITE_STAIRS = get("minecraft:polished_granite_stairs");
+    public static final ItemType PURPLE_DYE = init();
     @Nullable
-    public static final ItemType POLISHED_SULFUR = get("minecraft:polished_sulfur");
+    public static final ItemType PURPLE_GLAZED_TERRACOTTA = init();
     @Nullable
-    public static final ItemType POLISHED_SULFUR_SLAB = get("minecraft:polished_sulfur_slab");
+    public static final ItemType PURPLE_SHULKER_BOX = init();
     @Nullable
-    public static final ItemType POLISHED_SULFUR_STAIRS = get("minecraft:polished_sulfur_stairs");
+    public static final ItemType PURPLE_STAINED_GLASS = init();
     @Nullable
-    public static final ItemType POLISHED_SULFUR_WALL = get("minecraft:polished_sulfur_wall");
+    public static final ItemType PURPLE_STAINED_GLASS_PANE = init();
     @Nullable
-    public static final ItemType POLISHED_TUFF = get("minecraft:polished_tuff");
+    public static final ItemType PURPLE_TERRACOTTA = init();
     @Nullable
-    public static final ItemType POLISHED_TUFF_SLAB = get("minecraft:polished_tuff_slab");
+    public static final ItemType PURPLE_WOOL = init();
     @Nullable
-    public static final ItemType POLISHED_TUFF_STAIRS = get("minecraft:polished_tuff_stairs");
+    public static final ItemType PURPUR_BLOCK = init();
     @Nullable
-    public static final ItemType POLISHED_TUFF_WALL = get("minecraft:polished_tuff_wall");
+    public static final ItemType PURPUR_PILLAR = init();
     @Nullable
-    public static final ItemType POPPED_CHORUS_FRUIT = get("minecraft:popped_chorus_fruit");
+    public static final ItemType PURPUR_SLAB = init();
     @Nullable
-    public static final ItemType POPPY = get("minecraft:poppy");
+    public static final ItemType PURPUR_STAIRS = init();
     @Nullable
-    public static final ItemType PORKCHOP = get("minecraft:porkchop");
+    public static final ItemType QUARTZ = init();
     @Nullable
-    public static final ItemType POTATO = get("minecraft:potato");
+    public static final ItemType QUARTZ_BLOCK = init();
     @Nullable
-    public static final ItemType POTENT_SULFUR = get("minecraft:potent_sulfur");
+    public static final ItemType QUARTZ_BRICKS = init();
     @Nullable
-    public static final ItemType POTION = get("minecraft:potion");
+    public static final ItemType QUARTZ_PILLAR = init();
     @Nullable
-    public static final ItemType POWDER_SNOW_BUCKET = get("minecraft:powder_snow_bucket");
+    public static final ItemType QUARTZ_SLAB = init();
     @Nullable
-    public static final ItemType POWERED_RAIL = get("minecraft:powered_rail");
+    public static final ItemType QUARTZ_STAIRS = init();
     @Nullable
-    public static final ItemType PRISMARINE = get("minecraft:prismarine");
+    public static final ItemType RABBIT = init();
     @Nullable
-    public static final ItemType PRISMARINE_BRICK_SLAB = get("minecraft:prismarine_brick_slab");
+    public static final ItemType RABBIT_FOOT = init();
     @Nullable
-    public static final ItemType PRISMARINE_BRICK_STAIRS = get("minecraft:prismarine_brick_stairs");
+    public static final ItemType RABBIT_HIDE = init();
     @Nullable
-    public static final ItemType PRISMARINE_BRICKS = get("minecraft:prismarine_bricks");
+    public static final ItemType RABBIT_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType PRISMARINE_CRYSTALS = get("minecraft:prismarine_crystals");
+    public static final ItemType RABBIT_STEW = init();
     @Nullable
-    public static final ItemType PRISMARINE_SHARD = get("minecraft:prismarine_shard");
+    public static final ItemType RAIL = init();
     @Nullable
-    public static final ItemType PRISMARINE_SLAB = get("minecraft:prismarine_slab");
+    public static final ItemType RAISER_ARMOR_TRIM_SMITHING_TEMPLATE = init();
     @Nullable
-    public static final ItemType PRISMARINE_STAIRS = get("minecraft:prismarine_stairs");
+    public static final ItemType RAVAGER_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType PRISMARINE_WALL = get("minecraft:prismarine_wall");
+    public static final ItemType RAW_COPPER = init();
     @Nullable
-    public static final ItemType PRIZE_POTTERY_SHERD = get("minecraft:prize_pottery_sherd");
+    public static final ItemType RAW_COPPER_BLOCK = init();
     @Nullable
-    public static final ItemType PUFFERFISH = get("minecraft:pufferfish");
+    public static final ItemType RAW_GOLD = init();
     @Nullable
-    public static final ItemType PUFFERFISH_BUCKET = get("minecraft:pufferfish_bucket");
+    public static final ItemType RAW_GOLD_BLOCK = init();
     @Nullable
-    public static final ItemType PUFFERFISH_SPAWN_EGG = get("minecraft:pufferfish_spawn_egg");
+    public static final ItemType RAW_IRON = init();
     @Nullable
-    public static final ItemType PUMPKIN = get("minecraft:pumpkin");
+    public static final ItemType RAW_IRON_BLOCK = init();
     @Nullable
-    public static final ItemType PUMPKIN_PIE = get("minecraft:pumpkin_pie");
+    public static final ItemType RECOVERY_COMPASS = init();
     @Nullable
-    public static final ItemType PUMPKIN_SEEDS = get("minecraft:pumpkin_seeds");
+    public static final ItemType RED_BANNER = init();
     @Nullable
-    public static final ItemType PURPLE_BANNER = get("minecraft:purple_banner");
+    public static final ItemType RED_BED = init();
+    @Nullable public static final ItemType RED_BUNDLE = init();
     @Nullable
-    public static final ItemType PURPLE_BED = get("minecraft:purple_bed");
+    public static final ItemType RED_CANDLE = init();
     @Nullable
-    public static final ItemType PURPLE_BUNDLE = get("minecraft:purple_bundle");
+    public static final ItemType RED_CARPET = init();
     @Nullable
-    public static final ItemType PURPLE_CANDLE = get("minecraft:purple_candle");
+    public static final ItemType RED_CONCRETE = init();
     @Nullable
-    public static final ItemType PURPLE_CARPET = get("minecraft:purple_carpet");
+    public static final ItemType RED_CONCRETE_POWDER = init();
     @Nullable
-    public static final ItemType PURPLE_CONCRETE = get("minecraft:purple_concrete");
+    public static final ItemType RED_DYE = init();
     @Nullable
-    public static final ItemType PURPLE_CONCRETE_POWDER = get("minecraft:purple_concrete_powder");
+    public static final ItemType RED_GLAZED_TERRACOTTA = init();
     @Nullable
-    public static final ItemType PURPLE_DYE = get("minecraft:purple_dye");
+    public static final ItemType RED_MUSHROOM = init();
     @Nullable
-    public static final ItemType PURPLE_GLAZED_TERRACOTTA = get("minecraft:purple_glazed_terracotta");
+    public static final ItemType RED_MUSHROOM_BLOCK = init();
     @Nullable
-    public static final ItemType PURPLE_HARNESS = get("minecraft:purple_harness");
+    public static final ItemType RED_NETHER_BRICK_SLAB = init();
     @Nullable
-    public static final ItemType PURPLE_SHULKER_BOX = get("minecraft:purple_shulker_box");
+    public static final ItemType RED_NETHER_BRICK_STAIRS = init();
     @Nullable
-    public static final ItemType PURPLE_STAINED_GLASS = get("minecraft:purple_stained_glass");
+    public static final ItemType RED_NETHER_BRICK_WALL = init();
     @Nullable
-    public static final ItemType PURPLE_STAINED_GLASS_PANE = get("minecraft:purple_stained_glass_pane");
+    public static final ItemType RED_NETHER_BRICKS = init();
     @Nullable
-    public static final ItemType PURPLE_TERRACOTTA = get("minecraft:purple_terracotta");
+    public static final ItemType RED_SAND = init();
     @Nullable
-    public static final ItemType PURPLE_WOOL = get("minecraft:purple_wool");
+    public static final ItemType RED_SANDSTONE = init();
     @Nullable
-    public static final ItemType PURPUR_BLOCK = get("minecraft:purpur_block");
+    public static final ItemType RED_SANDSTONE_SLAB = init();
     @Nullable
-    public static final ItemType PURPUR_PILLAR = get("minecraft:purpur_pillar");
+    public static final ItemType RED_SANDSTONE_STAIRS = init();
     @Nullable
-    public static final ItemType PURPUR_SLAB = get("minecraft:purpur_slab");
+    public static final ItemType RED_SANDSTONE_WALL = init();
     @Nullable
-    public static final ItemType PURPUR_STAIRS = get("minecraft:purpur_stairs");
+    public static final ItemType RED_SHULKER_BOX = init();
     @Nullable
-    public static final ItemType QUARTZ = get("minecraft:quartz");
+    public static final ItemType RED_STAINED_GLASS = init();
     @Nullable
-    public static final ItemType QUARTZ_BLOCK = get("minecraft:quartz_block");
+    public static final ItemType RED_STAINED_GLASS_PANE = init();
     @Nullable
-    public static final ItemType QUARTZ_BRICKS = get("minecraft:quartz_bricks");
+    public static final ItemType RED_TERRACOTTA = init();
     @Nullable
-    public static final ItemType QUARTZ_PILLAR = get("minecraft:quartz_pillar");
+    public static final ItemType RED_TULIP = init();
     @Nullable
-    public static final ItemType QUARTZ_SLAB = get("minecraft:quartz_slab");
+    public static final ItemType RED_WOOL = init();
     @Nullable
-    public static final ItemType QUARTZ_STAIRS = get("minecraft:quartz_stairs");
+    public static final ItemType REDSTONE = init();
     @Nullable
-    public static final ItemType RABBIT = get("minecraft:rabbit");
+    public static final ItemType REDSTONE_BLOCK = init();
     @Nullable
-    public static final ItemType RABBIT_FOOT = get("minecraft:rabbit_foot");
+    public static final ItemType REDSTONE_LAMP = init();
     @Nullable
-    public static final ItemType RABBIT_HIDE = get("minecraft:rabbit_hide");
+    public static final ItemType REDSTONE_ORE = init();
     @Nullable
-    public static final ItemType RABBIT_SPAWN_EGG = get("minecraft:rabbit_spawn_egg");
+    public static final ItemType REDSTONE_TORCH = init();
     @Nullable
-    public static final ItemType RABBIT_STEW = get("minecraft:rabbit_stew");
+    public static final ItemType REINFORCED_DEEPSLATE = init();
     @Nullable
-    public static final ItemType RAIL = get("minecraft:rail");
+    public static final ItemType REPEATER = init();
     @Nullable
-    public static final ItemType RAISER_ARMOR_TRIM_SMITHING_TEMPLATE = get("minecraft:raiser_armor_trim_smithing_template");
+    public static final ItemType REPEATING_COMMAND_BLOCK = init();
     @Nullable
-    public static final ItemType RAVAGER_SPAWN_EGG = get("minecraft:ravager_spawn_egg");
+    public static final ItemType RESIN_BLOCK = init();
     @Nullable
-    public static final ItemType RAW_COPPER = get("minecraft:raw_copper");
+    public static final ItemType RESIN_BRICK = init();
     @Nullable
-    public static final ItemType RAW_COPPER_BLOCK = get("minecraft:raw_copper_block");
+    public static final ItemType RESIN_BRICK_SLAB = init();
     @Nullable
-    public static final ItemType RAW_GOLD = get("minecraft:raw_gold");
+    public static final ItemType RESIN_BRICK_STAIRS = init();
     @Nullable
-    public static final ItemType RAW_GOLD_BLOCK = get("minecraft:raw_gold_block");
+    public static final ItemType RESIN_BRICK_WALL = init();
     @Nullable
-    public static final ItemType RAW_IRON = get("minecraft:raw_iron");
+    public static final ItemType RESIN_BRICKS = init();
     @Nullable
-    public static final ItemType RAW_IRON_BLOCK = get("minecraft:raw_iron_block");
+    public static final ItemType RESIN_CLUMP = init();
     @Nullable
-    public static final ItemType RECOVERY_COMPASS = get("minecraft:recovery_compass");
+    public static final ItemType RESPAWN_ANCHOR = init();
     @Nullable
-    public static final ItemType RED_BANNER = get("minecraft:red_banner");
+    public static final ItemType RIB_ARMOR_TRIM_SMITHING_TEMPLATE = init();
     @Nullable
-    public static final ItemType RED_BED = get("minecraft:red_bed");
+    public static final ItemType ROOTED_DIRT = init();
     @Nullable
-    public static final ItemType RED_BUNDLE = get("minecraft:red_bundle");
-    @Nullable
-    public static final ItemType RED_CANDLE = get("minecraft:red_candle");
-    @Nullable
-    public static final ItemType RED_CARPET = get("minecraft:red_carpet");
-    @Nullable
-    public static final ItemType RED_CONCRETE = get("minecraft:red_concrete");
-    @Nullable
-    public static final ItemType RED_CONCRETE_POWDER = get("minecraft:red_concrete_powder");
-    @Nullable
-    public static final ItemType RED_DYE = get("minecraft:red_dye");
-    @Nullable
-    public static final ItemType RED_GLAZED_TERRACOTTA = get("minecraft:red_glazed_terracotta");
-    @Nullable
-    public static final ItemType RED_HARNESS = get("minecraft:red_harness");
-    @Nullable
-    public static final ItemType RED_MUSHROOM = get("minecraft:red_mushroom");
-    @Nullable
-    public static final ItemType RED_MUSHROOM_BLOCK = get("minecraft:red_mushroom_block");
-    @Nullable
-    public static final ItemType RED_NETHER_BRICK_SLAB = get("minecraft:red_nether_brick_slab");
-    @Nullable
-    public static final ItemType RED_NETHER_BRICK_STAIRS = get("minecraft:red_nether_brick_stairs");
-    @Nullable
-    public static final ItemType RED_NETHER_BRICK_WALL = get("minecraft:red_nether_brick_wall");
-    @Nullable
-    public static final ItemType RED_NETHER_BRICKS = get("minecraft:red_nether_bricks");
-    @Nullable
-    public static final ItemType RED_SAND = get("minecraft:red_sand");
-    @Nullable
-    public static final ItemType RED_SANDSTONE = get("minecraft:red_sandstone");
-    @Nullable
-    public static final ItemType RED_SANDSTONE_SLAB = get("minecraft:red_sandstone_slab");
-    @Nullable
-    public static final ItemType RED_SANDSTONE_STAIRS = get("minecraft:red_sandstone_stairs");
-    @Nullable
-    public static final ItemType RED_SANDSTONE_WALL = get("minecraft:red_sandstone_wall");
-    @Nullable
-    public static final ItemType RED_SHULKER_BOX = get("minecraft:red_shulker_box");
-    @Nullable
-    public static final ItemType RED_STAINED_GLASS = get("minecraft:red_stained_glass");
-    @Nullable
-    public static final ItemType RED_STAINED_GLASS_PANE = get("minecraft:red_stained_glass_pane");
-    @Nullable
-    public static final ItemType RED_TERRACOTTA = get("minecraft:red_terracotta");
-    @Nullable
-    public static final ItemType RED_TULIP = get("minecraft:red_tulip");
-    @Nullable
-    public static final ItemType RED_WOOL = get("minecraft:red_wool");
-    @Nullable
-    public static final ItemType REDSTONE = get("minecraft:redstone");
-    @Nullable
-    public static final ItemType REDSTONE_BLOCK = get("minecraft:redstone_block");
-    @Nullable
-    public static final ItemType REDSTONE_LAMP = get("minecraft:redstone_lamp");
-    @Nullable
-    public static final ItemType REDSTONE_ORE = get("minecraft:redstone_ore");
-    @Nullable
-    public static final ItemType REDSTONE_TORCH = get("minecraft:redstone_torch");
-    @Nullable
-    public static final ItemType REINFORCED_DEEPSLATE = get("minecraft:reinforced_deepslate");
-    @Nullable
-    public static final ItemType REPEATER = get("minecraft:repeater");
-    @Nullable
-    public static final ItemType REPEATING_COMMAND_BLOCK = get("minecraft:repeating_command_block");
-    @Nullable
-    public static final ItemType RESIN_BLOCK = get("minecraft:resin_block");
-    @Nullable
-    public static final ItemType RESIN_BRICK = get("minecraft:resin_brick");
-    @Nullable
-    public static final ItemType RESIN_BRICK_SLAB = get("minecraft:resin_brick_slab");
-    @Nullable
-    public static final ItemType RESIN_BRICK_STAIRS = get("minecraft:resin_brick_stairs");
-    @Nullable
-    public static final ItemType RESIN_BRICK_WALL = get("minecraft:resin_brick_wall");
-    @Nullable
-    public static final ItemType RESIN_BRICKS = get("minecraft:resin_bricks");
-    @Nullable
-    public static final ItemType RESIN_CLUMP = get("minecraft:resin_clump");
-    @Nullable
-    public static final ItemType RESPAWN_ANCHOR = get("minecraft:respawn_anchor");
-    @Nullable
-    public static final ItemType RIB_ARMOR_TRIM_SMITHING_TEMPLATE = get("minecraft:rib_armor_trim_smithing_template");
-    @Nullable
-    public static final ItemType ROOTED_DIRT = get("minecraft:rooted_dirt");
-    @Nullable
-    public static final ItemType ROSE_BUSH = get("minecraft:rose_bush");
+    public static final ItemType ROSE_BUSH = init();
     @Deprecated
     @Nullable
-    public static final ItemType ROSE_RED = get("minecraft:rose_red");
+    public static final ItemType ROSE_RED = init();
     @Nullable
-    public static final ItemType ROTTEN_FLESH = get("minecraft:rotten_flesh");
+    public static final ItemType ROTTEN_FLESH = init();
     @Nullable
-    public static final ItemType SADDLE = get("minecraft:saddle");
+    public static final ItemType SADDLE = init();
     @Nullable
-    public static final ItemType SALMON = get("minecraft:salmon");
+    public static final ItemType SALMON = init();
     @Nullable
-    public static final ItemType SALMON_BUCKET = get("minecraft:salmon_bucket");
+    public static final ItemType SALMON_BUCKET = init();
     @Nullable
-    public static final ItemType SALMON_SPAWN_EGG = get("minecraft:salmon_spawn_egg");
+    public static final ItemType SALMON_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType SAND = get("minecraft:sand");
+    public static final ItemType SAND = init();
     @Nullable
-    public static final ItemType SANDSTONE = get("minecraft:sandstone");
+    public static final ItemType SANDSTONE = init();
     @Nullable
-    public static final ItemType SANDSTONE_SLAB = get("minecraft:sandstone_slab");
+    public static final ItemType SANDSTONE_SLAB = init();
     @Nullable
-    public static final ItemType SANDSTONE_STAIRS = get("minecraft:sandstone_stairs");
+    public static final ItemType SANDSTONE_STAIRS = init();
     @Nullable
-    public static final ItemType SANDSTONE_WALL = get("minecraft:sandstone_wall");
+    public static final ItemType SANDSTONE_WALL = init();
     @Nullable
-    public static final ItemType SCAFFOLDING = get("minecraft:scaffolding");
+    public static final ItemType SCAFFOLDING = init();
     @Nullable
-    public static final ItemType SCRAPE_POTTERY_SHERD = get("minecraft:scrape_pottery_sherd");
+    public static final ItemType SCRAPE_POTTERY_SHERD = init();
     @Nullable
-    public static final ItemType SCULK = get("minecraft:sculk");
+    public static final ItemType SCULK = init();
     @Nullable
-    public static final ItemType SCULK_CATALYST = get("minecraft:sculk_catalyst");
+    public static final ItemType SCULK_CATALYST = init();
     @Nullable
-    public static final ItemType SCULK_SENSOR = get("minecraft:sculk_sensor");
+    public static final ItemType SCULK_SENSOR = init();
     @Nullable
-    public static final ItemType SCULK_SHRIEKER = get("minecraft:sculk_shrieker");
+    public static final ItemType SCULK_SHRIEKER = init();
     @Nullable
-    public static final ItemType SCULK_VEIN = get("minecraft:sculk_vein");
+    public static final ItemType SCULK_VEIN = init();
     @Nullable
     @Deprecated
-    public static final ItemType SCUTE = get("minecraft:scute");
+    public static final ItemType SCUTE = init();
     @Nullable
-    public static final ItemType SEA_LANTERN = get("minecraft:sea_lantern");
+    public static final ItemType SEA_LANTERN = init();
     @Nullable
-    public static final ItemType SEA_PICKLE = get("minecraft:sea_pickle");
+    public static final ItemType SEA_PICKLE = init();
     @Nullable
-    public static final ItemType SEAGRASS = get("minecraft:seagrass");
+    public static final ItemType SEAGRASS = init();
     @Nullable
-    public static final ItemType SENTRY_ARMOR_TRIM_SMITHING_TEMPLATE = get("minecraft:sentry_armor_trim_smithing_template");
+    public static final ItemType SENTRY_ARMOR_TRIM_SMITHING_TEMPLATE = init();
     @Nullable
-    public static final ItemType SHAPER_ARMOR_TRIM_SMITHING_TEMPLATE = get("minecraft:shaper_armor_trim_smithing_template");
+    public static final ItemType SHAPER_ARMOR_TRIM_SMITHING_TEMPLATE = init();
     @Nullable
-    public static final ItemType SHEAF_POTTERY_SHERD = get("minecraft:sheaf_pottery_sherd");
+    public static final ItemType SHEAF_POTTERY_SHERD = init();
     @Nullable
-    public static final ItemType SHEARS = get("minecraft:shears");
+    public static final ItemType SHEARS = init();
     @Nullable
-    public static final ItemType SHEEP_SPAWN_EGG = get("minecraft:sheep_spawn_egg");
+    public static final ItemType SHEEP_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType SHELTER_POTTERY_SHERD = get("minecraft:shelter_pottery_sherd");
+    public static final ItemType SHELTER_POTTERY_SHERD = init();
     @Nullable
-    public static final ItemType SHIELD = get("minecraft:shield");
+    public static final ItemType SHIELD = init();
     @Nullable
-    public static final ItemType SHORT_DRY_GRASS = get("minecraft:short_dry_grass");
+    public static final ItemType SHORT_DRY_GRASS = init();
     @Nullable
-    public static final ItemType SHORT_GRASS = get("minecraft:short_grass");
+    public static final ItemType SHORT_GRASS = init();
     @Nullable
-    public static final ItemType SHROOMLIGHT = get("minecraft:shroomlight");
+    public static final ItemType SHROOMLIGHT = init();
     @Nullable
-    public static final ItemType SHULKER_BOX = get("minecraft:shulker_box");
+    public static final ItemType SHULKER_BOX = init();
     @Nullable
-    public static final ItemType SHULKER_SHELL = get("minecraft:shulker_shell");
+    public static final ItemType SHULKER_SHELL = init();
     @Nullable
-    public static final ItemType SHULKER_SPAWN_EGG = get("minecraft:shulker_spawn_egg");
+    public static final ItemType SHULKER_SPAWN_EGG = init();
     @Deprecated
     @Nullable
-    public static final ItemType SIGN = get("minecraft:sign");
+    public static final ItemType SIGN = init();
     @Nullable
-    public static final ItemType SILENCE_ARMOR_TRIM_SMITHING_TEMPLATE = get("minecraft:silence_armor_trim_smithing_template");
+    public static final ItemType SILENCE_ARMOR_TRIM_SMITHING_TEMPLATE = init();
     @Nullable
-    public static final ItemType SILVERFISH_SPAWN_EGG = get("minecraft:silverfish_spawn_egg");
+    public static final ItemType SILVERFISH_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType SKELETON_HORSE_SPAWN_EGG = get("minecraft:skeleton_horse_spawn_egg");
+    public static final ItemType SKELETON_HORSE_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType SKELETON_SKULL = get("minecraft:skeleton_skull");
+    public static final ItemType SKELETON_SKULL = init();
     @Nullable
-    public static final ItemType SKELETON_SPAWN_EGG = get("minecraft:skeleton_spawn_egg");
+    public static final ItemType SKELETON_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType SKULL_BANNER_PATTERN = get("minecraft:skull_banner_pattern");
+    public static final ItemType SKULL_BANNER_PATTERN = init();
     @Nullable
-    public static final ItemType SKULL_POTTERY_SHERD = get("minecraft:skull_pottery_sherd");
+    public static final ItemType SKULL_POTTERY_SHERD = init();
     @Nullable
-    public static final ItemType SLIME_BALL = get("minecraft:slime_ball");
+    public static final ItemType SLIME_BALL = init();
     @Nullable
-    public static final ItemType SLIME_BLOCK = get("minecraft:slime_block");
+    public static final ItemType SLIME_BLOCK = init();
     @Nullable
-    public static final ItemType SLIME_SPAWN_EGG = get("minecraft:slime_spawn_egg");
+    public static final ItemType SLIME_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType SMALL_AMETHYST_BUD = get("minecraft:small_amethyst_bud");
+    public static final ItemType SMALL_AMETHYST_BUD = init();
     @Nullable
-    public static final ItemType SMALL_DRIPLEAF = get("minecraft:small_dripleaf");
+    public static final ItemType SMALL_DRIPLEAF = init();
     @Nullable
-    public static final ItemType SMITHING_TABLE = get("minecraft:smithing_table");
+    public static final ItemType SMITHING_TABLE = init();
     @Nullable
-    public static final ItemType SMOKER = get("minecraft:smoker");
+    public static final ItemType SMOKER = init();
     @Nullable
-    public static final ItemType SMOOTH_BASALT = get("minecraft:smooth_basalt");
+    public static final ItemType SMOOTH_BASALT = init();
     @Nullable
-    public static final ItemType SMOOTH_QUARTZ = get("minecraft:smooth_quartz");
+    public static final ItemType SMOOTH_QUARTZ = init();
     @Nullable
-    public static final ItemType SMOOTH_QUARTZ_SLAB = get("minecraft:smooth_quartz_slab");
+    public static final ItemType SMOOTH_QUARTZ_SLAB = init();
     @Nullable
-    public static final ItemType SMOOTH_QUARTZ_STAIRS = get("minecraft:smooth_quartz_stairs");
+    public static final ItemType SMOOTH_QUARTZ_STAIRS = init();
     @Nullable
-    public static final ItemType SMOOTH_RED_SANDSTONE = get("minecraft:smooth_red_sandstone");
+    public static final ItemType SMOOTH_RED_SANDSTONE = init();
     @Nullable
-    public static final ItemType SMOOTH_RED_SANDSTONE_SLAB = get("minecraft:smooth_red_sandstone_slab");
+    public static final ItemType SMOOTH_RED_SANDSTONE_SLAB = init();
     @Nullable
-    public static final ItemType SMOOTH_RED_SANDSTONE_STAIRS = get("minecraft:smooth_red_sandstone_stairs");
+    public static final ItemType SMOOTH_RED_SANDSTONE_STAIRS = init();
     @Nullable
-    public static final ItemType SMOOTH_SANDSTONE = get("minecraft:smooth_sandstone");
+    public static final ItemType SMOOTH_SANDSTONE = init();
     @Nullable
-    public static final ItemType SMOOTH_SANDSTONE_SLAB = get("minecraft:smooth_sandstone_slab");
+    public static final ItemType SMOOTH_SANDSTONE_SLAB = init();
     @Nullable
-    public static final ItemType SMOOTH_SANDSTONE_STAIRS = get("minecraft:smooth_sandstone_stairs");
+    public static final ItemType SMOOTH_SANDSTONE_STAIRS = init();
     @Nullable
-    public static final ItemType SMOOTH_STONE = get("minecraft:smooth_stone");
+    public static final ItemType SMOOTH_STONE = init();
     @Nullable
-    public static final ItemType SMOOTH_STONE_SLAB = get("minecraft:smooth_stone_slab");
+    public static final ItemType SMOOTH_STONE_SLAB = init();
     @Nullable
-    public static final ItemType SNIFFER_EGG = get("minecraft:sniffer_egg");
+    public static final ItemType SNIFFER_EGG = init();
     @Nullable
-    public static final ItemType SNIFFER_SPAWN_EGG = get("minecraft:sniffer_spawn_egg");
+    public static final ItemType SNIFFER_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType SNORT_POTTERY_SHERD = get("minecraft:snort_pottery_sherd");
+    public static final ItemType SNORT_POTTERY_SHERD = init();
     @Nullable
-    public static final ItemType SNOUT_ARMOR_TRIM_SMITHING_TEMPLATE = get("minecraft:snout_armor_trim_smithing_template");
+    public static final ItemType SNOUT_ARMOR_TRIM_SMITHING_TEMPLATE = init();
     @Nullable
-    public static final ItemType SNOW = get("minecraft:snow");
+    public static final ItemType SNOW = init();
     @Nullable
-    public static final ItemType SNOW_BLOCK = get("minecraft:snow_block");
+    public static final ItemType SNOW_BLOCK = init();
     @Nullable
-    public static final ItemType SNOW_GOLEM_SPAWN_EGG = get("minecraft:snow_golem_spawn_egg");
+    public static final ItemType SNOW_GOLEM_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType SNOWBALL = get("minecraft:snowball");
+    public static final ItemType SNOWBALL = init();
     @Nullable
-    public static final ItemType SOUL_CAMPFIRE = get("minecraft:soul_campfire");
+    public static final ItemType SOUL_CAMPFIRE = init();
     @Nullable
-    public static final ItemType SOUL_LANTERN = get("minecraft:soul_lantern");
+    public static final ItemType SOUL_LANTERN = init();
     @Nullable
-    public static final ItemType SOUL_SAND = get("minecraft:soul_sand");
+    public static final ItemType SOUL_SAND = init();
     @Nullable
-    public static final ItemType SOUL_SOIL = get("minecraft:soul_soil");
+    public static final ItemType SOUL_SOIL = init();
     @Nullable
-    public static final ItemType SOUL_TORCH = get("minecraft:soul_torch");
+    public static final ItemType SOUL_TORCH = init();
     @Nullable
-    public static final ItemType SPAWNER = get("minecraft:spawner");
+    public static final ItemType SPAWNER = init();
     @Nullable
-    public static final ItemType SPECTRAL_ARROW = get("minecraft:spectral_arrow");
+    public static final ItemType SPECTRAL_ARROW = init();
     @Nullable
-    public static final ItemType SPIDER_EYE = get("minecraft:spider_eye");
+    public static final ItemType SPIDER_EYE = init();
     @Nullable
-    public static final ItemType SPIDER_SPAWN_EGG = get("minecraft:spider_spawn_egg");
+    public static final ItemType SPIDER_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType SPIRE_ARMOR_TRIM_SMITHING_TEMPLATE = get("minecraft:spire_armor_trim_smithing_template");
+    public static final ItemType SPIRE_ARMOR_TRIM_SMITHING_TEMPLATE = init();
     @Nullable
-    public static final ItemType SPLASH_POTION = get("minecraft:splash_potion");
+    public static final ItemType SPLASH_POTION = init();
     @Nullable
-    public static final ItemType SPONGE = get("minecraft:sponge");
+    public static final ItemType SPONGE = init();
     @Nullable
-    public static final ItemType SPORE_BLOSSOM = get("minecraft:spore_blossom");
+    public static final ItemType SPORE_BLOSSOM = init();
     @Nullable
-    public static final ItemType SPRUCE_BOAT = get("minecraft:spruce_boat");
+    public static final ItemType SPRUCE_BOAT = init();
     @Nullable
-    public static final ItemType SPRUCE_BUTTON = get("minecraft:spruce_button");
+    public static final ItemType SPRUCE_CHEST_BOAT = init();
     @Nullable
-    public static final ItemType SPRUCE_CHEST_BOAT = get("minecraft:spruce_chest_boat");
+    public static final ItemType SPRUCE_BUTTON = init();
     @Nullable
-    public static final ItemType SPRUCE_DOOR = get("minecraft:spruce_door");
+    public static final ItemType SPRUCE_DOOR = init();
     @Nullable
-    public static final ItemType SPRUCE_FENCE = get("minecraft:spruce_fence");
+    public static final ItemType SPRUCE_FENCE = init();
     @Nullable
-    public static final ItemType SPRUCE_FENCE_GATE = get("minecraft:spruce_fence_gate");
+    public static final ItemType SPRUCE_FENCE_GATE = init();
     @Nullable
-    public static final ItemType SPRUCE_HANGING_SIGN = get("minecraft:spruce_hanging_sign");
+    public static final ItemType SPRUCE_HANGING_SIGN = init();
     @Nullable
-    public static final ItemType SPRUCE_LEAVES = get("minecraft:spruce_leaves");
+    public static final ItemType SPRUCE_LEAVES = init();
     @Nullable
-    public static final ItemType SPRUCE_LOG = get("minecraft:spruce_log");
+    public static final ItemType SPRUCE_LOG = init();
     @Nullable
-    public static final ItemType SPRUCE_PLANKS = get("minecraft:spruce_planks");
+    public static final ItemType SPRUCE_PLANKS = init();
     @Nullable
-    public static final ItemType SPRUCE_PRESSURE_PLATE = get("minecraft:spruce_pressure_plate");
+    public static final ItemType SPRUCE_PRESSURE_PLATE = init();
     @Nullable
-    public static final ItemType SPRUCE_SAPLING = get("minecraft:spruce_sapling");
+    public static final ItemType SPRUCE_SAPLING = init();
     @Nullable
-    public static final ItemType SPRUCE_SHELF = get("minecraft:spruce_shelf");
+    public static final ItemType SPRUCE_SHELF = init();
     @Nullable
-    public static final ItemType SPRUCE_SIGN = get("minecraft:spruce_sign");
+    public static final ItemType SPRUCE_SIGN = init();
     @Nullable
-    public static final ItemType SPRUCE_SLAB = get("minecraft:spruce_slab");
+    public static final ItemType SPRUCE_SLAB = init();
     @Nullable
-    public static final ItemType SPRUCE_STAIRS = get("minecraft:spruce_stairs");
+    public static final ItemType SPRUCE_STAIRS = init();
     @Nullable
-    public static final ItemType SPRUCE_TRAPDOOR = get("minecraft:spruce_trapdoor");
+    public static final ItemType SPRUCE_TRAPDOOR = init();
     @Nullable
-    public static final ItemType SPRUCE_WOOD = get("minecraft:spruce_wood");
+    public static final ItemType SPRUCE_WOOD = init();
     @Nullable
-    public static final ItemType SPYGLASS = get("minecraft:spyglass");
+    public static final ItemType SPYGLASS = init();
     @Nullable
-    public static final ItemType SQUID_SPAWN_EGG = get("minecraft:squid_spawn_egg");
+    public static final ItemType SQUID_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType STICK = get("minecraft:stick");
+    public static final ItemType STICK = init();
     @Nullable
-    public static final ItemType STICKY_PISTON = get("minecraft:sticky_piston");
+    public static final ItemType STICKY_PISTON = init();
     @Nullable
-    public static final ItemType STONE = get("minecraft:stone");
+    public static final ItemType STONE = init();
     @Nullable
-    public static final ItemType STONE_AXE = get("minecraft:stone_axe");
+    public static final ItemType STONE_AXE = init();
     @Nullable
-    public static final ItemType STONE_BRICK_SLAB = get("minecraft:stone_brick_slab");
+    public static final ItemType STONE_BRICK_SLAB = init();
     @Nullable
-    public static final ItemType STONE_BRICK_STAIRS = get("minecraft:stone_brick_stairs");
+    public static final ItemType STONE_BRICK_STAIRS = init();
     @Nullable
-    public static final ItemType STONE_BRICK_WALL = get("minecraft:stone_brick_wall");
+    public static final ItemType STONE_BRICK_WALL = init();
     @Nullable
-    public static final ItemType STONE_BRICKS = get("minecraft:stone_bricks");
+    public static final ItemType STONE_BRICKS = init();
     @Nullable
-    public static final ItemType STONE_BUTTON = get("minecraft:stone_button");
+    public static final ItemType STONE_BUTTON = init();
     @Nullable
-    public static final ItemType STONE_HOE = get("minecraft:stone_hoe");
+    public static final ItemType STONE_HOE = init();
     @Nullable
-    public static final ItemType STONE_PICKAXE = get("minecraft:stone_pickaxe");
+    public static final ItemType STONE_PICKAXE = init();
     @Nullable
-    public static final ItemType STONE_PRESSURE_PLATE = get("minecraft:stone_pressure_plate");
+    public static final ItemType STONE_PRESSURE_PLATE = init();
     @Nullable
-    public static final ItemType STONE_SHOVEL = get("minecraft:stone_shovel");
+    public static final ItemType STONE_SHOVEL = init();
     @Nullable
-    public static final ItemType STONE_SLAB = get("minecraft:stone_slab");
+    public static final ItemType STONE_SLAB = init();
     @Nullable
-    public static final ItemType STONE_SPEAR = get("minecraft:stone_spear");
+    public static final ItemType STONE_SPEAR = init();
     @Nullable
-    public static final ItemType STONE_STAIRS = get("minecraft:stone_stairs");
+    public static final ItemType STONE_STAIRS = init();
     @Nullable
-    public static final ItemType STONE_SWORD = get("minecraft:stone_sword");
+    public static final ItemType STONE_SWORD = init();
     @Nullable
-    public static final ItemType STONECUTTER = get("minecraft:stonecutter");
+    public static final ItemType STONECUTTER = init();
     @Nullable
-    public static final ItemType STRAY_SPAWN_EGG = get("minecraft:stray_spawn_egg");
+    public static final ItemType STRAY_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType STRIDER_SPAWN_EGG = get("minecraft:strider_spawn_egg");
+    public static final ItemType STRIDER_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType STRING = get("minecraft:string");
+    public static final ItemType STRING = init();
     @Nullable
-    public static final ItemType STRIPPED_ACACIA_LOG = get("minecraft:stripped_acacia_log");
+    public static final ItemType STRIPPED_ACACIA_LOG = init();
     @Nullable
-    public static final ItemType STRIPPED_ACACIA_WOOD = get("minecraft:stripped_acacia_wood");
+    public static final ItemType STRIPPED_ACACIA_WOOD = init();
     @Nullable
-    public static final ItemType STRIPPED_BAMBOO_BLOCK = get("minecraft:stripped_bamboo_block");
+    public static final ItemType STRIPPED_BAMBOO_BLOCK = init();
     @Nullable
-    public static final ItemType STRIPPED_BIRCH_LOG = get("minecraft:stripped_birch_log");
+    public static final ItemType STRIPPED_BIRCH_LOG = init();
     @Nullable
-    public static final ItemType STRIPPED_BIRCH_WOOD = get("minecraft:stripped_birch_wood");
+    public static final ItemType STRIPPED_BIRCH_WOOD = init();
     @Nullable
-    public static final ItemType STRIPPED_CHERRY_LOG = get("minecraft:stripped_cherry_log");
+    public static final ItemType STRIPPED_CHERRY_LOG = init();
     @Nullable
-    public static final ItemType STRIPPED_CHERRY_WOOD = get("minecraft:stripped_cherry_wood");
+    public static final ItemType STRIPPED_CHERRY_WOOD = init();
     @Nullable
-    public static final ItemType STRIPPED_CRIMSON_HYPHAE = get("minecraft:stripped_crimson_hyphae");
+    public static final ItemType STRIPPED_CRIMSON_HYPHAE = init();
     @Nullable
-    public static final ItemType STRIPPED_CRIMSON_STEM = get("minecraft:stripped_crimson_stem");
+    public static final ItemType STRIPPED_CRIMSON_STEM = init();
     @Nullable
-    public static final ItemType STRIPPED_DARK_OAK_LOG = get("minecraft:stripped_dark_oak_log");
+    public static final ItemType STRIPPED_DARK_OAK_LOG = init();
     @Nullable
-    public static final ItemType STRIPPED_DARK_OAK_WOOD = get("minecraft:stripped_dark_oak_wood");
+    public static final ItemType STRIPPED_DARK_OAK_WOOD = init();
     @Nullable
-    public static final ItemType STRIPPED_JUNGLE_LOG = get("minecraft:stripped_jungle_log");
+    public static final ItemType STRIPPED_JUNGLE_LOG = init();
     @Nullable
-    public static final ItemType STRIPPED_JUNGLE_WOOD = get("minecraft:stripped_jungle_wood");
+    public static final ItemType STRIPPED_JUNGLE_WOOD = init();
     @Nullable
-    public static final ItemType STRIPPED_MANGROVE_LOG = get("minecraft:stripped_mangrove_log");
+    public static final ItemType STRIPPED_MANGROVE_LOG = init();
     @Nullable
-    public static final ItemType STRIPPED_MANGROVE_WOOD = get("minecraft:stripped_mangrove_wood");
+    public static final ItemType STRIPPED_MANGROVE_WOOD = init();
     @Nullable
-    public static final ItemType STRIPPED_OAK_LOG = get("minecraft:stripped_oak_log");
+    public static final ItemType STRIPPED_OAK_LOG = init();
     @Nullable
-    public static final ItemType STRIPPED_OAK_WOOD = get("minecraft:stripped_oak_wood");
+    public static final ItemType STRIPPED_OAK_WOOD = init();
+    @Nullable public static final ItemType STRIPPED_PALE_OAK_LOG = init();
+    @Nullable public static final ItemType STRIPPED_PALE_OAK_WOOD = init();
     @Nullable
-    public static final ItemType STRIPPED_PALE_OAK_LOG = get("minecraft:stripped_pale_oak_log");
+    public static final ItemType STRIPPED_SPRUCE_LOG = init();
     @Nullable
-    public static final ItemType STRIPPED_PALE_OAK_WOOD = get("minecraft:stripped_pale_oak_wood");
+    public static final ItemType STRIPPED_SPRUCE_WOOD = init();
     @Nullable
-    public static final ItemType STRIPPED_SPRUCE_LOG = get("minecraft:stripped_spruce_log");
+    public static final ItemType STRIPPED_WARPED_HYPHAE = init();
     @Nullable
-    public static final ItemType STRIPPED_SPRUCE_WOOD = get("minecraft:stripped_spruce_wood");
+    public static final ItemType STRIPPED_WARPED_STEM = init();
     @Nullable
-    public static final ItemType STRIPPED_WARPED_HYPHAE = get("minecraft:stripped_warped_hyphae");
+    public static final ItemType STRUCTURE_BLOCK = init();
     @Nullable
-    public static final ItemType STRIPPED_WARPED_STEM = get("minecraft:stripped_warped_stem");
+    public static final ItemType STRUCTURE_VOID = init();
     @Nullable
-    public static final ItemType STRUCTURE_BLOCK = get("minecraft:structure_block");
+    public static final ItemType SUGAR = init();
     @Nullable
-    public static final ItemType STRUCTURE_VOID = get("minecraft:structure_void");
+    public static final ItemType SUGAR_CANE = init();
     @Nullable
-    public static final ItemType SUGAR = get("minecraft:sugar");
+    public static final ItemType SULFUR = init();
     @Nullable
-    public static final ItemType SUGAR_CANE = get("minecraft:sugar_cane");
+    public static final ItemType SULFUR_BRICK_SLAB = init();
     @Nullable
-    public static final ItemType SULFUR = get("minecraft:sulfur");
+    public static final ItemType SULFUR_BRICK_STAIRS = init();
     @Nullable
-    public static final ItemType SULFUR_BRICK_SLAB = get("minecraft:sulfur_brick_slab");
+    public static final ItemType SULFUR_BRICK_WALL = init();
     @Nullable
-    public static final ItemType SULFUR_BRICK_STAIRS = get("minecraft:sulfur_brick_stairs");
+    public static final ItemType SULFUR_BRICKS = init();
     @Nullable
-    public static final ItemType SULFUR_BRICK_WALL = get("minecraft:sulfur_brick_wall");
+    public static final ItemType SULFUR_CUBE_BUCKET = init();
     @Nullable
-    public static final ItemType SULFUR_BRICKS = get("minecraft:sulfur_bricks");
+    public static final ItemType SULFUR_CUBE_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType SULFUR_CUBE_BUCKET = get("minecraft:sulfur_cube_bucket");
+    public static final ItemType SULFUR_SLAB = init();
     @Nullable
-    public static final ItemType SULFUR_CUBE_SPAWN_EGG = get("minecraft:sulfur_cube_spawn_egg");
+    public static final ItemType SULFUR_SPIKE = init();
     @Nullable
-    public static final ItemType SULFUR_SLAB = get("minecraft:sulfur_slab");
+    public static final ItemType SULFUR_STAIRS = init();
     @Nullable
-    public static final ItemType SULFUR_SPIKE = get("minecraft:sulfur_spike");
+    public static final ItemType SULFUR_WALL = init();
     @Nullable
-    public static final ItemType SULFUR_STAIRS = get("minecraft:sulfur_stairs");
+    public static final ItemType SUNFLOWER = init();
     @Nullable
-    public static final ItemType SULFUR_WALL = get("minecraft:sulfur_wall");
+    public static final ItemType SUSPICIOUS_GRAVEL = init();
     @Nullable
-    public static final ItemType SUNFLOWER = get("minecraft:sunflower");
+    public static final ItemType SUSPICIOUS_SAND = init();
     @Nullable
-    public static final ItemType SUSPICIOUS_GRAVEL = get("minecraft:suspicious_gravel");
+    public static final ItemType SUSPICIOUS_STEW = init();
     @Nullable
-    public static final ItemType SUSPICIOUS_SAND = get("minecraft:suspicious_sand");
+    public static final ItemType SWEET_BERRIES = init();
     @Nullable
-    public static final ItemType SUSPICIOUS_STEW = get("minecraft:suspicious_stew");
+    public static final ItemType TADPOLE_BUCKET = init();
     @Nullable
-    public static final ItemType SWEET_BERRIES = get("minecraft:sweet_berries");
+    public static final ItemType TADPOLE_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType TADPOLE_BUCKET = get("minecraft:tadpole_bucket");
+    public static final ItemType TALL_DRY_GRASS = init();
     @Nullable
-    public static final ItemType TADPOLE_SPAWN_EGG = get("minecraft:tadpole_spawn_egg");
+    public static final ItemType TALL_GRASS = init();
     @Nullable
-    public static final ItemType TALL_DRY_GRASS = get("minecraft:tall_dry_grass");
+    public static final ItemType TARGET = init();
     @Nullable
-    public static final ItemType TALL_GRASS = get("minecraft:tall_grass");
+    public static final ItemType TERRACOTTA = init();
     @Nullable
-    public static final ItemType TARGET = get("minecraft:target");
+    public static final ItemType TEST_BLOCK = init();
     @Nullable
-    public static final ItemType TERRACOTTA = get("minecraft:terracotta");
+    public static final ItemType TEST_INSTANCE_BLOCK = init();
     @Nullable
-    public static final ItemType TEST_BLOCK = get("minecraft:test_block");
+    public static final ItemType TIDE_ARMOR_TRIM_SMITHING_TEMPLATE = init();
     @Nullable
-    public static final ItemType TEST_INSTANCE_BLOCK = get("minecraft:test_instance_block");
+    public static final ItemType TINTED_GLASS = init();
     @Nullable
-    public static final ItemType TIDE_ARMOR_TRIM_SMITHING_TEMPLATE = get("minecraft:tide_armor_trim_smithing_template");
+    public static final ItemType TIPPED_ARROW = init();
     @Nullable
-    public static final ItemType TINTED_GLASS = get("minecraft:tinted_glass");
+    public static final ItemType TNT = init();
     @Nullable
-    public static final ItemType TIPPED_ARROW = get("minecraft:tipped_arrow");
+    public static final ItemType TNT_MINECART = init();
     @Nullable
-    public static final ItemType TNT = get("minecraft:tnt");
+    public static final ItemType TORCH = init();
     @Nullable
-    public static final ItemType TNT_MINECART = get("minecraft:tnt_minecart");
+    public static final ItemType TORCHFLOWER = init();
     @Nullable
-    public static final ItemType TORCH = get("minecraft:torch");
+    public static final ItemType TORCHFLOWER_SEEDS = init();
     @Nullable
-    public static final ItemType TORCHFLOWER = get("minecraft:torchflower");
+    public static final ItemType TOTEM_OF_UNDYING = init();
     @Nullable
-    public static final ItemType TORCHFLOWER_SEEDS = get("minecraft:torchflower_seeds");
+    public static final ItemType TRADER_LLAMA_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType TOTEM_OF_UNDYING = get("minecraft:totem_of_undying");
+    public static final ItemType TRAPPED_CHEST = init();
     @Nullable
-    public static final ItemType TRADER_LLAMA_SPAWN_EGG = get("minecraft:trader_llama_spawn_egg");
+    public static final ItemType TRIAL_KEY = init();
     @Nullable
-    public static final ItemType TRAPPED_CHEST = get("minecraft:trapped_chest");
+    public static final ItemType TRIAL_SPAWNER = init();
     @Nullable
-    public static final ItemType TRIAL_KEY = get("minecraft:trial_key");
+    public static final ItemType TRIDENT = init();
     @Nullable
-    public static final ItemType TRIAL_SPAWNER = get("minecraft:trial_spawner");
+    public static final ItemType TRIPWIRE_HOOK = init();
     @Nullable
-    public static final ItemType TRIDENT = get("minecraft:trident");
+    public static final ItemType TROPICAL_FISH = init();
     @Nullable
-    public static final ItemType TRIPWIRE_HOOK = get("minecraft:tripwire_hook");
+    public static final ItemType TROPICAL_FISH_BUCKET = init();
     @Nullable
-    public static final ItemType TROPICAL_FISH = get("minecraft:tropical_fish");
+    public static final ItemType TROPICAL_FISH_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType TROPICAL_FISH_BUCKET = get("minecraft:tropical_fish_bucket");
+    public static final ItemType TUBE_CORAL = init();
     @Nullable
-    public static final ItemType TROPICAL_FISH_SPAWN_EGG = get("minecraft:tropical_fish_spawn_egg");
+    public static final ItemType TUBE_CORAL_BLOCK = init();
     @Nullable
-    public static final ItemType TUBE_CORAL = get("minecraft:tube_coral");
+    public static final ItemType TUBE_CORAL_FAN = init();
     @Nullable
-    public static final ItemType TUBE_CORAL_BLOCK = get("minecraft:tube_coral_block");
+    public static final ItemType TUFF = init();
     @Nullable
-    public static final ItemType TUBE_CORAL_FAN = get("minecraft:tube_coral_fan");
+    public static final ItemType TUFF_BRICK_SLAB = init();
     @Nullable
-    public static final ItemType TUFF = get("minecraft:tuff");
+    public static final ItemType TUFF_BRICK_STAIRS = init();
     @Nullable
-    public static final ItemType TUFF_BRICK_SLAB = get("minecraft:tuff_brick_slab");
+    public static final ItemType TUFF_BRICK_WALL = init();
     @Nullable
-    public static final ItemType TUFF_BRICK_STAIRS = get("minecraft:tuff_brick_stairs");
+    public static final ItemType TUFF_BRICKS = init();
     @Nullable
-    public static final ItemType TUFF_BRICK_WALL = get("minecraft:tuff_brick_wall");
+    public static final ItemType TUFF_SLAB = init();
     @Nullable
-    public static final ItemType TUFF_BRICKS = get("minecraft:tuff_bricks");
+    public static final ItemType TUFF_STAIRS = init();
     @Nullable
-    public static final ItemType TUFF_SLAB = get("minecraft:tuff_slab");
+    public static final ItemType TUFF_WALL = init();
     @Nullable
-    public static final ItemType TUFF_STAIRS = get("minecraft:tuff_stairs");
+    public static final ItemType TURTLE_EGG = init();
     @Nullable
-    public static final ItemType TUFF_WALL = get("minecraft:tuff_wall");
+    public static final ItemType TURTLE_HELMET = init();
     @Nullable
-    public static final ItemType TURTLE_EGG = get("minecraft:turtle_egg");
+    public static final ItemType TURTLE_SCUTE = init();
     @Nullable
-    public static final ItemType TURTLE_HELMET = get("minecraft:turtle_helmet");
+    public static final ItemType TURTLE_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType TURTLE_SCUTE = get("minecraft:turtle_scute");
+    public static final ItemType TWISTING_VINES = init();
     @Nullable
-    public static final ItemType TURTLE_SPAWN_EGG = get("minecraft:turtle_spawn_egg");
+    public static final ItemType VAULT = init();
     @Nullable
-    public static final ItemType TWISTING_VINES = get("minecraft:twisting_vines");
+    public static final ItemType VERDANT_FROGLIGHT = init();
     @Nullable
-    public static final ItemType VAULT = get("minecraft:vault");
+    public static final ItemType VEX_ARMOR_TRIM_SMITHING_TEMPLATE = init();
     @Nullable
-    public static final ItemType VERDANT_FROGLIGHT = get("minecraft:verdant_froglight");
+    public static final ItemType VEX_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType VEX_ARMOR_TRIM_SMITHING_TEMPLATE = get("minecraft:vex_armor_trim_smithing_template");
+    public static final ItemType VILLAGER_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType VEX_SPAWN_EGG = get("minecraft:vex_spawn_egg");
+    public static final ItemType VINDICATOR_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType VILLAGER_SPAWN_EGG = get("minecraft:villager_spawn_egg");
+    public static final ItemType VINE = init();
     @Nullable
-    public static final ItemType VINDICATOR_SPAWN_EGG = get("minecraft:vindicator_spawn_egg");
+    public static final ItemType WANDERING_TRADER_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType VINE = get("minecraft:vine");
+    public static final ItemType WARD_ARMOR_TRIM_SMITHING_TEMPLATE = init();
     @Nullable
-    public static final ItemType WANDERING_TRADER_SPAWN_EGG = get("minecraft:wandering_trader_spawn_egg");
+    public static final ItemType WARDEN_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType WARD_ARMOR_TRIM_SMITHING_TEMPLATE = get("minecraft:ward_armor_trim_smithing_template");
+    public static final ItemType WARPED_BUTTON = init();
     @Nullable
-    public static final ItemType WARDEN_SPAWN_EGG = get("minecraft:warden_spawn_egg");
+    public static final ItemType WARPED_DOOR = init();
     @Nullable
-    public static final ItemType WARPED_BUTTON = get("minecraft:warped_button");
+    public static final ItemType WARPED_FENCE = init();
     @Nullable
-    public static final ItemType WARPED_DOOR = get("minecraft:warped_door");
+    public static final ItemType WARPED_FENCE_GATE = init();
     @Nullable
-    public static final ItemType WARPED_FENCE = get("minecraft:warped_fence");
+    public static final ItemType WARPED_FUNGUS = init();
     @Nullable
-    public static final ItemType WARPED_FENCE_GATE = get("minecraft:warped_fence_gate");
+    public static final ItemType WARPED_FUNGUS_ON_A_STICK = init();
     @Nullable
-    public static final ItemType WARPED_FUNGUS = get("minecraft:warped_fungus");
+    public static final ItemType WARPED_HANGING_SIGN = init();
     @Nullable
-    public static final ItemType WARPED_FUNGUS_ON_A_STICK = get("minecraft:warped_fungus_on_a_stick");
+    public static final ItemType WARPED_HYPHAE = init();
     @Nullable
-    public static final ItemType WARPED_HANGING_SIGN = get("minecraft:warped_hanging_sign");
+    public static final ItemType WARPED_NYLIUM = init();
     @Nullable
-    public static final ItemType WARPED_HYPHAE = get("minecraft:warped_hyphae");
+    public static final ItemType WARPED_PLANKS = init();
     @Nullable
-    public static final ItemType WARPED_NYLIUM = get("minecraft:warped_nylium");
+    public static final ItemType WARPED_PRESSURE_PLATE = init();
     @Nullable
-    public static final ItemType WARPED_PLANKS = get("minecraft:warped_planks");
+    public static final ItemType WARPED_ROOTS = init();
     @Nullable
-    public static final ItemType WARPED_PRESSURE_PLATE = get("minecraft:warped_pressure_plate");
+    public static final ItemType WARPED_SHELF = init();
     @Nullable
-    public static final ItemType WARPED_ROOTS = get("minecraft:warped_roots");
+    public static final ItemType WARPED_SIGN = init();
     @Nullable
-    public static final ItemType WARPED_SHELF = get("minecraft:warped_shelf");
+    public static final ItemType WARPED_SLAB = init();
     @Nullable
-    public static final ItemType WARPED_SIGN = get("minecraft:warped_sign");
+    public static final ItemType WARPED_STAIRS = init();
     @Nullable
-    public static final ItemType WARPED_SLAB = get("minecraft:warped_slab");
+    public static final ItemType WARPED_STEM = init();
     @Nullable
-    public static final ItemType WARPED_STAIRS = get("minecraft:warped_stairs");
+    public static final ItemType WARPED_TRAPDOOR = init();
     @Nullable
-    public static final ItemType WARPED_STEM = get("minecraft:warped_stem");
+    public static final ItemType WARPED_WART_BLOCK = init();
     @Nullable
-    public static final ItemType WARPED_TRAPDOOR = get("minecraft:warped_trapdoor");
+    public static final ItemType WATER_BUCKET = init();
     @Nullable
-    public static final ItemType WARPED_WART_BLOCK = get("minecraft:warped_wart_block");
+    public static final ItemType WAXED_CHISELED_COPPER = init();
     @Nullable
-    public static final ItemType WATER_BUCKET = get("minecraft:water_bucket");
+    public static final ItemType WAXED_COPPER_BARS = init();
     @Nullable
-    public static final ItemType WAXED_CHISELED_COPPER = get("minecraft:waxed_chiseled_copper");
+    public static final ItemType WAXED_COPPER_BLOCK = init();
     @Nullable
-    public static final ItemType WAXED_COPPER_BARS = get("minecraft:waxed_copper_bars");
+    public static final ItemType WAXED_COPPER_BULB = init();
     @Nullable
-    public static final ItemType WAXED_COPPER_BLOCK = get("minecraft:waxed_copper_block");
+    public static final ItemType WAXED_COPPER_CHAIN = init();
     @Nullable
-    public static final ItemType WAXED_COPPER_BULB = get("minecraft:waxed_copper_bulb");
+    public static final ItemType WAXED_COPPER_CHEST = init();
     @Nullable
-    public static final ItemType WAXED_COPPER_CHAIN = get("minecraft:waxed_copper_chain");
+    public static final ItemType WAXED_COPPER_DOOR = init();
     @Nullable
-    public static final ItemType WAXED_COPPER_CHEST = get("minecraft:waxed_copper_chest");
+    public static final ItemType WAXED_COPPER_GOLEM_STATUE = init();
     @Nullable
-    public static final ItemType WAXED_COPPER_DOOR = get("minecraft:waxed_copper_door");
+    public static final ItemType WAXED_COPPER_GRATE = init();
     @Nullable
-    public static final ItemType WAXED_COPPER_GOLEM_STATUE = get("minecraft:waxed_copper_golem_statue");
+    public static final ItemType WAXED_COPPER_LANTERN = init();
     @Nullable
-    public static final ItemType WAXED_COPPER_GRATE = get("minecraft:waxed_copper_grate");
+    public static final ItemType WAXED_COPPER_TRAPDOOR = init();
     @Nullable
-    public static final ItemType WAXED_COPPER_LANTERN = get("minecraft:waxed_copper_lantern");
+    public static final ItemType WAXED_CUT_COPPER = init();
     @Nullable
-    public static final ItemType WAXED_COPPER_TRAPDOOR = get("minecraft:waxed_copper_trapdoor");
+    public static final ItemType WAXED_CUT_COPPER_SLAB = init();
     @Nullable
-    public static final ItemType WAXED_CUT_COPPER = get("minecraft:waxed_cut_copper");
+    public static final ItemType WAXED_CUT_COPPER_STAIRS = init();
     @Nullable
-    public static final ItemType WAXED_CUT_COPPER_SLAB = get("minecraft:waxed_cut_copper_slab");
+    public static final ItemType WAXED_EXPOSED_CHISELED_COPPER = init();
     @Nullable
-    public static final ItemType WAXED_CUT_COPPER_STAIRS = get("minecraft:waxed_cut_copper_stairs");
+    public static final ItemType WAXED_EXPOSED_COPPER = init();
     @Nullable
-    public static final ItemType WAXED_EXPOSED_CHISELED_COPPER = get("minecraft:waxed_exposed_chiseled_copper");
+    public static final ItemType WAXED_EXPOSED_COPPER_BARS = init();
     @Nullable
-    public static final ItemType WAXED_EXPOSED_COPPER = get("minecraft:waxed_exposed_copper");
+    public static final ItemType WAXED_EXPOSED_COPPER_BULB = init();
     @Nullable
-    public static final ItemType WAXED_EXPOSED_COPPER_BARS = get("minecraft:waxed_exposed_copper_bars");
+    public static final ItemType WAXED_EXPOSED_COPPER_CHAIN = init();
     @Nullable
-    public static final ItemType WAXED_EXPOSED_COPPER_BULB = get("minecraft:waxed_exposed_copper_bulb");
+    public static final ItemType WAXED_EXPOSED_COPPER_CHEST = init();
     @Nullable
-    public static final ItemType WAXED_EXPOSED_COPPER_CHAIN = get("minecraft:waxed_exposed_copper_chain");
+    public static final ItemType WAXED_EXPOSED_COPPER_DOOR = init();
     @Nullable
-    public static final ItemType WAXED_EXPOSED_COPPER_CHEST = get("minecraft:waxed_exposed_copper_chest");
+    public static final ItemType WAXED_EXPOSED_COPPER_GOLEM_STATUE = init();
     @Nullable
-    public static final ItemType WAXED_EXPOSED_COPPER_DOOR = get("minecraft:waxed_exposed_copper_door");
+    public static final ItemType WAXED_EXPOSED_COPPER_GRATE = init();
     @Nullable
-    public static final ItemType WAXED_EXPOSED_COPPER_GOLEM_STATUE = get("minecraft:waxed_exposed_copper_golem_statue");
+    public static final ItemType WAXED_EXPOSED_COPPER_LANTERN = init();
     @Nullable
-    public static final ItemType WAXED_EXPOSED_COPPER_GRATE = get("minecraft:waxed_exposed_copper_grate");
+    public static final ItemType WAXED_EXPOSED_COPPER_TRAPDOOR = init();
     @Nullable
-    public static final ItemType WAXED_EXPOSED_COPPER_LANTERN = get("minecraft:waxed_exposed_copper_lantern");
+    public static final ItemType WAXED_EXPOSED_CUT_COPPER = init();
     @Nullable
-    public static final ItemType WAXED_EXPOSED_COPPER_TRAPDOOR = get("minecraft:waxed_exposed_copper_trapdoor");
+    public static final ItemType WAXED_EXPOSED_CUT_COPPER_SLAB = init();
     @Nullable
-    public static final ItemType WAXED_EXPOSED_CUT_COPPER = get("minecraft:waxed_exposed_cut_copper");
+    public static final ItemType WAXED_EXPOSED_CUT_COPPER_STAIRS = init();
     @Nullable
-    public static final ItemType WAXED_EXPOSED_CUT_COPPER_SLAB = get("minecraft:waxed_exposed_cut_copper_slab");
+    public static final ItemType WAXED_EXPOSED_LIGHTNING_ROD = init();
     @Nullable
-    public static final ItemType WAXED_EXPOSED_CUT_COPPER_STAIRS = get("minecraft:waxed_exposed_cut_copper_stairs");
+    public static final ItemType WAXED_LIGHTNING_ROD  = init();
     @Nullable
-    public static final ItemType WAXED_EXPOSED_LIGHTNING_ROD = get("minecraft:waxed_exposed_lightning_rod");
+    public static final ItemType WAXED_OXIDIZED_CHISELED_COPPER = init();
     @Nullable
-    public static final ItemType WAXED_LIGHTNING_ROD = get("minecraft:waxed_lightning_rod");
+    public static final ItemType WAXED_OXIDIZED_COPPER = init();
     @Nullable
-    public static final ItemType WAXED_OXIDIZED_CHISELED_COPPER = get("minecraft:waxed_oxidized_chiseled_copper");
+    public static final ItemType WAXED_OXIDIZED_COPPER_BARS = init();
     @Nullable
-    public static final ItemType WAXED_OXIDIZED_COPPER = get("minecraft:waxed_oxidized_copper");
+    public static final ItemType WAXED_OXIDIZED_COPPER_BULB = init();
     @Nullable
-    public static final ItemType WAXED_OXIDIZED_COPPER_BARS = get("minecraft:waxed_oxidized_copper_bars");
+    public static final ItemType WAXED_OXIDIZED_COPPER_CHAIN = init();
     @Nullable
-    public static final ItemType WAXED_OXIDIZED_COPPER_BULB = get("minecraft:waxed_oxidized_copper_bulb");
+    public static final ItemType WAXED_OXIDIZED_COPPER_CHEST = init();
     @Nullable
-    public static final ItemType WAXED_OXIDIZED_COPPER_CHAIN = get("minecraft:waxed_oxidized_copper_chain");
+    public static final ItemType WAXED_OXIDIZED_COPPER_DOOR = init();
     @Nullable
-    public static final ItemType WAXED_OXIDIZED_COPPER_CHEST = get("minecraft:waxed_oxidized_copper_chest");
+    public static final ItemType WAXED_OXIDIZED_COPPER_GOLEM_STATUE = init();
     @Nullable
-    public static final ItemType WAXED_OXIDIZED_COPPER_DOOR = get("minecraft:waxed_oxidized_copper_door");
+    public static final ItemType WAXED_OXIDIZED_COPPER_GRATE = init();
     @Nullable
-    public static final ItemType WAXED_OXIDIZED_COPPER_GOLEM_STATUE = get("minecraft:waxed_oxidized_copper_golem_statue");
+    public static final ItemType WAXED_OXIDIZED_COPPER_LANTERN = init();
     @Nullable
-    public static final ItemType WAXED_OXIDIZED_COPPER_GRATE = get("minecraft:waxed_oxidized_copper_grate");
+    public static final ItemType WAXED_OXIDIZED_COPPER_TRAPDOOR = init();
     @Nullable
-    public static final ItemType WAXED_OXIDIZED_COPPER_LANTERN = get("minecraft:waxed_oxidized_copper_lantern");
+    public static final ItemType WAXED_OXIDIZED_CUT_COPPER = init();
     @Nullable
-    public static final ItemType WAXED_OXIDIZED_COPPER_TRAPDOOR = get("minecraft:waxed_oxidized_copper_trapdoor");
+    public static final ItemType WAXED_OXIDIZED_CUT_COPPER_SLAB = init();
     @Nullable
-    public static final ItemType WAXED_OXIDIZED_CUT_COPPER = get("minecraft:waxed_oxidized_cut_copper");
+    public static final ItemType WAXED_OXIDIZED_CUT_COPPER_STAIRS = init();
     @Nullable
-    public static final ItemType WAXED_OXIDIZED_CUT_COPPER_SLAB = get("minecraft:waxed_oxidized_cut_copper_slab");
+    public static final ItemType WAXED_OXIDIZED_LIGHTNING_ROD = init();
     @Nullable
-    public static final ItemType WAXED_OXIDIZED_CUT_COPPER_STAIRS = get("minecraft:waxed_oxidized_cut_copper_stairs");
+    public static final ItemType WAXED_WEATHERED_CHISELED_COPPER = init();
     @Nullable
-    public static final ItemType WAXED_OXIDIZED_LIGHTNING_ROD = get("minecraft:waxed_oxidized_lightning_rod");
+    public static final ItemType WAXED_WEATHERED_COPPER = init();
     @Nullable
-    public static final ItemType WAXED_WEATHERED_CHISELED_COPPER = get("minecraft:waxed_weathered_chiseled_copper");
+    public static final ItemType WAXED_WEATHERED_COPPER_BARS = init();
     @Nullable
-    public static final ItemType WAXED_WEATHERED_COPPER = get("minecraft:waxed_weathered_copper");
+    public static final ItemType WAXED_WEATHERED_COPPER_BULB = init();
     @Nullable
-    public static final ItemType WAXED_WEATHERED_COPPER_BARS = get("minecraft:waxed_weathered_copper_bars");
+    public static final ItemType WAXED_WEATHERED_COPPER_CHAIN = init();
     @Nullable
-    public static final ItemType WAXED_WEATHERED_COPPER_BULB = get("minecraft:waxed_weathered_copper_bulb");
+    public static final ItemType WAXED_WEATHERED_COPPER_CHEST = init();
     @Nullable
-    public static final ItemType WAXED_WEATHERED_COPPER_CHAIN = get("minecraft:waxed_weathered_copper_chain");
+    public static final ItemType WAXED_WEATHERED_COPPER_DOOR = init();
     @Nullable
-    public static final ItemType WAXED_WEATHERED_COPPER_CHEST = get("minecraft:waxed_weathered_copper_chest");
+    public static final ItemType WAXED_WEATHERED_COPPER_GOLEM_STATUE = init();
     @Nullable
-    public static final ItemType WAXED_WEATHERED_COPPER_DOOR = get("minecraft:waxed_weathered_copper_door");
+    public static final ItemType WAXED_WEATHERED_COPPER_GRATE = init();
     @Nullable
-    public static final ItemType WAXED_WEATHERED_COPPER_GOLEM_STATUE = get("minecraft:waxed_weathered_copper_golem_statue");
+    public static final ItemType WAXED_WEATHERED_COPPER_LANTERN = init();
     @Nullable
-    public static final ItemType WAXED_WEATHERED_COPPER_GRATE = get("minecraft:waxed_weathered_copper_grate");
+    public static final ItemType WAXED_WEATHERED_COPPER_TRAPDOOR = init();
     @Nullable
-    public static final ItemType WAXED_WEATHERED_COPPER_LANTERN = get("minecraft:waxed_weathered_copper_lantern");
+    public static final ItemType WAXED_WEATHERED_CUT_COPPER = init();
     @Nullable
-    public static final ItemType WAXED_WEATHERED_COPPER_TRAPDOOR = get("minecraft:waxed_weathered_copper_trapdoor");
+    public static final ItemType WAXED_WEATHERED_CUT_COPPER_SLAB = init();
     @Nullable
-    public static final ItemType WAXED_WEATHERED_CUT_COPPER = get("minecraft:waxed_weathered_cut_copper");
+    public static final ItemType WAXED_WEATHERED_CUT_COPPER_STAIRS = init();
     @Nullable
-    public static final ItemType WAXED_WEATHERED_CUT_COPPER_SLAB = get("minecraft:waxed_weathered_cut_copper_slab");
+    public static final ItemType WAXED_WEATHERED_LIGHTNING_ROD = init();
     @Nullable
-    public static final ItemType WAXED_WEATHERED_CUT_COPPER_STAIRS = get("minecraft:waxed_weathered_cut_copper_stairs");
+    public static final ItemType WAYFINDER_ARMOR_TRIM_SMITHING_TEMPLATE = init();
     @Nullable
-    public static final ItemType WAXED_WEATHERED_LIGHTNING_ROD = get("minecraft:waxed_weathered_lightning_rod");
+    public static final ItemType WEATHERED_CHISELED_COPPER = init();
     @Nullable
-    public static final ItemType WAYFINDER_ARMOR_TRIM_SMITHING_TEMPLATE = get("minecraft:wayfinder_armor_trim_smithing_template");
+    public static final ItemType WEATHERED_COPPER = init();
     @Nullable
-    public static final ItemType WEATHERED_CHISELED_COPPER = get("minecraft:weathered_chiseled_copper");
+    public static final ItemType WEATHERED_COPPER_BARS = init();
     @Nullable
-    public static final ItemType WEATHERED_COPPER = get("minecraft:weathered_copper");
+    public static final ItemType WEATHERED_COPPER_BULB = init();
     @Nullable
-    public static final ItemType WEATHERED_COPPER_BARS = get("minecraft:weathered_copper_bars");
+    public static final ItemType WEATHERED_COPPER_CHAIN = init();
     @Nullable
-    public static final ItemType WEATHERED_COPPER_BULB = get("minecraft:weathered_copper_bulb");
+    public static final ItemType WEATHERED_COPPER_CHEST = init();
     @Nullable
-    public static final ItemType WEATHERED_COPPER_CHAIN = get("minecraft:weathered_copper_chain");
+    public static final ItemType WEATHERED_COPPER_DOOR = init();
     @Nullable
-    public static final ItemType WEATHERED_COPPER_CHEST = get("minecraft:weathered_copper_chest");
+    public static final ItemType WEATHERED_COPPER_GOLEM_STATUE = init();
     @Nullable
-    public static final ItemType WEATHERED_COPPER_DOOR = get("minecraft:weathered_copper_door");
+    public static final ItemType WEATHERED_COPPER_GRATE = init();
     @Nullable
-    public static final ItemType WEATHERED_COPPER_GOLEM_STATUE = get("minecraft:weathered_copper_golem_statue");
+    public static final ItemType WEATHERED_COPPER_LANTERN = init();
     @Nullable
-    public static final ItemType WEATHERED_COPPER_GRATE = get("minecraft:weathered_copper_grate");
+    public static final ItemType WEATHERED_COPPER_TRAPDOOR = init();
     @Nullable
-    public static final ItemType WEATHERED_COPPER_LANTERN = get("minecraft:weathered_copper_lantern");
+    public static final ItemType WEATHERED_CUT_COPPER = init();
     @Nullable
-    public static final ItemType WEATHERED_COPPER_TRAPDOOR = get("minecraft:weathered_copper_trapdoor");
+    public static final ItemType WEATHERED_CUT_COPPER_SLAB = init();
     @Nullable
-    public static final ItemType WEATHERED_CUT_COPPER = get("minecraft:weathered_cut_copper");
+    public static final ItemType WEATHERED_CUT_COPPER_STAIRS = init();
     @Nullable
-    public static final ItemType WEATHERED_CUT_COPPER_SLAB = get("minecraft:weathered_cut_copper_slab");
+    public static final ItemType WEATHERED_LIGHTNING_ROD = init();
     @Nullable
-    public static final ItemType WEATHERED_CUT_COPPER_STAIRS = get("minecraft:weathered_cut_copper_stairs");
+    public static final ItemType WEEPING_VINES = init();
     @Nullable
-    public static final ItemType WEATHERED_LIGHTNING_ROD = get("minecraft:weathered_lightning_rod");
+    public static final ItemType WET_SPONGE = init();
     @Nullable
-    public static final ItemType WEEPING_VINES = get("minecraft:weeping_vines");
+    public static final ItemType WHEAT = init();
     @Nullable
-    public static final ItemType WET_SPONGE = get("minecraft:wet_sponge");
+    public static final ItemType WHEAT_SEEDS = init();
     @Nullable
-    public static final ItemType WHEAT = get("minecraft:wheat");
+    public static final ItemType WHITE_BANNER = init();
     @Nullable
-    public static final ItemType WHEAT_SEEDS = get("minecraft:wheat_seeds");
+    public static final ItemType WHITE_BED = init();
+    @Nullable public static final ItemType WHITE_BUNDLE = init();
     @Nullable
-    public static final ItemType WHITE_BANNER = get("minecraft:white_banner");
+    public static final ItemType WHITE_CANDLE = init();
     @Nullable
-    public static final ItemType WHITE_BED = get("minecraft:white_bed");
+    public static final ItemType WHITE_CARPET = init();
     @Nullable
-    public static final ItemType WHITE_BUNDLE = get("minecraft:white_bundle");
+    public static final ItemType WHITE_CONCRETE = init();
     @Nullable
-    public static final ItemType WHITE_CANDLE = get("minecraft:white_candle");
+    public static final ItemType WHITE_CONCRETE_POWDER = init();
     @Nullable
-    public static final ItemType WHITE_CARPET = get("minecraft:white_carpet");
+    public static final ItemType WHITE_DYE = init();
     @Nullable
-    public static final ItemType WHITE_CONCRETE = get("minecraft:white_concrete");
+    public static final ItemType WHITE_GLAZED_TERRACOTTA = init();
     @Nullable
-    public static final ItemType WHITE_CONCRETE_POWDER = get("minecraft:white_concrete_powder");
+    public static final ItemType WHITE_SHULKER_BOX = init();
     @Nullable
-    public static final ItemType WHITE_DYE = get("minecraft:white_dye");
+    public static final ItemType WHITE_STAINED_GLASS = init();
     @Nullable
-    public static final ItemType WHITE_GLAZED_TERRACOTTA = get("minecraft:white_glazed_terracotta");
+    public static final ItemType WHITE_STAINED_GLASS_PANE = init();
     @Nullable
-    public static final ItemType WHITE_HARNESS = get("minecraft:white_harness");
+    public static final ItemType WHITE_TERRACOTTA = init();
     @Nullable
-    public static final ItemType WHITE_SHULKER_BOX = get("minecraft:white_shulker_box");
+    public static final ItemType WHITE_TULIP = init();
     @Nullable
-    public static final ItemType WHITE_STAINED_GLASS = get("minecraft:white_stained_glass");
+    public static final ItemType WHITE_WOOL = init();
     @Nullable
-    public static final ItemType WHITE_STAINED_GLASS_PANE = get("minecraft:white_stained_glass_pane");
+    public static final ItemType WILD_ARMOR_TRIM_SMITHING_TEMPLATE = init();
     @Nullable
-    public static final ItemType WHITE_TERRACOTTA = get("minecraft:white_terracotta");
+    public static final ItemType WILDFLOWERS = init();
     @Nullable
-    public static final ItemType WHITE_TULIP = get("minecraft:white_tulip");
+    public static final ItemType WIND_CHARGE = init();
     @Nullable
-    public static final ItemType WHITE_WOOL = get("minecraft:white_wool");
+    public static final ItemType WITCH_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType WILD_ARMOR_TRIM_SMITHING_TEMPLATE = get("minecraft:wild_armor_trim_smithing_template");
+    public static final ItemType WITHER_ROSE = init();
     @Nullable
-    public static final ItemType WILDFLOWERS = get("minecraft:wildflowers");
+    public static final ItemType WITHER_SKELETON_SKULL = init();
     @Nullable
-    public static final ItemType WIND_CHARGE = get("minecraft:wind_charge");
+    public static final ItemType WITHER_SKELETON_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType WITCH_SPAWN_EGG = get("minecraft:witch_spawn_egg");
+    public static final ItemType WITHER_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType WITHER_ROSE = get("minecraft:wither_rose");
+    public static final ItemType WOLF_ARMOR = init();
     @Nullable
-    public static final ItemType WITHER_SKELETON_SKULL = get("minecraft:wither_skeleton_skull");
+    public static final ItemType WOLF_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType WITHER_SKELETON_SPAWN_EGG = get("minecraft:wither_skeleton_spawn_egg");
+    public static final ItemType WOODEN_AXE = init();
     @Nullable
-    public static final ItemType WITHER_SPAWN_EGG = get("minecraft:wither_spawn_egg");
+    public static final ItemType WOODEN_HOE = init();
     @Nullable
-    public static final ItemType WOLF_ARMOR = get("minecraft:wolf_armor");
+    public static final ItemType WOODEN_PICKAXE = init();
     @Nullable
-    public static final ItemType WOLF_SPAWN_EGG = get("minecraft:wolf_spawn_egg");
+    public static final ItemType WOODEN_SHOVEL = init();
     @Nullable
-    public static final ItemType WOODEN_AXE = get("minecraft:wooden_axe");
+    public static final ItemType WOODEN_SPEAR = init();
     @Nullable
-    public static final ItemType WOODEN_HOE = get("minecraft:wooden_hoe");
+    public static final ItemType WOODEN_SWORD = init();
     @Nullable
-    public static final ItemType WOODEN_PICKAXE = get("minecraft:wooden_pickaxe");
+    public static final ItemType WRITABLE_BOOK = init();
     @Nullable
-    public static final ItemType WOODEN_SHOVEL = get("minecraft:wooden_shovel");
+    public static final ItemType WRITTEN_BOOK = init();
     @Nullable
-    public static final ItemType WOODEN_SPEAR = get("minecraft:wooden_spear");
+    public static final ItemType YELLOW_BANNER = init();
     @Nullable
-    public static final ItemType WOODEN_SWORD = get("minecraft:wooden_sword");
+    public static final ItemType YELLOW_BED = init();
+    @Nullable public static final ItemType YELLOW_BUNDLE = init();
     @Nullable
-    public static final ItemType WRITABLE_BOOK = get("minecraft:writable_book");
+    public static final ItemType YELLOW_CANDLE = init();
     @Nullable
-    public static final ItemType WRITTEN_BOOK = get("minecraft:written_book");
+    public static final ItemType YELLOW_CARPET = init();
     @Nullable
-    public static final ItemType YELLOW_BANNER = get("minecraft:yellow_banner");
+    public static final ItemType YELLOW_CONCRETE = init();
     @Nullable
-    public static final ItemType YELLOW_BED = get("minecraft:yellow_bed");
+    public static final ItemType YELLOW_CONCRETE_POWDER = init();
     @Nullable
-    public static final ItemType YELLOW_BUNDLE = get("minecraft:yellow_bundle");
+    public static final ItemType YELLOW_DYE = init();
     @Nullable
-    public static final ItemType YELLOW_CANDLE = get("minecraft:yellow_candle");
+    public static final ItemType YELLOW_GLAZED_TERRACOTTA = init();
     @Nullable
-    public static final ItemType YELLOW_CARPET = get("minecraft:yellow_carpet");
+    public static final ItemType YELLOW_SHULKER_BOX = init();
     @Nullable
-    public static final ItemType YELLOW_CONCRETE = get("minecraft:yellow_concrete");
+    public static final ItemType YELLOW_STAINED_GLASS = init();
     @Nullable
-    public static final ItemType YELLOW_CONCRETE_POWDER = get("minecraft:yellow_concrete_powder");
+    public static final ItemType YELLOW_STAINED_GLASS_PANE = init();
     @Nullable
-    public static final ItemType YELLOW_DYE = get("minecraft:yellow_dye");
+    public static final ItemType YELLOW_TERRACOTTA = init();
     @Nullable
-    public static final ItemType YELLOW_GLAZED_TERRACOTTA = get("minecraft:yellow_glazed_terracotta");
+    public static final ItemType YELLOW_WOOL = init();
     @Nullable
-    public static final ItemType YELLOW_HARNESS = get("minecraft:yellow_harness");
+    public static final ItemType ZOGLIN_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType YELLOW_SHULKER_BOX = get("minecraft:yellow_shulker_box");
+    public static final ItemType ZOMBIE_HEAD = init();
     @Nullable
-    public static final ItemType YELLOW_STAINED_GLASS = get("minecraft:yellow_stained_glass");
+    public static final ItemType ZOMBIE_HORSE_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType YELLOW_STAINED_GLASS_PANE = get("minecraft:yellow_stained_glass_pane");
-    @Nullable
-    public static final ItemType YELLOW_TERRACOTTA = get("minecraft:yellow_terracotta");
-    @Nullable
-    public static final ItemType YELLOW_WOOL = get("minecraft:yellow_wool");
-    @Nullable
-    public static final ItemType ZOGLIN_SPAWN_EGG = get("minecraft:zoglin_spawn_egg");
-    @Nullable
-    public static final ItemType ZOMBIE_HEAD = get("minecraft:zombie_head");
-    @Nullable
-    public static final ItemType ZOMBIE_HORSE_SPAWN_EGG = get("minecraft:zombie_horse_spawn_egg");
-    @Nullable
-    public static final ItemType ZOMBIE_NAUTILUS_SPAWN_EGG = get("minecraft:zombie_nautilus_spawn_egg");
+    public static final ItemType ZOMBIE_NAUTILUS_SPAWN_EGG = init();
     @Deprecated
     @Nullable
-    public static final ItemType ZOMBIE_PIGMAN_SPAWN_EGG = get("minecraft:zombie_pigman_spawn_egg");
+    public static final ItemType ZOMBIE_PIGMAN_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType ZOMBIE_SPAWN_EGG = get("minecraft:zombie_spawn_egg");
+    public static final ItemType ZOMBIE_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType ZOMBIE_VILLAGER_SPAWN_EGG = get("minecraft:zombie_villager_spawn_egg");
+    public static final ItemType ZOMBIE_VILLAGER_SPAWN_EGG = init();
     @Nullable
-    public static final ItemType ZOMBIFIED_PIGLIN_SPAWN_EGG = get("minecraft:zombified_piglin_spawn_egg");
+    public static final ItemType ZOMBIFIED_PIGLIN_SPAWN_EGG = init();
 
     private ItemTypes() {
+    }
+
+    private static Field[] fieldsTmp;
+    private static int initIndex;
+
+    private static ItemType init() {
+        try {
+            if (fieldsTmp == null) {
+                fieldsTmp = ItemTypes.class.getDeclaredFields();
+                ItemTypesCache.init(); // force class to load
+            }
+            String name = fieldsTmp[initIndex++].getName().toLowerCase(Locale.ROOT);
+            return ItemType.REGISTRY.get(name);
+        } catch (Throwable e) {
+            e.printStackTrace();
+            throw e;
+        }
+    }
+
+    static {
+        // we should be at the first non-ItemType field now
+        if (!fieldsTmp[initIndex].getName().equals("fieldsTmp")) {
+            throw new IllegalStateException("improper initialization of item type fields");
+        }
+        fieldsTmp = null;
     }
 
     @Nullable

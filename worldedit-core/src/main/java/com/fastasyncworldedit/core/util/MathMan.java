@@ -71,11 +71,11 @@ public class MathMan {
     }
 
     public static int clamp(int check, int min, int max) {
-        return Math.clamp(check, min, max);
+        return check > max ? max : (Math.max(check, min));
     }
 
     public static float clamp(float check, float min, float max) {
-        return Math.clamp(check, min, max);
+        return check > max ? max : Math.max(check, min);
     }
 
     public static double hypot(final double... pars) {
